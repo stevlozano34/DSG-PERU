@@ -1,0 +1,117 @@
+/* WhatsApp Button - Diseño limpio y moderno */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    position: relative;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.whatsapp-button:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(18, 140, 126, 0.3);
+}
+
+.whatsapp-icon {
+    color: white;
+    font-size: 1.8rem;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.whatsapp-button:hover .whatsapp-icon {
+    transform: scale(1.05);
+}
+
+/* Badge de notificación */
+.whatsapp-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #FF4D4D;
+    color: white;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border: 2px solid white;
+}
+
+/* Tooltip sutil */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 4.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--card);
+    color: var(--foreground);
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border);
+    pointer-events: none;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-0.5rem, -50%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .whatsapp-button {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+    
+    .whatsapp-icon {
+        font-size: 1.6rem;
+    }
+    
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
+
+/* Tema oscuro */
+.dark .whatsapp-button {
+    border-color: var(--background);
+}
+
+.dark .whatsapp-tooltip {
+    background: var(--card);
+    border-color: var(--border);
+}

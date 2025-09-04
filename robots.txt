@@ -1,0 +1,49 @@
+# Robots.txt para DSG PERU TECHNOLOGY
+# Permite el acceso a todos los bots por defecto
+User-agent: *
+
+# Bloquear acceso a directorios administrativos y sensibles
+Disallow: /pages/admin-dashboard/
+Disallow: /pages/client-dasboard/
+Disallow: /pages/auth/
+Disallow: /pages/errors/
+
+# Bloquear archivos de configuración y desarrollo
+Disallow: /config/
+Disallow: /.qodo/
+Disallow: /.hintrc
+
+# Bloquear archivos de sistema y temporales
+Disallow: /*.log
+Disallow: /temp/
+Disallow: /cache/
+
+# Permitir acceso a recursos públicos importantes
+Allow: /assets/
+Allow: /pages/public/
+
+# Indicar la ubicación del sitemap
+Sitemap: https://tudominio.com/sitemap.xml
+
+# Configuración específica para Google
+User-agent: Googlebot
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Configuración para bots de redes sociales
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+
+
+El archivo robots.txt es un archivo de texto que le dice a los motores de búsqueda (Google, Bing, etc.) qué partes de tu sitio web pueden o no pueden rastrear e indexar.
+
+### 📍 Para qué sirve:
+- Controla el acceso de los bots de búsqueda a tu sitio
+- Protege contenido sensible como páginas de administración
+- Mejora el SEO dirigiendo a los bots hacia el contenido importante
+- Ahorra ancho de banda evitando que rastreen archivos innecesarios

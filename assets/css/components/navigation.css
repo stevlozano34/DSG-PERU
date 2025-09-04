@@ -1,0 +1,395 @@
+/* Navigation Dropdowns */
+.login-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Desktop dropdown menu */
+.login-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    min-width: 200px;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Mobile dropdown menu */
+.mobile-login-dropdown {
+    position: relative;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+#mobile-login-dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    color: var(--foreground);
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(-10px);
+    display: block !important;
+}
+
+#mobile-login-dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    max-height: 300px;
+    transform: translateY(0);
+    padding: 0.75rem 0.5rem;
+}
+
+/* Asegurar que el botón ocupe todo el ancho */
+#mobile-login-dropdown-btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: var(--primary);
+    color: white;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#mobile-login-dropdown-btn i {
+    color: white;
+}
+
+#mobile-login-dropdown-btn:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajustes para modo oscuro */
+.dark #mobile-login-dropdown-btn {
+    background-color: #ffffff;
+    border-color: var(--primary);
+    color: #000000 !important;
+}
+
+.dark #mobile-login-dropdown-btn span {
+    color: #000000 !important;
+}
+
+.dark #mobile-login-dropdown-btn i {
+    color: #000000 !important;
+}
+
+.dark #mobile-login-dropdown-btn:hover {
+    background-color: #f0f0f0;
+    border-color: var(--primary);
+    color: #000000 !important;
+}
+
+.dark #mobile-login-dropdown-btn:hover span,
+.dark #mobile-login-dropdown-btn:hover i {
+    color: #000000 !important;
+}
+
+#mobile-login-dropdown-btn i {
+    transition: transform 0.2s ease;
+}
+
+#mobile-login-dropdown-btn[aria-expanded="true"] i:last-child {
+    transform: rotate(180deg);
+}
+
+/* Estilos para los elementos del menú */
+#mobile-login-dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 0.25rem 0;
+    background-color: transparent;
+}
+
+#mobile-login-dropdown-menu .dropdown-item:hover {
+    background-color: var(--accent);
+    transform: translateX(4px);
+}
+
+#mobile-login-dropdown-menu .dropdown-item i {
+    margin-right: 0.75rem;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--primary);
+}
+
+/* Show/hide dropdown on hover/focus (desktop) */
+.login-dropdown:hover .dropdown-menu,
+.login-dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown items */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.mobile-menu .dropdown-item {
+    padding: 0.8rem 1.25rem;
+    border-radius: 8px;
+    margin: 0.25rem 0;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.dark .mobile-menu .dropdown-item {
+    color: var(--color-muted);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-item i {
+    margin-right: 0.75rem;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateX(2px);
+    color: var(--color-accent);
+}
+
+/* ===== ESTILOS PARA MENÚ MÓVIL ===== */
+.mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: var(--background);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Ajustes para modo oscuro */
+.dark .mobile-actions {
+    background: rgba(30, 30, 35, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Contenedor de botones superiores */
+.mobile-actions-top {
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+/* Botón de tema */
+.mobile-actions .theme-toggle {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    color: var(--foreground);
+}
+
+.dark .mobile-actions .theme-toggle {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-actions .theme-toggle:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-actions .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-actions .theme-toggle i {
+    width: 22px;
+    height: 22px;
+}
+
+/* Botón de demo */
+.mobile-actions .btn-outline {
+    flex: 1;
+    background: transparent;
+    border: 1.5px solid var(--primary);
+    color: var(--primary);
+    border-radius: 10px;
+    padding: 0.8rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.dark .mobile-actions .btn-outline {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.mobile-actions .btn-outline i {
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.mobile-actions .btn-outline:hover {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-actions .btn-outline i {
+    margin-right: 0.6rem;
+    transition: transform 0.25s ease;
+}
+
+.mobile-actions .btn-outline:hover i {
+    transform: scale(1.1);
+}
+
+/* Contenedor del menú de inicio de sesión */
+.mobile-login-dropdown {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+/* Botón principal de inicio de sesión */
+.mobile-login-dropdown .btn-primary {
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-login-dropdown .btn-primary i:last-child {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.mobile-login-dropdown.active .btn-primary i:last-child {
+    transform: rotate(180deg);
+}
+
+/* Menú desplegable */
+.mobile-login-dropdown .dropdown-menu {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-login-dropdown.active .dropdown-menu {
+    opacity: 1;
+    height: auto;
+    padding: 0.5rem;
+}
+
+/* Elementos del menú desplegable */
+.mobile-login-dropdown .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.mobile-login-dropdown .dropdown-item i {
+    margin-right: 0.75rem;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.mobile-login-dropdown .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+}
+
+.mobile-login-dropdown .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+}
+
+.mobile-login-dropdown .dropdown-item i {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.75rem;
+}

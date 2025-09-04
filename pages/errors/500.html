@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Error del Servidor | DSG</title>
+    <link rel="stylesheet" href="../../assets/css/global/reset.css">
+    <link rel="stylesheet" href="../../assets/css/global/variables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            overflow-y: auto; /* Cambiado de overflow: hidden */
+            padding: 1rem 0; /* Agregado para espaciado en móviles */
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 700px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-icon {
+            font-size: 5rem;
+            color: #ff6b6b;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .error-details {
+            background: #f8f9fa;
+            border-left: 4px solid #ff6b6b;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .error-details h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .error-details p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f7fafc;
+            color: #4a5568;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            background: #edf2f7;
+            transform: translateY(-2px);
+        }
+
+        .status-info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .status-info h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .retry-timer {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin: 1rem 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+
+        @media (max-width: 768px) {
+        body {
+            align-items: flex-start; /* Cambiado para mejor visualización en móviles */
+            padding: 2rem 1rem;
+        }
+        
+        .error-container {
+            margin: 1rem;
+            padding: 2rem;
+            min-height: auto; /* Agregado para flexibilidad */
+        }
+
+        .error-code {
+            font-size: 4rem;
+        }
+
+        .error-title {
+            font-size: 2rem;
+        }
+
+        .error-actions {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 250px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">
+            <i class="fas fa-server"></i>
+        </div>
+        <div class="error-code">500</div>
+        <h1 class="error-title">Error Interno del Servidor</h1>
+        <p class="error-message">
+            Lo sentimos, algo salió mal en nuestros servidores. 
+            Nuestro equipo técnico ha sido notificado y está trabajando para solucionarlo.
+        </p>
+        
+        <div class="error-details">
+            <h4><i class="fas fa-info-circle"></i> Detalles del Error</h4>
+            <p><strong>Código de Error:</strong> HTTP 500 - Internal Server Error</p>
+            <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
+            <p><strong>ID de Sesión:</strong> <span id="sessionId"></span></p>
+        </div>
+
+        <div class="retry-timer">
+            <i class="fas fa-clock"></i>
+            Reintentando automáticamente en: <span id="countdown">30</span> segundos
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+
+        <div class="error-actions">
+            <a href="../../index.html" class="btn btn-primary">
+                <i class="fas fa-home"></i>
+                Ir al Inicio
+            </a>
+            <button onclick="location.reload()" class="btn btn-secondary">
+                <i class="fas fa-redo"></i>
+                Reintentar Ahora
+            </button>
+            <a href="mailto:soporte@dsg.com" class="btn btn-secondary">
+                <i class="fas fa-envelope"></i>
+                Contactar Soporte
+            </a>
+        </div>
+
+        <div class="status-info">
+            <h4><i class="fas fa-shield-alt"></i> Estado del Sistema</h4>
+            <p>Puedes verificar el estado de nuestros servicios en tiempo real visitando nuestra página de estado del sistema.</p>
+        </div>
+    </div>
+
+    <script>
+        // Generate session ID
+        document.getElementById('sessionId').textContent = 'SES-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+        
+        // Set timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('es-ES');
+        
+        // Countdown timer
+        let countdown = 30;
+        const countdownElement = document.getElementById('countdown');
+        const progressBar = document.getElementById('progressBar');
+        
+        const timer = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            
+            // Update progress bar
+            const progress = ((30 - countdown) / 30) * 100;
+            progressBar.style.width = progress + '%';
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                location.reload();
+            }
+        }, 1000);
+        
+        // Stop auto-reload if user interacts with the page
+        document.addEventListener('click', () => {
+            clearInterval(timer);
+            countdownElement.textContent = 'Cancelado';
+            progressBar.style.width = '0%';
+        });
+    </script>
+</body>
+</html>

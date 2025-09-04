@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixture - Admin Dashboard</title>
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/admin-dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Fixture</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clients.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logs.html" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <span>Logs</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Good morning, Robert</h1>
+                    <p>Step up to these pending the lazy day from and manage book tasks.</p>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../../assets/images/hero/user-avatar.jpg" alt="User" class="user-avatar">
+                        <span>Gbemigem</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Project Task Statistics</h3>
+                            <button class="stat-menu"><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">235</div>
+                            <div class="stat-label">Total number of Tasks</div>
+                            <div class="stat-progress">
+                                <div class="progress-item">
+                                    <span class="progress-label">Completed</span>
+                                    <span class="progress-value">1102 24.47</span>
+                                </div>
+                                <div class="progress-item">
+                                    <span class="progress-label">In Progress</span>
+                                    <span class="progress-value">89 Goal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Task Progress</h3>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">131</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Task Priority</h3>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">80</div>
+                            <div class="stat-label">High Priority</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Total Focus</h3>
+                        </div>
+                        <div class="stat-content">
+                            <div class="focus-chart">
+                                <canvas id="focusChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Stats -->
+                <div class="secondary-stats">
+                    <div class="stat-item">
+                        <h4>Daily Projects</h4>
+                        <div class="stat-value">80%</div>
+                        <div class="stat-subtitle">Daily Focus</div>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Total Focus</h4>
+                        <div class="stat-value">92%</div>
+                        <div class="stat-subtitle">All Tasks</div>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="team-section">
+                    <h3>My Team</h3>
+                    <div class="team-members">
+                        <div class="team-member">
+                            <img src="../../assets/images/hero/team1.jpg" alt="Josh">
+                            <div class="member-info">
+                                <h4>Josh</h4>
+                                <p>Product/UX/UI Tasks</p>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <img src="../../assets/images/hero/team2.jpg" alt="Grace">
+                            <div class="member-info">
+                                <h4>Grace</h4>
+                                <p>Collateral Priority 5.4 Tasks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="activities-section">
+                    <div class="activities-header">
+                        <h3>Recent Activities</h3>
+                        <div class="activities-filters">
+                            <button class="filter-btn active">All</button>
+                            <button class="filter-btn">Pending</button>
+                            <button class="filter-btn">Completed</button>
+                        </div>
+                    </div>
+                    <div class="activities-list">
+                        <div class="activity-item">
+                            <div class="activity-info">
+                                <span class="activity-id">CM40033</span>
+                                <span class="activity-owner">Owner</span>
+                                <span class="activity-task">Versatile Bug/Purchase</span>
+                                <span class="activity-status completed">Completed</span>
+                                <span class="activity-date">14 Jan, 2023 08:48 PM</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-info">
+                                <span class="activity-id">JM40033</span>
+                                <span class="activity-owner">Pending</span>
+                                <span class="activity-task">Major App Optimization</span>
+                                <span class="activity-status pending">Pending</span>
+                                <span class="activity-date">14 Jan, 2023 11:59 PM</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-info">
+                                <span class="activity-id">JM40033</span>
+                                <span class="activity-owner">Owner</span>
+                                <span class="activity-task">Fight Table Reporting</span>
+                                <span class="activity-status completed">Completed</span>
+                                <span class="activity-date">12 Jan, 2023 09:00 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/pages/admin-dashboard/admin-dashboard.js"></script>
+</body>
+</html>

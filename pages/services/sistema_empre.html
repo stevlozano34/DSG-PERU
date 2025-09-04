@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Empresarial</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/global/index_responsive.css">
+    <link rel="stylesheet" href="/assets/css/components/navbar.css">
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/pages/servicios/sistema_empre.css">
+
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <!-- logo DSG -->
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png"> 
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    </div>
+                    <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/services/desarrollo_web.html" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/services/app_movil.html" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/services/sistema_empre.html" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                
+                <!-- Mover nav-actions dentro del menú móvil -->
+                <!-- En la sección de navegación, actualizar los botones -->
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+                        <i data-lucide="moon" class="theme-icon"></i>
+                        <span class="sr-only">Cambiar tema</span>
+                    </button>
+                    <button class="btn btn-outline btn-demo" onclick="requestDemo()" aria-label="Ver demostración">
+                        <i data-lucide="play-circle" class="btn-icon"></i>
+                        <span>Demo</span>
+                    </button>
+                    <!-- Dropdown para tipos de acceso -->
+                    <div class="login-dropdown">
+                        <button class="btn btn-primary btn-login" id="login-dropdown-btn" aria-expanded="false" aria-haspopup="true" aria-controls="login-dropdown-menu">
+                            <i data-lucide="log-in" class="btn-icon"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+                        </button>
+                        <div class="dropdown-menu" id="login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon" style="display: none;"></i>
+                <span class="sr-only">Menú de navegación</span>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/public/shop.html#web" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/public/shop.html#mobile" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/public/shop.html#enterprise" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                <div class="mobile-actions">
+                    <div class="mobile-actions-top">
+                        <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Cambiar tema">
+                            <i data-lucide="moon" class="theme-icon"></i>
+                        </button>
+                        <button class="btn btn-outline" onclick="requestDemo()">
+                            <i data-lucide="play-circle"></i>
+                            <span>Ver Demo</span>
+                        </button>
+                    </div>
+                    <div class="login-dropdown mobile-login-dropdown">
+                        <button class="btn btn-primary" id="mobile-login-dropdown-btn" aria-expanded="false">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="mobile-login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Overlay -->
+            <div class="mobile-overlay" id="mobile-overlay"></div>
+        </div>
+    </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Soluciones Empresariales Integrales y Modernas</h1>
+                <p>Transforma tu negocio con nuestras herramientas avanzadas, diseñadas para eficiencia, escalabilidad y elegancia. Optimiza procesos, analiza datos en tiempo real y automatiza tareas repetitivas con un enfoque minimalista.</p>
+                <a href="#contact" class="cta-button">Comienza Ahora</a>
+            </div>
+        </section>
+        <section id="features" class="section features-section">
+            <h2>Características Principales</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>Análisis Avanzado</h3>
+                    <p>Obtén insights profundos con dashboards intuitivos y reportes personalizables en tiempo real.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🤖</div>
+                    <h3>Automatización Inteligente</h3>
+                    <p>Automatiza flujos de trabajo complejos para reducir errores y aumentar la productividad diaria.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔒</div>
+                    <h3>Seguridad Robusta</h3>
+                    <p>Protege tus datos con encriptación de vanguardia y protocolos de seguridad multi-capa.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📱</div>
+                    <h3>Compatibilidad Móvil</h3>
+                    <p>Accede a tu sistema desde cualquier dispositivo con un diseño responsivo y optimizado.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🌐</div>
+                    <h3>Integración Fluida</h3>
+                    <p>Conecta fácilmente con herramientas externas como CRM, ERP y APIs de terceros.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Rendimiento Optimizado</h3>
+                    <p>Experiencia rápida y fluida gracias a tecnologías de carga eficiente y caching inteligente.</p>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="section services-section">
+            <h2>Nuestros Servicios Detallados</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <h3>Gestión Integral</h3>
+                    <p>Sistemas completos para la gestión de recursos humanos, finanzas, inventarios y operaciones diarias, con interfaces intuitivas y personalizables.</p>
+                    <ul>
+                        <li>Control de inventarios en tiempo real</li>
+                        <li>Gestión de nóminas y RRHH</li>
+                        <li>Reportes financieros automatizados</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Automatización de Procesos</h3>
+                    <p>Implementa bots y scripts para automatizar tareas repetitivas, integrando IA para predicciones y optimizaciones avanzadas.</p>
+                    <ul>
+                        <li>Automatización de emails y notificaciones</li>
+                        <li>Flujos de aprobación inteligentes</li>
+                        <li>Integración con herramientas de productividad</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Análisis y BI</h3>
+                    <p>Herramientas de Business Intelligence para visualizar datos, generar pronósticos y tomar decisiones basadas en evidencia.</p>
+                    <ul>
+                        <li>Dashboards interactivos</li>
+                        <li>Análisis predictivo con ML</li>
+                        <li>Exportación de datos en múltiples formatos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="section about-section">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una empresa líder en soluciones tecnológicas para empresas, con más de 10 años de experiencia. Nuestro enfoque minimalista asegura que cada herramienta sea elegante, fácil de usar y altamente efectiva. Nos especializamos en glassmorphism y diseños modernos para una experiencia usuario premium.</p>
+            <div class="about-details">
+                <div class="detail">
+                    <h4>Misión</h4>
+                    <p>Empoderar a las empresas con tecnología accesible y sofisticada.</p>
+                </div>
+                <div class="detail">
+                    <h4>Visión</h4>
+                    <p>Ser el estándar global en sistemas empresariales minimalistas.</p>
+                </div>
+                <div class="detail">
+                    <h4>Valores</h4>
+                    <p>Innovación, Elegancia, Eficiencia y Sostenibilidad.</p>
+                </div>
+            </div>
+        </section>
+        <section id="team" class="section team-section">
+            <h2>Nuestro Equipo</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo"></div>
+                    <h3>Juan Pérez</h3>
+                    <p>CEO & Fundador</p>
+                    <p>Experto en estrategia empresarial con 15 años en tech.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo"></div>
+                    <h3>Ana López</h3>
+                    <p>CTO</p>
+                    <p>Especialista en desarrollo de software y IA.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo"></div>
+                    <h3>Carlos Gómez</h3>
+                    <p>Director de Diseño</p>
+                    <p>Creador de interfaces minimalistas y elegantes.</p>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="section testimonials-section">
+            <h2>Testimonios de Clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Sistema Empresarial ha transformado nuestra operación diaria. ¡Altamente recomendado!"</p>
+                    <h4>Empresa XYZ</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"La automatización nos ahorró horas de trabajo semanal. Diseño elegante y funcional."</p>
+                    <h4>Compañía ABC</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Análisis precisos y seguridad impecable. El mejor sistema que hemos usado."</p>
+                    <h4>Negocio DEF</h4>
+                </div>
+            </div>
+        </section>
+        <section id="pricing" class="section pricing-section">
+            <h2>Planes de Precios</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Básico</h3>
+                    <p class="price">$29/mes</p>
+                    <ul>
+                        <li>Gestión básica</li>
+                        <li>Automatización limitada</li>
+                        <li>Soporte estándar</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Seleccionar</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Pro</h3>
+                    <p class="price">$99/mes</p>
+                    <ul>
+                        <li>Todas las características</li>
+                        <li>Automatización avanzada</li>
+                        <li>Soporte prioritario</li>
+                        <li>Análisis con IA</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Seleccionar</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p class="price">Personalizado</p>
+                    <ul>
+                        <li>Soluciones a medida</li>
+                        <li>Integraciones ilimitadas</li>
+                        <li>Soporte 24/7</li>
+                        <li>Consultoría dedicada</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Contactar</a>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section contact-section">
+            <h2>Contacto</h2>
+            <p>Estamos listos para ayudarte. Envíanos un mensaje detallado sobre tus necesidades empresariales.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Asunto" required>
+                <textarea placeholder="Mensaje" required></textarea>
+                <button type="submit" class="cta-button">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                        </div>
+                        <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                    </div>
+                    <p class="footer-description">
+                        Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="/pages/services/restaurantes.html">Restaurantes</a></li>
+                            <li><a href="/pages/services/boticas.html">Boticas</a></li>
+                            <li><a href="/pages/services/minimarkets.html">Minimarkets</a></li>
+                            <li><a href="/pages/services/personalizado.html">Personalizado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/pages/public/about.html">Acerca de</a></li>
+                            <li><a href="/pages/public/contact.html">Contacto</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="/pages/public/blog/blog.html">Blog</a></li>
+                            <li><a href="/pages/public/blog/post.html">Post Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Soporte</h4>
+                        <ul>
+                            <li><a href="/pages/public/help/centro-ayuda.html">Centro de Ayuda</a></li>
+                            <li><a href="/pages/public/help/documentation.html">Documentación</a></li>
+                            <li><a href="/pages/public/help/estado_servicio.html">Estado del Servicio</a></li>
+                            <li><a href="/pages/public/help/support.html">Contactar Soporte</a></li>
+                            <li><a href="/pages/public/help/faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DSG PERU TECHNOLOGY. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/dsgperu" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://www.tiktok.com/@dsg.peru.technolo" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/dsgperu?igsh=NHczY3l2dDdiNWZj" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/assets/js/components/navigation.js"></script>
+    <script src="/assets/js/components/dropdowns.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.nav a, .footer-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Card hover animations (already in CSS, but enhance if needed)
+    const cards = document.querySelectorAll('.feature-card, .card, .team-member, .testimonial-card, .pricing-card, .detail');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px)';
+            card.style.boxShadow = '0 8px 12px rgba(0, 0, 0, 0.15)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        });
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Form submission (simulate with alert for now)
+    const contactForm = document.querySelector('.contact-form');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Mensaje enviado con éxito. ¡Gracias por contactarnos!');
+        contactForm.reset();
+    });
+
+    // Lazy loading for sections (fade in on scroll)
+    const sections = document.querySelectorAll('.section');
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px'
+    };
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        section.classList.add('fade-in-section');
+        sectionObserver.observe(section);
+    });
+});
+    </script>
+
+    <!-- WhatsApp Button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/components/whatsapp-button.css">
+    <div class="whatsapp-float">
+        <a href="https://wa.me/51903148583?text=%C2%A1Hola!%20👋%20Estoy%20interesado(a)%20en%20los%20servicios%20de%20DSG%20Per%C3%BA%20Technology%20SRL.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20soluciones%20de%20facturaci%C3%B3n%20electr%C3%B3nica,%20alquiler%20de%20sistemas%20inform%C3%A1ticos,%20consultor%C3%ADa%20TI,%20outsourcing%20o%20desarrollo%20de%20software%20a%20medida.%20%C2%A1Gracias!" 
+        class="whatsapp-button" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Chatea con nosotros por WhatsApp">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            <span class="whatsapp-badge">1</span>
+            <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+        </a>
+    </div>
+</body>
+</html>

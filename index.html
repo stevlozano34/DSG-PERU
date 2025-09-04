@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSG PERU TECHNOLOGY - Soluciones de Software Empresarial</title>
+    <meta name="description" content="Desarrollamos software especializado para restaurantes, boticas, minimarkets y más. Soluciones tecnológicas que impulsan tu negocio.">
+    
+    <!-- css_public -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/global/index_responsive.css">
+    <link rel="stylesheet" href="/assets/css/components/navbar.css">
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/whatsapp-button.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <!-- logo DSG -->
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png"> 
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+<body>    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    </div>
+                    <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/services/desarrollo_web.html" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/services/app_movil.html" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/services/sistema_empre.html" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                
+                <!-- Mover nav-actions dentro del menú móvil -->
+                <!-- En la sección de navegación, actualizar los botones -->
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+                        <i data-lucide="moon" class="theme-icon"></i>
+                        <span class="sr-only">Cambiar tema</span>
+                    </button>
+                    <button class="btn btn-outline btn-demo" onclick="requestDemo()" aria-label="Ver demostración">
+                        <i data-lucide="play-circle" class="btn-icon"></i>
+                        <span>Demo</span>
+                    </button>
+                    <!-- Dropdown para tipos de acceso -->
+                    <div class="login-dropdown">
+                        <button class="btn btn-primary btn-login" id="login-dropdown-btn" aria-expanded="false" aria-haspopup="true" aria-controls="login-dropdown-menu">
+                            <i data-lucide="log-in" class="btn-icon"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+                        </button>
+                        <div class="dropdown-menu" id="login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon" style="display: none;"></i>
+                <span class="sr-only">Menú de navegación</span>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/public/shop.html#web" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/public/shop.html#mobile" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/public/shop.html#enterprise" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                <div class="mobile-actions">
+                    <div class="mobile-actions-top">
+                        <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Cambiar tema">
+                            <i data-lucide="moon" class="theme-icon"></i>
+                        </button>
+                        <button class="btn btn-outline" onclick="requestDemo()">
+                            <i data-lucide="play-circle"></i>
+                            <span>Ver Demo</span>
+                        </button>
+                    </div>
+                    <div class="login-dropdown mobile-login-dropdown">
+                        <button class="btn btn-primary" id="mobile-login-dropdown-btn" aria-expanded="false">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="mobile-login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Overlay -->
+            <div class="mobile-overlay" id="mobile-overlay"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i data-lucide="zap"></i>
+                        <span>Tecnología de Vanguardia</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Revoluciona tu <span class="text-gradient">Negocio</span> con Software Inteligente
+                    </h1>
+                    <p class="hero-description">
+                        Soluciones tecnológicas especializadas para restaurantes, boticas, minimarkets y más. 
+                        Automatiza procesos, optimiza operaciones y acelera el crecimiento de tu empresa.
+                    </p>
+                    <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" onclick="requestDemo()" aria-label="Solicitar demostración gratuita">
+                        <i data-lucide="rocket" class="btn-icon"></i>
+                        <span>Solicitar Demo Gratuita</span>
+                    </button>
+                    <button class="btn btn-outline btn-large" onclick="scrollToSection('servicios')" aria-label="Ver servicios disponibles">
+                        <i data-lucide="arrow-down" class="btn-icon"></i>
+                        <span>Ver Servicios</span>
+                    </button>
+                </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Empresas Atendidas</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Años de Experiencia</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Uptime Garantizado</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center" alt="Dashboard Preview" class="dashboard-preview">
+                        <div class="floating-cards">
+                            <div class="floating-card card-1">
+                                <i data-lucide="trending-up"></i>
+                                <span>+24% Ventas</span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <i data-lucide="users"></i>
+                                <span>1,234 Clientes</span>
+                            </div>
+                            <div class="floating-card card-3">
+                                <i data-lucide="check-circle"></i>
+                                <span>Automatizado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i data-lucide="briefcase"></i>
+                    <span>Nuestros Servicios</span>
+                </div>
+                <h2 class="section-title">Soluciones Especializadas para cada Industria</h2>
+                <div class="video-container">
+                    <video class="featured-video" autoplay loop muted playsinline>
+                        <source src="assets/images/video/videoooo.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                <p class="section-description">
+                    Desarrollamos software a medida que se adapta perfectamente a las necesidades específicas de tu sector.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+                    <h3 class="service-title">Restaurantes</h3>
+                    <p class="service-description">
+                        Sistema completo de punto de venta, gestión de inventario, control de mesas y análisis de ventas.
+                    </p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> POS Avanzado</li>
+                        <li><i data-lucide="check"></i> Gestión de Mesas</li>
+                        <li><i data-lucide="check"></i> Control de Inventario</li>
+                        <li><i data-lucide="check"></i> Reportes en Tiempo Real</li>
+                    </ul>
+                    <a href="/pages/services/restaurantes.html" class="btn btn-outline service-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
+                        <span>Conocer Más</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card featured">
+                    <div class="service-badge">Más Popular</div>
+                    <div class="service-icon">
+                        <i data-lucide="pill"></i>
+                    </div>
+                    <h3 class="service-title">Boticas y Farmacias</h3>
+                    <p class="service-description">
+                        Control farmacéutico especializado con gestión de recetas, vencimientos y regulaciones sanitarias.
+                    </p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Gestión de Recetas</li>
+                        <li><i data-lucide="check"></i> Control de Vencimientos</li>
+                        <li><i data-lucide="check"></i> Normativas DIGEMID</li>
+                        <li><i data-lucide="check"></i> Inventario Inteligente</li>
+                    </ul>
+                    <a href="/pages/services/boticas.html" class="btn btn-outline service-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
+                        <span>Solicitar Demo</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">Minimarkets</h3>
+                    <p class="service-description">
+                        Solución integral para pequeños comercios con gestión de productos, proveedores y clientes.
+                    </p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check"></i> Código de Barras</li>
+                        <li><i data-lucide="check"></i> Gestión de Proveedores</li>
+                        <li><i data-lucide="check"></i> Control de Stock</li>
+                        <li><i data-lucide="check"></i> Facturación Electrónica</li>
+                    </ul>
+                    <a href="/pages/services/minimarkets.html" class="btn btn-outline service-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
+                        <span>Conocer Más</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="text-center" style="margin: 2rem 0 3rem;">
+        <a href="/pages/public/shop.html" class="btn btn-primary service-btn">
+            <span>Ver Todos los Servicios</span>
+            <i data-lucide="arrow-right" width="16" height="16"></i>
+        </a>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="features-text">
+                    <div class="section-badge">
+                        <i data-lucide="star"></i>
+                        <span>Características</span>
+                    </div>
+                    <h2 class="section-title">¿Por qué elegir DSG PERU?</h2>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Seguridad Garantizada</h4>
+                                <p>Protección de datos con encriptación de nivel bancario y copias de seguridad automáticas.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i data-lucide="smartphone"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Acceso Móvil</h4>
+                                <p>Controla tu negocio desde cualquier lugar con nuestras aplicaciones móviles nativas.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i data-lucide="headphones"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Soporte 24/7</h4>
+                                <p>Equipo técnico especializado disponible las 24 horas para resolver cualquier inconveniente.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Implementación Rápida</h4>
+                                <p>Puesta en marcha en menos de 48 horas con capacitación completa incluida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-visual">
+                    <div class="features-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=600&fit=crop&crop=center" alt="Business Analytics">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="precios">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i data-lucide="dollar-sign"></i>
+                    <span>Precios</span>
+                </div>
+                <h2 class="section-title">Planes que se adaptan a tu negocio</h2>
+                <p class="section-description">
+                    Elige el plan perfecto para tu empresa. Todos incluyen soporte técnico y actualizaciones gratuitas.
+                </p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Básico</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">S/</span>
+                            <span class="price-amount">299</span>
+                            <span class="price-period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Hasta 2 usuarios</li>
+                        <li><i data-lucide="check"></i> POS básico</li>
+                        <li><i data-lucide="check"></i> Inventario simple</li>
+                        <li><i data-lucide="check"></i> Reportes básicos</li>
+                        <li><i data-lucide="check"></i> Soporte por email</li>
+                    </ul>
+                    <a href="/pages/auth/client-register.html" class="btn btn-outline pricing-btn">Empezar Gratis</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Recomendado</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Profesional</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">S/</span>
+                            <span class="price-amount">599</span>
+                            <span class="price-period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Hasta 10 usuarios</li>
+                        <li><i data-lucide="check"></i> POS avanzado</li>
+                        <li><i data-lucide="check"></i> Gestión completa</li>
+                        <li><i data-lucide="check"></i> Analytics avanzados</li>
+                        <li><i data-lucide="check"></i> Soporte prioritario</li>
+                        <li><i data-lucide="check"></i> App móvil</li>
+                    </ul>
+                    <button class="btn btn-primary pricing-btn">Solicitar Demo</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Empresarial</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">S/</span>
+                            <span class="price-amount">999</span>
+                            <span class="price-period">/mes</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Usuarios ilimitados</li>
+                        <li><i data-lucide="check"></i> Funciones premium</li>
+                        <li><i data-lucide="check"></i> Múltiples sucursales</li>
+                        <li><i data-lucide="check"></i> API personalizada</li>
+                        <li><i data-lucide="check"></i> Soporte 24/7</li>
+                        <li><i data-lucide="check"></i> Personalización</li>
+                    </ul>
+                    <a href="/pages/services/contact-sales.html" class="btn btn-outline pricing-btn">Contactar Ventas</a>
+                </div>
+            </div>
+        </div>
+        <div class="presenatcion" style="text-align: center; justify-content: center; margin-top: 70px;">
+            <h1>Nuestros clientes nos recomiendan!</h1>
+        </div>
+    </section>
+    <div class="carousel-multi" id="testimonial-carousel-multi">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-track">
+        <!-- Slide 1 -->
+        <div class="carousel-slide">
+            <div class="testimonial-card">
+                <img src="assets/images/logos/pollos.jpeg" alt="Juan" class="testimonial-logo">
+                <p class="testimonial-text">“DSG Perú nos ayudó a crecer rápido. ¡Excelente equipo!”</p>
+                <div class="testimonial-name">Juan Pérez</div>
+            </div>
+            <div class="testimonial-card">
+                <img src="assets/images/logos/vifarma.jpeg" alt="María" class="testimonial-logo">
+                <p class="testimonial-text">“El soporte es inmediato y muy profesional.”</p>
+                <div class="testimonial-name">María López</div>
+            </div>
+            <div class="testimonial-card">
+                <img src="assets/images/logos/farmasalud.jpeg" alt="Carlos" class="testimonial-logo">
+                <p class="testimonial-text">“La solución personalizada fue perfecta para mi negocio.”</p>
+                <div class="testimonial-name">Carlos Ruiz</div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+            <div class="testimonial-card">
+                <img src="assets/images/logos/alkalab.jpeg" alt="Ana" class="testimonial-logo">
+                <p class="testimonial-text">“Muy recomendados para cualquier empresa.”</p>
+                <div class="testimonial-name">Ana Torres</div>
+            </div>
+            <div class="testimonial-card">
+                <img src="assets/images/logos/verrlsmarkt.jpeg" alt="Luis" class="testimonial-logo">
+                <p class="testimonial-text">“El sistema es fácil de usar y muy completo.”</p>
+                <div class="testimonial-name">Luis Mendoza</div>
+            </div>
+            <div class="testimonial-card">
+                <img src="assets/images/logos/marcando huellitas.jpeg" alt="Sofía" class="testimonial-logo">
+                <p class="testimonial-text">“La capacitación fue clara y rápida.”</p>
+                <div class="testimonial-name">Sofía Ramírez</div>
+            </div>
+        </div>
+        <!-- Agrega más slides si tienes más testimonios -->
+        </div>
+        <button class="carousel-btn next">&#10095;</button>
+    </div>
+    
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Información de contacto</h2>
+                    <p class="section-description">
+                        Contáctanos hoy y descubre cómo podemos ayudarte a optimizar tus operaciones y aumentar tus ventas.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <!-- Tarjeta de Teléfono -->
+                        <div class="contact-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i data-lucide="phone"></i>
+                                </div>
+                                <h3 class="card-title">Teléfono</h3>
+                            </div>
+                            <div class="card-content">
+                                <a href="tel:+51987654321" class="contact-link">
+                                    <i data-lucide="phone-call"></i>
+                                    <span>+51 987 654 321</span>
+                                </a>
+                                <p class="card-description">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Tarjeta de Correo -->
+                        <div class="contact-card email-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <h3 class="card-title">Correo Electrónico</h3>
+                            </div>
+                            <div class="card-content">
+                                <a href="mailto:contacto@dsgperu.com" class="contact-link">
+                                    <i data-lucide="mail"></i>
+                                    <span>contacto@dsgperu.com</span>
+                                </a>
+                                <a href="mailto:proyectos@dsgperutech.com" class="contact-link">
+                                    <i data-lucide="briefcase"></i>
+                                    <span>proyectos@dsgperutech.com</span>
+                                </a>
+                                <p class="card-description">Respondemos en menos de 24 horas</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Tarjeta de Ubicaciones -->
+                        <div class="contact-card locations-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <h3 class="card-title">Nuestras Oficinas</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="location-item">
+                                    <div class="location-header">
+                                        <i data-lucide="map-pin"></i>
+                                        <h4>Pucallpa</h4>
+                                    </div>
+                                    <p>Av. Tupac Amaru 211, Pucallpa, Perú</p>
+                                    <a href="https://maps.app.goo.gl/example" target="_blank" class="map-link">
+                                        <i data-lucide="map"></i> Ver en mapa
+                                    </a>
+                                </div>
+                                
+                                <div class="location-item">
+                                    <div class="location-header">
+                                        <i data-lucide="map-pin"></i>
+                                        <h4>Lima</h4>
+                                    </div>
+                                    <p>Av. Ejército Cdra. 4, Miraflores, Lima</p>
+                                    <a href="https://maps.app.goo.gl/example2" target="_blank" class="map-link">
+                                        <i data-lucide="map"></i> Ver en mapa
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h3>Contáctanos</h3>
+                        <p>¿Tienes alguna pregunta o comentario? Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo *</label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="user"></i>
+                                    <input type="text" id="name" name="name" required placeholder="Ingresa tu nombre completo">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico *</label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="mail"></i>
+                                    <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Empresa</label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="briefcase"></i>
+                                    <input type="text" id="company" name="company" placeholder="Nombre de tu empresa (opcional)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="phone"></i>
+                                    <input type="tel" id="phone" name="phone" placeholder="Número de contacto (opcional)">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="subject">Asunto *</label>
+                            <div class="select-wrapper">
+                                <i data-lucide="help-circle"></i>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Selecciona un asunto</option>
+                                    <option value="Consulta General">Consulta General</option>
+                                    <option value="Información de Precios">Información de Precios</option>
+                                    <option value="Soporte Técnico">Soporte Técnico</option>
+                                    <option value="Solicitud de Demo">Solicitud de Demo</option>
+                                    <option value="Trabaja con Nosotros">Trabaja con Nosotros</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Mensaje *</label>
+                            <div class="textarea-wrapper">
+                                <i data-lucide="message-square"></i>
+                                <textarea id="message" name="message" rows="5" required 
+                                    placeholder="Por favor, describe tu consulta o comentario con el mayor detalle posible..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-submit" style="cursor: default; opacity: 0.8;" disabled>
+                                <i data-lucide="send"></i>
+                                <span>Enviar Mensaje (Demo)</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Ubicaciones -->
+    <section class="locations-section" id="ubicaciones">
+        <div class="container">
+            <div class="section-header">
+                <h2><i data-lucide="map-pin"></i> Nuestras Ubicaciones</h2>
+                <p class="section-subtitle">Visita nuestras oficinas o contáctanos para coordinar una cita</p>
+            </div>
+            <div class="maps-container">
+                <div class="map-card">
+                    <div class="map-header">
+                        <div class="map-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h4>Sucursal Pucallpa</h4>
+                    </div>
+                    <div class="map-iframe">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.0019371229296!2d-74.55919533199062!3d-8.372769560522263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a3bd22a238dd3f%3A0xdb55cc6384f0f0e9!2sDSG%20Peru%20Technology!5e0!3m2!1ses-419!2spe!4v1754667384753!5m2!1ses-419!2spe" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa de ubicación - Sucursal Pucallpa">
+                        </iframe>
+                    </div>
+                    <div class="map-details">
+                        <p><i data-lucide="map-pin"></i> Av. Tupac Amaru 211, Pucallpa, Perú</p>
+                        <p><i data-lucide="clock"></i> Lun - Vie: 9:00 AM - 6:00 PM</p>
+                        <a href="https://maps.app.goo.gl/example" target="_blank" class="btn-location">
+                            <i data-lucide="map"></i>
+                            <span>Ver en Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="map-card">
+                    <div class="map-header">
+                        <div class="map-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h4>Sucursal Lima</h4>
+                    </div>
+                    <div class="map-iframe">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.955607543134!2d-77.05114360321042!3d-12.115189999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c830bf7ffb31%3A0xf66e12ebb4f2e969!2sAvenida%20Del%20Ej%C3%A9rcito!5e0!3m2!1ses-419!2spe!4v1755616153605!5m2!1ses-419!2spe" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa de ubicación - Sucursal Lima">
+                        </iframe>
+                    </div>
+                    <div class="map-details">
+                        <p><i data-lucide="map-pin"></i> Av. Ejército Cdra. 4, Miraflores, Lima</p>
+                        <p><i data-lucide="clock"></i> Lun - Vie: 9:00 AM - 6:00 PM</p>
+                        <a href="https://maps.app.goo.gl/example2" target="_blank" class="btn-location">
+                            <i data-lucide="map"></i>
+                            <span>Ver en Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                        </div>
+                        <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                    </div>
+                    <p class="footer-description">
+                        Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="/pages/services/restaurantes.html">Restaurantes</a></li>
+                            <li><a href="/pages/services/boticas.html">Boticas</a></li>
+                            <li><a href="/pages/services/minimarkets.html">Minimarkets</a></li>
+                            <li><a href="/pages/services/personalizado.html">Personalizado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/pages/public/about.html">Acerca de</a></li>
+                            <li><a href="/pages/public/contact.html">Contacto</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="/pages/public/blog/blog.html">Blog</a></li>
+                            <li><a href="/pages/public/blog/post.html">Post Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Soporte</h4>
+                        <ul>
+                            <li><a href="/pages/public/help/centro-ayuda.html">Centro de Ayuda</a></li>
+                            <li><a href="/pages/public/help/documentation.html">Documentación</a></li>
+                            <li><a href="/pages/public/help/estado_servicio.html">Estado del Servicio</a></li>
+                            <li><a href="/pages/public/help/support.html">Contactar Soporte</a></li>
+                            <li><a href="/pages/public/help/faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DSG PERU TECHNOLOGY. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/dsgperu" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://www.tiktok.com/@dsg.peru.technolo" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/dsgperu?igsh=NHczY3l2dDdiNWZj" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/assets/js/components/navigation.js"></script>
+    <script src="/assets/js/components/dropdowns.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script src="/assets/js/carousel.js"></script>
+    
+    <!-- WhatsApp Button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/components/whatsapp-button.css">
+    <div class="whatsapp-float">
+        <a href="https://wa.me/51903148583?text=%C2%A1Hola!%20👋%20Estoy%20interesado(a)%20en%20los%20servicios%20de%20DSG%20Per%C3%BA%20Technology%20SRL.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20soluciones%20de%20facturaci%C3%B3n%20electr%C3%B3nica,%20alquiler%20de%20sistemas%20inform%C3%A1ticos,%20consultor%C3%ADa%20TI,%20outsourcing%20o%20desarrollo%20de%20software%20a%20medida.%20%C2%A1Gracias!" 
+        class="whatsapp-button" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Chatea con nosotros por WhatsApp">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            <span class="whatsapp-badge">1</span>
+            <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+        </a>
+    </div>
+</body>
+</html>

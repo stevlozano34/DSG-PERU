@@ -1,0 +1,94 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Desarrollo Web",
+      "description": "Creamos sitios web modernos, responsivos y optimizados para SEO que impulsan tu presencia digital.",
+      "icon": "fas fa-code",
+      "features": [
+        "Diseño responsivo",
+        "Optimización SEO",
+        "Velocidad optimizada",
+        "Seguridad avanzada"
+      ],
+      "price": "Desde $500",
+      "duration": "2-4 semanas",
+      "category": "desarrollo"
+    },
+    {
+      "id": 2,
+      "title": "Diseño UX/UI",
+      "description": "Diseñamos experiencias de usuario intuitivas y interfaces atractivas que convierten visitantes en clientes.",
+      "icon": "fas fa-paint-brush",
+      "features": [
+        "Investigación de usuarios",
+        "Wireframes y prototipos",
+        "Diseño visual",
+        "Testing de usabilidad"
+      ],
+      "price": "Desde $300",
+      "duration": "1-3 semanas",
+      "category": "diseno"
+    },
+    {
+      "id": 3,
+      "title": "Marketing Digital",
+      "description": "Estrategias de marketing digital personalizadas para aumentar tu visibilidad y generar más ventas.",
+      "icon": "fas fa-bullhorn",
+      "features": [
+        "SEO y SEM",
+        "Redes sociales",
+        "Email marketing",
+        "Análisis y reportes"
+      ],
+      "price": "Desde $200/mes",
+      "duration": "Continuo",
+      "category": "marketing"
+    },
+    {
+      "id": 4,
+      "title": "E-commerce",
+      "description": "Tiendas online completas con sistemas de pago seguros y gestión de inventario automatizada.",
+      "icon": "fas fa-shopping-cart",
+      "features": [
+        "Catálogo de productos",
+        "Pasarelas de pago",
+        "Gestión de inventario",
+        "Panel administrativo"
+      ],
+      "price": "Desde $800",
+      "duration": "3-6 semanas",
+      "category": "desarrollo"
+    },
+    {
+      "id": 5,
+      "title": "Consultoría IT",
+      "description": "Asesoramiento tecnológico especializado para optimizar tus procesos y sistemas empresariales.",
+      "icon": "fas fa-laptop-code",
+      "features": [
+        "Auditoría tecnológica",
+        "Optimización de procesos",
+        "Migración de sistemas",
+        "Capacitación del equipo"
+      ],
+      "price": "Desde $150/hora",
+      "duration": "Variable",
+      "category": "consultoria"
+    },
+    {
+      "id": 6,
+      "title": "Mantenimiento Web",
+      "description": "Servicio de mantenimiento continuo para mantener tu sitio web seguro, actualizado y funcionando óptimamente.",
+      "icon": "fas fa-tools",
+      "features": [
+        "Actualizaciones de seguridad",
+        "Backups automáticos",
+        "Monitoreo 24/7",
+        "Soporte técnico"
+      ],
+      "price": "Desde $50/mes",
+      "duration": "Mensual",
+      "category": "mantenimiento"
+    }
+  ]
+}

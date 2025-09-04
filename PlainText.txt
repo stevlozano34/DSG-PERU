@@ -1,0 +1,27 @@
+
+## Instalación Rápida
+
+1. Clona el repositorio
+2. Consulta `SETUP.md` para instrucciones detalladas
+3. Configura el servidor web
+4. Accede a `index.html`
+
+## Despliegue
+
+Consulta `DEPLOYMENT.md` para instrucciones completas de despliegue en diferentes entornos.
+
+## Contribución
+
+1. Fork del proyecto
+2. Crea una rama para tu feature
+3. Commit de cambios
+4. Push a la rama
+5. Crea un Pull Request
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Ver archivo LICENSE para más detalles.
+
+## Soporte
+
+Para soporte técnico, contacta al equipo de desarrollo o crea un issue en el repositorio.

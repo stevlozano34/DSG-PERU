@@ -1,0 +1,165 @@
+/* Detalles del servicio */
+.status-details {
+    background: var(--muted);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: var(--muted-foreground);
+    font-weight: 500;
+}
+
+.detail-value {
+    color: var(--foreground);
+    font-weight: 600;
+}
+
+/* Línea de tiempo */
+.status-timeline {
+    margin: 2.5rem 0;
+}
+
+.status-timeline h3 {
+    font-size: 1.25rem;
+    color: var(--foreground);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.status-header {
+    text-align: center;
+    margin: 5rem 0 3rem;
+    padding: 1rem 0;
+    border-bottom: 1px  solid var(--border);
+}
+
+.status-header h1 {
+    font-size: 3rem;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.status-header p {
+    color: var(--muted-foreground); 
+    font-size: 0.75rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+    padding-left: 1.5rem;
+    opacity: 0.7;
+}
+
+.timeline-item.active {
+    opacity: 1;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -1.9rem;
+    top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--muted-foreground);
+    border: 2px solid var(--background);
+    z-index: 1;
+}
+
+.timeline-item.active .timeline-dot {
+    background: #000000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h4 {
+    font-size: 1rem;
+    color: var(--foreground);
+    margin: 0 0 0.25rem 0;
+}
+
+.timeline-content p {
+    color: var(--muted-foreground);
+    margin: 0 0 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.timeline-date {
+    color: var(--muted-foreground);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Botones de acción */
+.status-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.status-actions .btn {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .status-card {
+        padding: 1.5rem;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .detail-label {
+        font-size: 0.9rem;
+    }
+    
+    .status-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .status-actions .btn {
+        width: 100%;
+    }
+}

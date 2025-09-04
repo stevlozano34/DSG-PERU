@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios - DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Planes y precios transparentes para todos nuestros servicios tecnológicos">
+    <link rel="icon" type="image/x-icon" href="/assets/images/icons/logo_3.1.png">
+    
+    <!-- CSS Global primero -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/global/index_responsive.css">
+    <link rel="stylesheet" href="/assets/css/components/navbar.css">
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/pages/pricing.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    </div>
+                    <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/services/desarrollo_web.html" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/services/app_movil.html" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/services/sistema_empre.html" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                
+                <!-- Mover nav-actions dentro del menú móvil -->
+                <!-- En la sección de navegación, actualizar los botones -->
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+                        <i data-lucide="moon" class="theme-icon"></i>
+                        <span class="sr-only">Cambiar tema</span>
+                    </button>
+                    <button class="btn btn-outline btn-demo" onclick="requestDemo()" aria-label="Ver demostración">
+                        <i data-lucide="play-circle" class="btn-icon"></i>
+                        <span>Demo</span>
+                    </button>
+                    <!-- Dropdown para tipos de acceso -->
+                    <div class="login-dropdown">
+                        <button class="btn btn-primary btn-login" id="login-dropdown-btn" aria-expanded="false" aria-haspopup="true" aria-controls="login-dropdown-menu">
+                            <i data-lucide="log-in" class="btn-icon"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+                        </button>
+                        <div class="dropdown-menu" id="login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon" style="display: none;"></i>
+                <span class="sr-only">Menú de navegación</span>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/public/shop.html#web" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/public/shop.html#mobile" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/public/shop.html#enterprise" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                <div class="mobile-actions">
+                    <div class="mobile-actions-top">
+                        <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Cambiar tema">
+                            <i data-lucide="moon" class="theme-icon"></i>
+                        </button>
+                        <button class="btn btn-outline" onclick="requestDemo()">
+                            <i data-lucide="play-circle"></i>
+                            <span>Ver Demo</span>
+                        </button>
+                    </div>
+                    <div class="login-dropdown mobile-login-dropdown">
+                        <button class="btn btn-primary" id="mobile-login-dropdown-btn" aria-expanded="false">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="mobile-login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Overlay -->
+            <div class="mobile-overlay" id="mobile-overlay"></div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="pricing-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Planes y Precios</h1>
+                <p>Soluciones flexibles que se adaptan a las necesidades de tu negocio</p>
+                
+                <div class="billing-toggle">
+                    <span class="billing-label">Mensual</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="billingToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="billing-label">Anual <span class="discount">-20%</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="pricing-plans">
+        <div class="container">
+            <div class="plans-grid">
+                <!-- Plan Básico -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>Básico</h3>
+                        <p>Perfecto para emprendedores</p>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">299</span>
+                            <span class="amount yearly">239</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>✓ Sitio web responsivo (hasta 5 páginas)</li>
+                            <li>✓ Diseño personalizado</li>
+                            <li>✓ Optimización SEO básica</li>
+                            <li>✓ Formulario de contacto</li>
+                            <li>✓ Integración redes sociales</li>
+                            <li>✓ Hosting por 1 año</li>
+                            <li>✓ Soporte por email</li>
+                            <li>✗ E-commerce</li>
+                            <li>✗ Panel de administración</li>
+                            <li>✗ Analíticas avanzadas</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline btn-large">Comenzar</a>
+                </div>
+
+                <!-- Plan Profesional -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">Más Popular</div>
+                    <div class="plan-header">
+                        <h3>Profesional</h3>
+                        <p>Ideal para pequeñas empresas</p>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">599</span>
+                            <span class="amount yearly">479</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>✓ Sitio web responsivo (hasta 15 páginas)</li>
+                            <li>✓ Diseño personalizado premium</li>
+                            <li>✓ Optimización SEO avanzada</li>
+                            <li>✓ E-commerce básico (hasta 50 productos)</li>
+                            <li>✓ Panel de administración</li>
+                            <li>✓ Integración con APIs</li>
+                            <li>✓ Hosting por 1 año</li>
+                            <li>✓ Soporte prioritario</li>
+                            <li>✓ Analíticas básicas</li>
+                            <li>✓ Certificado SSL</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary btn-large">Comenzar</a>
+                </div>
+
+                <!-- Plan Empresarial -->
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <h3>Empresarial</h3>
+                        <p>Para empresas en crecimiento</p>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">1299</span>
+                            <span class="amount yearly">1039</span>
+                            <span class="period">/mes</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>✓ Sitio web ilimitado</li>
+                            <li>✓ Diseño personalizado premium</li>
+                            <li>✓ E-commerce avanzado (productos ilimitados)</li>
+                            <li>✓ Sistema de gestión completo</li>
+                            <li>✓ Integración con CRM/ERP</li>
+                            <li>✓ App móvil básica</li>
+                            <li>✓ Hosting premium</li>
+                            <li>✓ Soporte 24/7</li>
+                            <li>✓ Analíticas avanzadas</li>
+                            <li>✓ Múltiples idiomas</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline btn-large">Comenzar</a>
+                </div>
+
+                <!-- Plan Personalizado -->
+                <div class="plan-card custom">
+                    <div class="plan-header">
+                        <h3>Personalizado</h3>
+                        <p>Solución a medida</p>
+                        <div class="plan-price">
+                            <span class="custom-price">Cotización</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li>✓ Desarrollo completamente personalizado</li>
+                            <li>✓ Arquitectura escalable</li>
+                            <li>✓ Integración con sistemas existentes</li>
+                            <li>✓ Aplicaciones móviles nativas</li>
+                            <li>✓ Consultoría tecnológica</li>
+                            <li>✓ Soporte dedicado</li>
+                            <li>✓ Mantenimiento incluido</li>
+                            <li>✓ Capacitación del equipo</li>
+                            <li>✓ SLA garantizado</li>
+                            <li>✓ Y mucho más...</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary btn-large">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-ons Section -->
+    <section class="addons-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Servicios Adicionales</h2>
+                <p>Mejora tu plan con estos servicios complementarios</p>
+            </div>
+            
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <div class="addon-icon">📱</div>
+                    <h3>App Móvil</h3>
+                    <p>Aplicación móvil nativa para iOS y Android</p>
+                    <div class="addon-price">+$800/mes</div>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-icon">📊</div>
+                    <h3>Analíticas Avanzadas</h3>
+                    <p>Dashboard completo con métricas detalladas</p>
+                    <div class="addon-price">+$150/mes</div>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-icon">🔒</div>
+                    <h3>Seguridad Premium</h3>
+                    <p>Firewall avanzado y monitoreo 24/7</p>
+                    <div class="addon-price">+$200/mes</div>
+                </div>
+                
+                <div class="addon-card">
+                    <div class="addon-icon">📧</div>
+                    <h3>Email Marketing</h3>
+                    <p>Campañas automatizadas y newsletters</p>
+                    <div class="addon-price">+$100/mes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Resolvemos tus dudas sobre nuestros planes</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Puedo cambiar de plan en cualquier momento?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, puedes actualizar o degradar tu plan en cualquier momento. Los cambios se aplicarán en tu próximo ciclo de facturación.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué incluye el soporte técnico?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nuestro soporte incluye resolución de problemas técnicos, actualizaciones de seguridad, backup automático y asistencia para el uso de la plataforma.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Hay costos adicionales por el hosting?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, el hosting está incluido en todos nuestros planes por el primer año. Después del primer año, el costo es de $120 anuales.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Ofrecen garantía de devolución?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos una garantía de satisfacción de 30 días. Si no estás completamente satisfecho, te devolvemos tu dinero.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Necesitas ayuda para elegir?</h2>
+                <p>Nuestro equipo te ayudará a encontrar el plan perfecto para tu negocio</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-large">Hablar con un Experto</a>
+                    <a href="demo.html" class="btn btn-outline btn-large">Ver Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                        </div>
+                        <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                    </div>
+                    <p class="footer-description">
+                        Encuentra el plan perfecto que se adapte a las necesidades de tu negocio y presupuesto.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="/pages/services/restaurantes.html">Restaurantes</a></li>
+                            <li><a href="/pages/services/boticas.html">Boticas</a></li>
+                            <li><a href="/pages/services/minimarkets.html">Minimarkets</a></li>
+                            <li><a href="/pages/services/personalizado.html">Personalizado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/pages/public/about.html">Acerca de</a></li>
+                            <li><a href="/pages/public/contact.html">Contacto</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="/pages/public/blog/blog.html">Blog</a></li>
+                            <li><a href="/pages/public/blog/post.html">Post Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Soporte</h4>
+                        <ul>
+                            <li><a href="/pages/public/help/centro-ayuda.html">Centro de Ayuda</a></li>
+                            <li><a href="/pages/public/help/documentation.html">Documentación</a></li>
+                            <li><a href="/pages/public/help/estado_servicio.html">Estado del Servicio</a></li>
+                            <li><a href="/pages/public/help/support.html">Contactar Soporte</a></li>
+                            <li><a href="/pages/public/help/faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DSG PERU TECHNOLOGY. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/dsgperu" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://www.tiktok.com/@dsg.peru.technolo" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/dsgperu?igsh=NHczY3l2dDdiNWZj" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script src="/assets/js/components/navigation.js"></script>
+    <script src="/assets/js/components/dropdowns.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/assets/js/pages/pricing.js"></script>
+
+    <!-- WhatsApp Button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/components/whatsapp-button.css">
+    <div class="whatsapp-float">
+        <a href="https://wa.me/51903148583?text=%C2%A1Hola!%20👋%20Estoy%20interesado(a)%20en%20los%20servicios%20de%20DSG%20Per%C3%BA%20Technology%20SRL.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20soluciones%20de%20facturaci%C3%B3n%20electr%C3%B3nica,%20alquiler%20de%20sistemas%20inform%C3%A1ticos,%20consultor%C3%ADa%20TI,%20outsourcing%20o%20desarrollo%20de%20software%20a%20medida.%20%C2%A1Gracias!" 
+        class="whatsapp-button" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Chatea con nosotros por WhatsApp">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            <span class="whatsapp-badge">1</span>
+            <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+        </a>
+    </div>
+    
+</body>
+</html>

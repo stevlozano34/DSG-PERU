@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Técnico - DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Obtén ayuda técnica especializada. Nuestro equipo de soporte está disponible 24/7 para resolver tus dudas y problemas técnicos.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/global/index_responsive.css">
+    <link rel="stylesheet" href="/assets/css/pages/help/support.css">
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    </div>
+                    <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/services/desarrollo_web.html" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/services/app_movil.html" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/services/sistema_empre.html" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                
+                <!-- Mover nav-actions dentro del menú móvil -->
+                <!-- En la sección de navegación, actualizar los botones -->
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+                        <i data-lucide="moon" class="theme-icon"></i>
+                        <span class="sr-only">Cambiar tema</span>
+                    </button>
+                    <button class="btn btn-outline btn-demo" onclick="requestDemo()" aria-label="Ver demostración">
+                        <i data-lucide="play-circle" class="btn-icon"></i>
+                        <span>Demo</span>
+                    </button>
+                    <!-- Dropdown para tipos de acceso -->
+                    <div class="login-dropdown">
+                        <button class="btn btn-primary btn-login" id="login-dropdown-btn" aria-expanded="false" aria-haspopup="true" aria-controls="login-dropdown-menu">
+                            <i data-lucide="log-in" class="btn-icon"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+                        </button>
+                        <div class="dropdown-menu" id="login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon" style="display: none;"></i>
+                <span class="sr-only">Menú de navegación</span>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/public/shop.html#web" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/public/shop.html#mobile" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/public/shop.html#enterprise" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                <div class="mobile-actions">
+                    <div class="mobile-actions-top">
+                        <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Cambiar tema">
+                            <i data-lucide="moon" class="theme-icon"></i>
+                        </button>
+                        <button class="btn btn-outline" onclick="requestDemo()">
+                            <i data-lucide="play-circle"></i>
+                            <span>Ver Demo</span>
+                        </button>
+                    </div>
+                    <div class="login-dropdown mobile-login-dropdown">
+                        <button class="btn btn-primary" id="mobile-login-dropdown-btn" aria-expanded="false">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="mobile-login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Overlay -->
+            <div class="mobile-overlay" id="mobile-overlay"></div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="support-hero">
+        <div class="container">
+            <h1>Soporte Técnico</h1>
+            <p>Estamos aquí para ayudarte 24/7. Obtén asistencia técnica especializada</p>
+        </div>
+    </section>
+
+    <!-- Support Options -->
+    <section class="support-container">
+        <h2 style="text-align: center; margin-bottom: 3rem; color: var(--text-primary);">Canales de Soporte</h2>
+        
+        <div class="support-grid">
+            <div class="support-card">
+                <div class="support-icon">
+                    <i data-lucide="message-circle" style="width: 24px; height: 24px;"></i>
+                </div>
+                <h3>Chat en Vivo</h3>
+                <p>Obtén ayuda inmediata a través de nuestro chat en vivo. Disponible 24/7 para resolver tus dudas al instante.</p>
+                <button class="btn btn-primary" onclick="openLiveChat()">Iniciar Chat</button>
+            </div>
+            
+            <div class="support-card">
+                <div class="support-icon">
+                    <i data-lucide="mail" style="width: 24px; height: 24px;"></i>
+                </div>
+                <h3>Email</h3>
+                <p>Envíanos un email detallado con tu consulta. Respondemos en menos de 2 horas durante horario laboral.</p>
+                <a href="mailto:soporte@dsgperu.com" class="btn btn-primary">Enviar Email</a>
+            </div>
+            
+            <div class="support-card">
+                <div class="support-icon">
+                    <i data-lucide="phone" style="width: 24px; height: 24px;"></i>
+                </div>
+                <h3>Teléfono</h3>
+                <p>Llámanos directamente para soporte urgente. Nuestro equipo técnico está disponible para emergencias.</p>
+                <a href="tel:+51987654321" class="btn btn-primary">+51 987 654 321</a>
+            </div>
+        </div>
+
+        <!-- Support Ticket Form -->
+        <div class="support-form">
+            <h2 style="margin-bottom: 2rem; color: var(--text-primary);">Crear Ticket de Soporte</h2>
+            
+            <form id="support-form">
+                <div class="form-group">
+                    <label for="ticket-name">Nombre Completo</label>
+                    <input type="text" id="ticket-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ticket-email">Email</label>
+                    <input type="email" id="ticket-email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ticket-category">Categoría</label>
+                    <select id="ticket-category" name="category" required>
+                        <option value="">Seleccionar categoría</option>
+                        <option value="hosting">Problemas de Hosting</option>
+                        <option value="website">Problemas del Sitio Web</option>
+                        <option value="email">Problemas de Email</option>
+                        <option value="billing">Facturación</option>
+                        <option value="technical">Soporte Técnico</option>
+                        <option value="other">Otro</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Prioridad</label>
+                    <div class="priority-selector">
+                        <div class="priority-option" data-priority="low">Baja</div>
+                        <div class="priority-option selected" data-priority="medium">Media</div>
+                        <div class="priority-option" data-priority="high">Alta</div>
+                        <div class="priority-option" data-priority="urgent">Urgente</div>
+                    </div>
+                    <input type="hidden" id="ticket-priority" name="priority" value="medium">
+                </div>
+                
+                <div class="form-group">
+                    <label for="ticket-subject">Asunto</label>
+                    <input type="text" id="ticket-subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ticket-description">Descripción del Problema</label>
+                    <textarea id="ticket-description" name="description" placeholder="Describe detalladamente el problema que estás experimentando..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Crear Ticket</button>
+            </form>
+        </div>
+
+        <!-- Ticket Status Tracker -->
+        <div class="status-tracker">
+            <h2 style="margin-bottom: 2rem; color: var(--text-primary);">Rastrear Ticket</h2>
+            
+            <div class="tracker-input">
+                <input type="text" id="ticket-id" placeholder="Ingresa tu ID de ticket (ej: DSG-2024-001)">
+                <button class="btn btn-primary" onclick="trackTicket()">Rastrear</button>
+            </div>
+            
+            <div id="ticket-status" style="display: none;">
+                <!-- Status will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Knowledge Base -->
+        <div class="knowledge-base">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--text-primary);">Base de Conocimientos</h2>
+            
+            <div class="kb-grid">
+                <div class="kb-item">
+                    <h4>Configuración de Email</h4>
+                    <p>Aprende a configurar tu email corporativo en diferentes clientes de correo.</p>
+                </div>
+                
+                <div class="kb-item">
+                    <h4>Gestión de Archivos</h4>
+                    <p>Guía completa para subir, organizar y gestionar archivos en tu hosting.</p>
+                </div>
+                
+                <div class="kb-item">
+                    <h4>Certificados SSL</h4>
+                    <p>Todo lo que necesitas saber sobre certificados SSL y cómo activarlos.</p>
+                </div>
+                
+                <div class="kb-item">
+                    <h4>Copias de Seguridad</h4>
+                    <p>Cómo crear, programar y restaurar copias de seguridad de tu sitio web.</p>
+                </div>
+                
+                <div class="kb-item">
+                    <h4>Optimización Web</h4>
+                    <p>Consejos y técnicas para mejorar la velocidad y rendimiento de tu sitio.</p>
+                </div>
+                
+                <div class="kb-item">
+                    <h4>Seguridad</h4>
+                    <p>Mejores prácticas de seguridad para proteger tu sitio web y datos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                        </div>
+                        <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                    </div>
+                    <p class="footer-description">
+                        Soporte técnico especializado para garantizar el máximo rendimiento de tus soluciones tecnológicas.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="/pages/services/restaurantes.html">Restaurantes</a></li>
+                            <li><a href="/pages/services/boticas.html">Boticas</a></li>
+                            <li><a href="/pages/services/minimarkets.html">Minimarkets</a></li>
+                            <li><a href="/pages/services/personalizado.html">Personalizado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/pages/public/about.html">Acerca de</a></li>
+                            <li><a href="/pages/public/contact.html">Contacto</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="/pages/public/blog/blog.html">Blog</a></li>
+                            <li><a href="/pages/public/blog/post.html">Post Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Soporte</h4>
+                        <ul>
+                            <li><a href="/pages/public/help/centro-ayuda.html">Centro de Ayuda</a></li>
+                            <li><a href="/pages/public/help/documentation.html">Documentación</a></li>
+                            <li><a href="/pages/public/help/estado_servicio.html">Estado del Servicio</a></li>
+                            <li><a href="/pages/public/help/support.html">Contactar Soporte</a></li>
+                            <li><a href="/pages/public/help/faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DSG PERU TECHNOLOGY. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/dsgperu" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://www.tiktok.com/@dsg.peru.technolo" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/dsgperu?igsh=NHczY3l2dDdiNWZj" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script src="/assets/js/components/navigation.js"></script>
+    <script src="/assets/js/components/dropdowns.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- WhatsApp Button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/components/whatsapp-button.css">
+    <div class="whatsapp-float">
+        <a href="https://wa.me/51903148583?text=%C2%A1Hola!%20👋%20Estoy%20interesado(a)%20en%20los%20servicios%20de%20DSG%20Per%C3%BA%20Technology%20SRL.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20soluciones%20de%20facturaci%C3%B3n%20electr%C3%B3nica,%20alquiler%20de%20sistemas%20inform%C3%A1ticos,%20consultor%C3%ADa%20TI,%20outsourcing%20o%20desarrollo%20de%20software%20a%20medida.%20%C2%A1Gracias!" 
+        class="whatsapp-button" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Chatea con nosotros por WhatsApp">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            <span class="whatsapp-badge">1</span>
+            <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+        </a>
+    </div>
+    
+</body>
+</html>

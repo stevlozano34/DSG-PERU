@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Ayuda | DSG</title>
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/global/index_responsive.css">
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/pages/help/centro_ayuda.css">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    </div>
+                    <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/services/desarrollo_web.html" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/services/app_movil.html" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/services/sistema_empre.html" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                
+                <!-- Mover nav-actions dentro del menú móvil -->
+                <!-- En la sección de navegación, actualizar los botones -->
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+                        <i data-lucide="moon" class="theme-icon"></i>
+                        <span class="sr-only">Cambiar tema</span>
+                    </button>
+                    <button class="btn btn-outline btn-demo" onclick="requestDemo()" aria-label="Ver demostración">
+                        <i data-lucide="play-circle" class="btn-icon"></i>
+                        <span>Demo</span>
+                    </button>
+                    <!-- Dropdown para tipos de acceso -->
+                    <div class="login-dropdown">
+                        <button class="btn btn-primary btn-login" id="login-dropdown-btn" aria-expanded="false" aria-haspopup="true" aria-controls="login-dropdown-menu">
+                            <i data-lucide="log-in" class="btn-icon"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+                        </button>
+                        <div class="dropdown-menu" id="login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon" style="display: none;"></i>
+                <span class="sr-only">Menú de navegación</span>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/public/shop.html#web" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/public/shop.html#mobile" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/public/shop.html#enterprise" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                <div class="mobile-actions">
+                    <div class="mobile-actions-top">
+                        <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Cambiar tema">
+                            <i data-lucide="moon" class="theme-icon"></i>
+                        </button>
+                        <button class="btn btn-outline" onclick="requestDemo()">
+                            <i data-lucide="play-circle"></i>
+                            <span>Ver Demo</span>
+                        </button>
+                    </div>
+                    <div class="login-dropdown mobile-login-dropdown">
+                        <button class="btn btn-primary" id="mobile-login-dropdown-btn" aria-expanded="false">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="mobile-login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Overlay -->
+            <div class="mobile-overlay" id="mobile-overlay"></div>
+        </div>
+    </nav>
+    <!-- Aquí iría tu header existente -->
+    <main class="help-center">
+        <header class="help-header">
+            <h1>¿En qué podemos ayudarte?</h1>
+            <div class="help-search">
+                <input type="text" class="search-input" placeholder="Buscar en la ayuda...">
+                <button class="search-btn">Buscar</button>
+            </div>
+            <p>O explora nuestras categorías de ayuda</p>
+        </header>
+
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-user-circle"></i></div>
+                <h3>Cuenta y Perfil</h3>
+                <p>Gestiona tu cuenta, perfil y configuraciones personales.</p>
+                <a href="#" class="btn-text">Ver más <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-lock"></i></div>
+                <h3>Seguridad</h3>
+                <p>Protege tu cuenta y aprende sobre medidas de seguridad.</p>
+                <a href="#" class="btn-text">Ver más <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-credit-card"></i></div>
+                <h3>Pagos y Facturación</h3>
+                <p>Información sobre métodos de pago y facturación.</p>
+                <a href="#" class="btn-text">Ver más <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <section class="faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Cómo cambio mi contraseña?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Para cambiar tu contraseña, sigue estos pasos: 1) Inicia sesión en tu cuenta. 2) Ve a Configuración de la cuenta. 3) Selecciona "Seguridad". 4) Haz clic en "Cambiar contraseña". 5) Ingresa tu contraseña actual y la nueva contraseña. 6) Haz clic en "Guardar cambios".</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Cómo contacto al soporte técnico?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Puedes contactar a nuestro equipo de soporte técnico a través del formulario de contacto en la sección "Soporte" de tu cuenta, o enviando un correo electrónico a soporte@dsg.com. Nuestro tiempo de respuesta promedio es de 24 horas hábiles.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ¿Cómo actualizo mi información de facturación?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Para actualizar tu información de facturación: 1) Inicia sesión en tu cuenta. 2) Ve a la sección "Facturación". 3) Haz clic en "Métodos de pago". 4) Selecciona "Agregar método de pago" o edita el existente. 5) Ingresa la nueva información. 6) Haz clic en "Guardar cambios".</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-support">
+            <h2>¿No encontraste lo que buscabas?</h2>
+            <p>Nuestro equipo de soporte está aquí para ayudarte con cualquier pregunta o problema que puedas tener.</p>
+            <a href="#" class="btn-support">Contactar Soporte</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                        </div>
+                        <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                    </div>
+                    <p class="footer-description">
+                        Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="/pages/services/restaurantes.html">Restaurantes</a></li>
+                            <li><a href="/pages/services/boticas.html">Boticas</a></li>
+                            <li><a href="/pages/services/minimarkets.html">Minimarkets</a></li>
+                            <li><a href="/pages/services/personalizado.html">Personalizado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/pages/public/about.html">Acerca de</a></li>
+                            <li><a href="/pages/public/contact.html">Contacto</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="/pages/public/blog/blog.html">Blog</a></li>
+                            <li><a href="/pages/public/blog/post.html">Post Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Soporte</h4>
+                        <ul>
+                            <li><a href="/pages/public/help/centro-ayuda.html">Centro de Ayuda</a></li>
+                            <li><a href="/pages/public/help/documentation.html">Documentación</a></li>
+                            <li><a href="/pages/public/help/estado_servicio.html">Estado del Servicio</a></li>
+                            <li><a href="/pages/public/help/support.html">Contactar Soporte</a></li>
+                            <li><a href="/pages/public/help/faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DSG PERU TECHNOLOGY. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/dsgperu" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://www.tiktok.com/@dsg.peru.technolo" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/dsgperu?igsh=NHczY3l2dDdiNWZj" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Aquí iría tu footer existente -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script src="/assets/js/components/navigation.js"></script>
+    <script src="/assets/js/components/dropdowns.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        // Funcionalidad del acordeón de preguntas frecuentes
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Cerrar todos los demás ítems
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Abrir el ítem actual si no estaba activo
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Funcionalidad de búsqueda
+        const searchInput = document.querySelector('.search-input');
+        const searchBtn = document.querySelector('.search-btn');
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            if (searchTerm) {
+                // Aquí iría la lógica de búsqueda real
+                alert(`Buscando: ${searchTerm}`);
+                // En una implementación real, esto podría filtrar las preguntas frecuentes
+                // o redirigir a una página de resultados de búsqueda
+            }
+        }
+        
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

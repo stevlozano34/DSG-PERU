@@ -1,0 +1,1154 @@
+/* 
+ * Estilos para la página de contacto de ventas - Tema monocromático profesional
+ * Diseño: Blanco y negro con escala de grises
+ * Enfoque: Minimalista, elegante y altamente legible
+ */
+
+:root {
+    /* Escala de grises optimizada para contraste y legibilidad */
+    --black: #000000;
+    --white: #ffffff;
+    --gray-10: #f8f9fa;
+    --gray-20: #e9ecef;
+    --gray-30: #dee2e6;
+    --gray-40: #ced4da;
+    --gray-50: #adb5bd;
+    --gray-60: #6c757d;
+    --gray-70: #495057;
+    --gray-80: #343a40;
+    --gray-90: #212529;
+    
+    /* Sombras sutiles */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Bordes */
+    --border: 1px solid var(--gray-20);
+    --border-dark: 1px solid var(--gray-30);
+    
+    /* Radios */
+    --rounded-sm: 0.25rem;
+    --rounded: 0.5rem;
+    --rounded-md: 0.75rem;
+    --rounded-lg: 1rem;
+    --rounded-xl: 1.5rem;
+    --rounded-full: 9999px;
+    
+    /* Transiciones */
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset y estilos base */
+body {
+    color: var(--gray-90);
+    background-color: var(--white);
+    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tipografía mejorada */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.25;
+    margin-top: 0;
+    color: var(--gray-90);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--gray-70);
+}
+
+a {
+    color: var(--gray-90);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Secciones */
+section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+/* Botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    border-radius: var(--rounded);
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background-color: var(--black);
+    color: var(--white);
+    border: 2px solid var(--black);
+}
+
+.btn-primary:hover {
+    background-color: var(--gray-90);
+    border-color: var(--gray-90);
+    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--black);
+    border: 2px solid var(--gray-90);
+}
+
+.btn-outline:hover {
+    background-color: var(--gray-10);
+    border-color: var(--black);
+    color: var(--black);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Tarjetas */
+.card {
+    background: var(--white);
+    border-radius: var(--rounded);
+    box-shadow: var(--shadow);
+    border: var(--border);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* ====================
+   ENCABEZADO PRINCIPAL
+   ==================== */
+.sales-plan-header {
+    background: linear-gradient(135deg, var(--gray-90) 0%, var(--black) 100%);
+    color: var(--white);
+    padding: 8rem 0 6rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sales-plan-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--white), var(--gray-30), var(--white));
+    opacity: 0.1;
+}
+
+.sales-plan-header .container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.sales-plan-header h1 {
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sales-plan-header p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    font-weight: 400;
+    color: var(--gray-30);
+}
+
+.sales-plan-header .plan-name {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    padding: 0.6rem 3rem;
+    border-radius: var(--rounded-full);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+.sales-plan-header .plan-name:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Efecto de patrón sutil */
+.sales-plan-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* ====================
+   SECCIÓN DE CARACTERÍSTICAS
+   ==================== */
+.plan-features {
+    background: var(--white);
+    border-radius: var(--rounded-lg);
+    box-shadow: var(--shadow);
+    padding: 4rem 2.5rem;
+    margin: 0 auto 5rem;
+    border: var(--border);
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.plan-features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--black), var(--gray-60), var(--black));
+    opacity: 0.9;
+}
+
+.plan-features h3 {
+    color: var(--gray-90);
+    margin-bottom: 3rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-bottom: 1.25rem;
+}
+
+.plan-features h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--black);
+    border-radius: 3px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-top: 2.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 2rem 1.75rem;
+    background: var(--white);
+    border-radius: var(--rounded);
+    border: var(--border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--black);
+    transition: height 0.3s ease;
+    z-index: -1;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gray-30);
+}
+
+.feature-item:hover::before {
+    height: 100%;
+}
+
+.feature-item i {
+    color: var(--black);
+    margin-top: 0.25rem;
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.feature-item:hover i {
+    transform: scale(1.1);
+}
+
+.feature-item h4 {
+    color: var(--gray-90);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    position: relative;
+    display: inline-block;
+}
+
+.feature-item h4::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--black);
+    transition: width 0.3s ease;
+}
+
+.feature-item:hover h4::after {
+    width: 100%;
+}
+
+.feature-item p {
+    color: var(--gray-60);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.feature-item:hover p {
+    color: var(--gray-70);
+}
+
+/* Efecto de patrón sutil en el fondo */
+.plan-features::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ====================
+   FORMULARIO DE CONTACTO
+   ==================== */
+.contact-section {
+    padding: 6rem 0;
+    background-color: var(--gray-10);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-30), transparent);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Encabezado del formulario */
+.contact-sales-form .form-header {
+    text-align: left;
+    margin-bottom: 2.5rem;
+    grid-column: 1 / -1;
+}
+
+.contact-sales-form .form-header h2 {
+    color: var(--gray-90);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+
+.contact-sales-form .form-header p {
+    color: var(--gray-60);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0;
+}
+
+/* Estructura del formulario */
+.contact-sales-form {
+    background: var(--white);
+    border-radius: var(--rounded-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    border: var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-sales-form::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--black), var(--gray-60));
+}
+
+/* Grupos de formulario */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    color: var(--gray-80);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-size: 0.9375rem;
+    transition: color 0.2s ease;
+}
+
+.form-group:focus-within label {
+    color: var(--black);
+}
+
+/* Campos de formulario */
+.form-control {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--gray-90);
+    background-color: var(--white);
+    background-clip: padding-box;
+    border: var(--border);
+    border-radius: var(--rounded);
+    transition: var(--transition);
+    height: auto;
+    appearance: none;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: var(--gray-60);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Textarea */
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.6;
+    padding: 1rem 1.25rem;
+}
+
+/* Estilos para el select personalizado */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: '⌄';
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    color: var(--gray-60);
+    pointer-events: none;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+select.form-control {
+    padding-right: 3rem;
+    cursor: pointer;
+}
+
+/* Estilos para los campos de formulario enfocados */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gray-70);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Botón de envío */
+.form-actions {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.btn-submit {
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    border-radius: var(--rounded);
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    background-color: var(--gray-90);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Mensajes de validación */
+.form-feedback {
+    display: none;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-control.is-invalid ~ .invalid-feedback {
+    display: block;
+    color: #dc3545;
+}
+
+/* Sección de información de contacto */
+.contact-info {
+    padding-left: 2rem;
+    position: relative;
+}
+
+.contact-info::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gray-30), transparent);
+}
+
+.info-card {
+    background: var(--white);
+    border-radius: var(--rounded-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    border: var(--border);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.info-card h3 {
+    color: var(--gray-90);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-20);
+    position: relative;
+}
+
+.info-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--black);
+}
+
+.contact-method {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.contact-method:last-child {
+    margin-bottom: 0;
+}
+
+.contact-method i {
+    color: var(--black);
+    font-size: 1.5rem;
+    margin-right: 1.25rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+}
+
+.contact-method-content h4 {
+    color: var(--gray-90);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-method-content p, 
+.contact-method-content a {
+    color: var(--gray-60);
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: color 0.2s ease;
+}
+
+.contact-method-content a:hover {
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* Sección de información de la empresa */
+.company-info {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-20);
+}
+
+.company-info p {
+    color: var(--gray-60);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gray-10);
+    color: var(--gray-90);
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background: var(--black);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        padding-left: 0;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid var(--gray-20);
+    }
+    
+    .contact-info::before {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-sales-form,
+    .info-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        text-align: center;
+    }
+    
+    .btn-submit {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .sales-plan-header h1 {
+        font-size: 2.25rem;
+    }
+    
+    .sales-plan-header p {
+        font-size: 1.125rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plan-features {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+
+
+
+/* Contact Info */
+.contact-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    height: fit-content;
+}
+
+.info-card {
+    background: var(--white);
+    border-radius: var(--rounded-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    border-color: var(--gray-300);
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.info-icon i {
+    color: var(--gray-900);
+    font-size: 1.25rem;
+}
+
+.info-content h4 {
+    color: var(--gray-900);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.info-content p,
+.info-content a {
+    color: var(--gray-600);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin: 0.25rem 0;
+    display: block;
+}
+
+.info-content a {
+    color: var(--gray-900);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.info-content a:hover {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+/* FAQ Section */
+.faq-section {
+    background-color: var(--gray-50);
+    padding: 4rem 0;
+    margin-top: 4rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    color: var(--gray-900);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.section-header p {
+    color: var(--gray-600);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--white);
+    border-radius: var(--rounded);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    transition: all 0.2s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--gray-50);
+}
+
+.faq-question .faq-icon {
+    margin-left: 1rem;
+    transition: transform 0.2s ease;
+    color: var(--gray-900);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
+    font-size: 0.9375rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding-bottom: 1.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--gray-900) 0%, var(--black) 100%);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.cta-content p {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-actions .btn {
+    min-width: 180px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.cta-actions .btn i {
+    font-size: 1.1em;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sales-plan-header {
+        padding: 3rem 0;
+    }
+    
+    .sales-plan-header h1 {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sales-plan-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .sales-plan-header p {
+        font-size: 1rem;
+    }
+    
+    .plan-features {
+        padding: 1.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+    }
+}
+
+/* Form Actions */
+.form-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Button with Icon */
+.btn i {
+    margin-right: 0.5rem;
+}
+
+/* Utility Classes */
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-outline.btn-sm {
+    padding: 0.375rem 0.75rem;
+}

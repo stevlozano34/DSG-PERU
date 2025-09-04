@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Catálogo de productos y servicios de DSG PERU TECHNOLOGY">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/global/index_responsive.css">
+    <link rel="stylesheet" href="/assets/css/components/navbar.css">
+    <link rel="stylesheet" href="/assets/css/pages/shop.css">
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    </div>
+                    <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/services/desarrollo_web.html" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/services/app_movil.html" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/services/sistema_empre.html" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                
+                <!-- Mover nav-actions dentro del menú móvil -->
+                <!-- En la sección de navegación, actualizar los botones -->
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+                        <i data-lucide="moon" class="theme-icon"></i>
+                        <span class="sr-only">Cambiar tema</span>
+                    </button>
+                    <button class="btn btn-outline btn-demo" onclick="requestDemo()" aria-label="Ver demostración">
+                        <i data-lucide="play-circle" class="btn-icon"></i>
+                        <span>Demo</span>
+                    </button>
+                    <!-- Dropdown para tipos de acceso -->
+                    <div class="login-dropdown">
+                        <button class="btn btn-primary btn-login" id="login-dropdown-btn" aria-expanded="false" aria-haspopup="true" aria-controls="login-dropdown-menu">
+                            <i data-lucide="log-in" class="btn-icon"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+                        </button>
+                        <div class="dropdown-menu" id="login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon" style="display: none;"></i>
+                <span class="sr-only">Menú de navegación</span>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/public/shop.html#web" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/public/shop.html#mobile" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/public/shop.html#enterprise" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                <div class="mobile-actions">
+                    <div class="mobile-actions-top">
+                        <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Cambiar tema">
+                            <i data-lucide="moon" class="theme-icon"></i>
+                        </button>
+                        <button class="btn btn-outline" onclick="requestDemo()">
+                            <i data-lucide="play-circle"></i>
+                            <span>Ver Demo</span>
+                        </button>
+                    </div>
+                    <div class="login-dropdown mobile-login-dropdown">
+                        <button class="btn btn-primary" id="mobile-login-dropdown-btn" aria-expanded="false">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="mobile-login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Overlay -->
+            <div class="mobile-overlay" id="mobile-overlay"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="shop-page">
+        <!-- Hero Section -->
+        <section class="shop-hero">
+            <div class="container">
+                <div class="shop-hero-content">
+                    <h1>Catálogo de Productos</h1>
+                    <p>Descubre nuestras soluciones tecnológicas diseñadas para impulsar tu negocio</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="shop-filters">
+            <div class="container">
+                <div class="filters-wrapper">
+                    <div class="filter-group">
+                        <label for="category-filter">Categoría:</label>
+                        <select id="category-filter" class="filter-select">
+                            <option value="all">Todas las categorías</option>
+                            <option value="web">Desarrollo Web</option>
+                            <option value="mobile">Aplicaciones Móviles</option>
+                            <option value="enterprise">Sistemas Empresariales</option>
+                            <option value="consulting">Consultoría</option>
+                            <option value="maintenance">Mantenimiento</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="price-filter">Precio:</label>
+                        <select id="price-filter" class="filter-select">
+                            <option value="all">Todos los precios</option>
+                            <option value="low">Hasta S/ 5,000</option>
+                            <option value="medium">S/ 5,000 - S/ 15,000</option>
+                            <option value="high">Más de S/ 15,000</option>
+                        </select>
+                    </div>
+                    
+                    <!-- From Uiverse.io by satyamchaudharydev --> 
+                    <form class="form">
+                        <label for="search">
+                            <input required="" autocomplete="off" placeholder="search your chats" id="search" type="text">
+                            <div class="icon">
+                                <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-on">
+                                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                                </svg>
+                                <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-off">
+                                    <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linejoin="round" stroke-linecap="round"></path>
+                                </svg>
+                            </div>
+                            <button type="reset" class="close-btn">
+                                <svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
+                                    <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-grid">
+                    <!-- Web Development Products -->
+                    <div class="product-card" data-category="web" data-price="medium">
+                        <div class="product-image">
+                            <div class="product-badge">Más Popular</div>
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Sitio Web Corporativo">
+                        </div>
+                        <div class="product-content">
+                            <h3>Sitio Web Corporativo</h3>
+                            <p>Sitio web profesional con diseño responsivo, CMS y optimización SEO.</p>
+                            <div class="product-features">
+                                <span class="feature">Diseño Responsivo</span>
+                                <span class="feature">CMS Incluido</span>
+                                <span class="feature">SEO Optimizado</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">S/ 8,500</span>
+                                <span class="price-period">Proyecto completo</span>
+                            </div>
+                            <button class="btn btn-primary product-btn">Solicitar Cotización</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="web" data-price="low">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop" alt="Landing Page">
+                        </div>
+                        <div class="product-content">
+                            <h3>Landing Page</h3>
+                            <p>Página de aterrizaje optimizada para conversiones con formularios integrados.</p>
+                            <div class="product-features">
+                                <span class="feature">Alta Conversión</span>
+                                <span class="feature">Formularios</span>
+                                <span class="feature">Analytics</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">S/ 3,500</span>
+                                <span class="price-period">Proyecto completo</span>
+                            </div>
+                            <button class="btn btn-primary product-btn">Solicitar Cotización</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="web" data-price="high">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1556742049-bebda4e38f71?w=400&h=250&fit=crop" alt="E-commerce">
+                        </div>
+                        <div class="product-content">
+                            <h3>Tienda Online (E-commerce)</h3>
+                            <p>Plataforma de comercio electrónico completa con pasarela de pagos.</p>
+                            <div class="product-features">
+                                <span class="feature">Pasarela de Pagos</span>
+                                <span class="feature">Inventario</span>
+                                <span class="feature">Panel Admin</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">S/ 18,500</span>
+                                <span class="price-period">Proyecto completo</span>
+                            </div>
+                            <button class="btn btn-primary product-btn">Solicitar Cotización</button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Apps -->
+                    <div class="product-card" data-category="mobile" data-price="high">
+                        <div class="product-image">
+                            <div class="product-badge">Nuevo</div>
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop" alt="App Móvil">
+                        </div>
+                        <div class="product-content">
+                            <h3>Aplicación Móvil Nativa</h3>
+                            <p>App nativa para iOS y Android con funcionalidades avanzadas.</p>
+                            <div class="product-features">
+                                <span class="feature">iOS & Android</span>
+                                <span class="feature">Push Notifications</span>
+                                <span class="feature">Offline Mode</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">S/ 25,000</span>
+                                <span class="price-period">Proyecto completo</span>
+                            </div>
+                            <button class="btn btn-primary product-btn">Solicitar Cotización</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="mobile" data-price="medium">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop" alt="PWA">
+                        </div>
+                        <div class="product-content">
+                            <h3>Progressive Web App (PWA)</h3>
+                            <p>Aplicación web progresiva que funciona como app nativa.</p>
+                            <div class="product-features">
+                                <span class="feature">Multiplataforma</span>
+                                <span class="feature">Offline First</span>
+                                <span class="feature">App-like</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">S/ 12,000</span>
+                                <span class="price-period">Proyecto completo</span>
+                            </div>
+                            <button class="btn btn-primary product-btn">Solicitar Cotización</button>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise Systems -->
+                    <div class="product-card" data-category="enterprise" data-price="high">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="ERP">
+                        </div>
+                        <div class="product-content">
+                            <h3>Sistema ERP Personalizado</h3>
+                            <p>Sistema de planificación de recursos empresariales adaptado a tu negocio.</p>
+                            <div class="product-features">
+                                <span class="feature">Módulos Personalizados</span>
+                                <span class="feature">Reportes Avanzados</span>
+                                <span class="feature">Integración API</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">S/ 45,000</span>
+                                <span class="price-period">Proyecto completo</span>
+                            </div>
+                            <button class="btn btn-primary product-btn">Solicitar Cotización</button>
+                        </div>
+                    </div>
+
+                    <!-- Consulting Services -->
+                    <div class="product-card" data-category="consulting" data-price="medium">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop" alt="Consultoría">
+                        </div>
+                        <div class="product-content">
+                            <h3>Consultoría Tecnológica</h3>
+                            <p>Asesoramiento experto para la transformación digital de tu empresa.</p>
+                            <div class="product-features">
+                                <span class="feature">Análisis Técnico</span>
+                                <span class="feature">Roadmap</span>
+                                <span class="feature">Mejores Prácticas</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">S/ 350</span>
+                                <span class="price-period">Por hora</span>
+                            </div>
+                            <button class="btn btn-primary product-btn">Solicitar Cotización</button>
+                        </div>
+                    </div>
+
+                    <!-- Maintenance Services -->
+                    <div class="product-card" data-category="maintenance" data-price="low">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop" alt="Mantenimiento">
+                        </div>
+                        <div class="product-content">
+                            <h3>Plan de Mantenimiento</h3>
+                            <p>Mantenimiento y soporte continuo para tus sistemas y aplicaciones.</p>
+                            <div class="product-features">
+                                <span class="feature">Soporte 24/7</span>
+                                <span class="feature">Actualizaciones</span>
+                                <span class="feature">Monitoreo</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">S/ 1,200</span>
+                                <span class="price-period">Por mes</span>
+                            </div>
+                            <button class="btn btn-primary product-btn">Solicitar Cotización</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="shop-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>¿No encuentras lo que buscas?</h2>
+                    <p>Creamos soluciones personalizadas para cada cliente. Cuéntanos tu proyecto y te ayudaremos a hacerlo realidad.</p>
+                    <div class="cta-buttons">
+                        <a href="/pages/public/contact.html" class="btn btn-primary btn-large">Contactar Ahora</a>
+                        <a href="/pages/public/services.html" class="btn btn-outline btn-large">Ver Servicios</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                        </div>
+                        <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                    </div>
+                    <p class="footer-description">
+                        Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="/pages/services/restaurantes.html">Restaurantes</a></li>
+                            <li><a href="/pages/services/boticas.html">Boticas</a></li>
+                            <li><a href="/pages/services/minimarkets.html">Minimarkets</a></li>
+                            <li><a href="/pages/services/personalizado.html">Personalizado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/pages/public/about.html">Acerca de</a></li>
+                            <li><a href="/pages/public/contact.html">Contacto</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="/pages/public/blog/blog.html">Blog</a></li>
+                            <li><a href="/pages/public/blog/post.html">Post Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Soporte</h4>
+                        <ul>
+                            <li><a href="/pages/public/help/centro-ayuda.html">Centro de Ayuda</a></li>
+                            <li><a href="/pages/public/help/documentation.html">Documentación</a></li>
+                            <li><a href="/pages/public/help/estado_servicio.html">Estado del Servicio</a></li>
+                            <li><a href="/pages/public/help/support.html">Contactar Soporte</a></li>
+                            <li><a href="/pages/public/help/faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DSG PERU TECHNOLOGY. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/dsgperu" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://www.tiktok.com/@dsg.peru.technolo" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/dsgperu?igsh=NHczY3l2dDdiNWZj" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script src="/assets/js/components/navigation.js"></script>
+    <script src="/assets/js/components/dropdowns.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- WhatsApp Button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/components/whatsapp-button.css">
+    <div class="whatsapp-float">
+        <a href="https://wa.me/51903148583?text=%C2%A1Hola!%20👋%20Estoy%20interesado(a)%20en%20los%20servicios%20de%20DSG%20Per%C3%BA%20Technology%20SRL.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20soluciones%20de%20facturaci%C3%B3n%20electr%C3%B3nica,%20alquiler%20de%20sistemas%20inform%C3%A1ticos,%20consultor%C3%ADa%20TI,%20outsourcing%20o%20desarrollo%20de%20software%20a%20medida.%20%C2%A1Gracias!" 
+        class="whatsapp-button" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Chatea con nosotros por WhatsApp">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            <span class="whatsapp-badge">1</span>
+            <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+        </a>
+    </div>
+</body>
+</html>

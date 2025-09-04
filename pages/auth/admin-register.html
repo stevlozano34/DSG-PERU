@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Administrativo | DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Registro de nuevos administradores - Acceso restringido">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/pages/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+    
+    <style>
+        .admin-badge {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .authorization-notice {
+            background: #fee2e2;
+            border: 1px solid #dc2626;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #991b1b;
+        }
+        
+        .authorization-notice h4 {
+            margin: 0 0 0.5rem 0;
+            color: #991b1b;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .role-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .role-option {
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .role-option:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .role-option.selected {
+            border-color: var(--primary-color);
+            background: var(--primary-color-light);
+        }
+        
+        .role-option input[type="radio"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Header -->
+            <div class="auth-header">
+                <div class="logo">
+                    <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    <h1>DSG PERU TECHNOLOGY</h1>
+                </div>
+                <div class="admin-badge">
+                    <i data-lucide="shield-plus"></i>
+                    <span>Registro Administrativo</span>
+                </div>
+                <h2>Nuevo Administrador</h2>
+                <p>Registro de personal autorizado</p>
+            </div>
+
+            <!-- Authorization Notice -->
+            <div class="authorization-notice">
+                <h4><i data-lucide="alert-circle" style="width: 16px; height: 16px; margin-right: 0.5rem;"></i>Acceso Restringido</h4>
+                <p>Solo el personal autorizado puede crear cuentas administrativas. Se requiere código de autorización.</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form class="auth-form" id="admin-register-form">
+                <div class="form-group">
+                    <label for="authCode">Código de Autorización</label>
+                    <div class="input-group">
+                        <i data-lucide="key" class="input-icon"></i>
+                        <input type="text" id="authCode" name="authCode" required placeholder="Código proporcionado por IT">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Nombre</label>
+                        <div class="input-group">
+                            <i data-lucide="user" class="input-icon"></i>
+                            <input type="text" id="firstName" name="firstName" required placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Apellido</label>
+                        <div class="input-group">
+                            <i data-lucide="user" class="input-icon"></i>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Apellido">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Corporativo</label>
+                    <div class="input-group">
+                        <i data-lucide="mail" class="input-icon"></i>
+                        <input type="email" id="email" name="email" required placeholder="nombre@dsgperu.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeId">ID de Empleado</label>
+                    <div class="input-group">
+                        <i data-lucide="badge" class="input-icon"></i>
+                        <input type="text" id="employeeId" name="employeeId" required placeholder="EMP-2024-001">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Rol Administrativo</label>
+                    <div class="role-selector">
+                        <div class="role-option" data-role="super-admin">
+                            <input type="radio" name="role" value="super-admin" id="super-admin">
+                            <i data-lucide="crown" style="width: 24px; height: 24px; margin-bottom: 0.5rem;"></i>
+                            <h4>Super Admin</h4>
+                            <p>Acceso completo al sistema</p>
+                        </div>
+                        <div class="role-option" data-role="admin">
+                            <input type="radio" name="role" value="admin" id="admin">
+                            <i data-lucide="shield" style="width: 24px; height: 24px; margin-bottom: 0.5rem;"></i>
+                            <h4>Administrador</h4>
+                            <p>Gestión de usuarios y contenido</p>
+                        </div>
+                        <div class="role-option" data-role="moderator">
+                            <input type="radio" name="role" value="moderator" id="moderator">
+                            <i data-lucide="user-check" style="width: 24px; height: 24px; margin-bottom: 0.5rem;"></i>
+                            <h4>Moderador</h4>
+                            <p>Supervisión y soporte</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-group">
+                            <i data-lucide="lock" class="input-icon"></i>
+                            <input type="password" id="password" name="password" required placeholder="Mínimo 12 caracteres">
+                            <button type="button" class="password-toggle" id="password-toggle">
+                                <i data-lucide="eye" id="toggle-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar Contraseña</label>
+                        <div class="input-group">
+                            <i data-lucide="lock" class="input-icon"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirma tu contraseña">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password Requirements -->
+                <div class="password-requirements">
+                    <h4>Requisitos de contraseña:</h4>
+                    <ul>
+                        <li id="req-length">Mínimo 12 caracteres</li>
+                        <li id="req-upper">Al menos 1 mayúscula</li>
+                        <li id="req-lower">Al menos 1 minúscula</li>
+                        <li id="req-number">Al menos 1 número</li>
+                        <li id="req-special">Al menos 1 carácter especial</li>
+                    </ul>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <span class="checkmark"></span>
+                        Acepto las políticas de seguridad y confidencialidad
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="twoFactor" name="twoFactor" required>
+                        <span class="checkmark"></span>
+                        Configuraré autenticación de dos factores (2FA)
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i data-lucide="shield-plus"></i>
+                    <span>Crear Cuenta Administrativa</span>
+                </button>
+            </form>
+
+            <!-- Footer -->
+            <div class="auth-footer">
+                <p><a href="/pages/auth/admin-login.html">← Volver al login administrativo</a></p>
+                <p><a href="/index.html">← Volver al inicio</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            
+            // Role selection
+            const roleOptions = document.querySelectorAll('.role-option');
+            roleOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    roleOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    this.querySelector('input[type="radio"]').checked = true;
+                });
+            });
+            
+            // Password toggle
+            const passwordToggle = document.getElementById('password-toggle');
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggle-icon');
+            
+            passwordToggle.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                toggleIcon.setAttribute('data-lucide', type === 'password' ? 'eye' : 'eye-off');
+                lucide.createIcons();
+            });
+            
+            // Password requirements checker
+            const requirements = {
+                length: document.getElementById('req-length'),
+                upper: document.getElementById('req-upper'),
+                lower: document.getElementById('req-lower'),
+                number: document.getElementById('req-number'),
+                special: document.getElementById('req-special')
+            };
+            
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                
+                // Check length
+                if (password.length >= 12) {
+                    requirements.length.style.color = '#22c55e';
+                    requirements.length.style.textDecoration = 'line-through';
+                } else {
+                    requirements.length.style.color = '#ef4444';
+                    requirements.length.style.textDecoration = 'none';
+                }
+                
+                // Check uppercase
+                if (/[A-Z]/.test(password)) {
+                    requirements.upper.style.color = '#22c55e';
+                    requirements.upper.style.textDecoration = 'line-through';
+                } else {
+                    requirements.upper.style.color = '#ef4444';
+                    requirements.upper.style.textDecoration = 'none';
+                }
+                
+                // Check lowercase
+                if (/[a-z]/.test(password)) {
+                    requirements.lower.style.color = '#22c55e';
+                    requirements.lower.style.textDecoration = 'line-through';
+                } else {
+                    requirements.lower.style.color = '#ef4444';
+                    requirements.lower.style.textDecoration = 'none';
+                }
+                
+                // Check number
+                if (/[0-9]/.test(password)) {
+                    requirements.number.style.color = '#22c55e';
+                    requirements.number.style.textDecoration = 'line-through';
+                } else {
+                    requirements.number.style.color = '#ef4444';
+                    requirements.number.style.textDecoration = 'none';
+                }
+                
+                // Check special character
+                if (/[^A-Za-z0-9]/.test(password)) {
+                    requirements.special.style.color = '#22c55e';
+                    requirements.special.style.textDecoration = 'line-through';
+                } else {
+                    requirements.special.style.color = '#ef4444';
+                    requirements.special.style.textDecoration = 'none';
+                }
+            });
+            
+            // Form validation
+            document.getElementById('admin-register-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const authCode = document.getElementById('authCode').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                const role = document.querySelector('input[name="role"]:checked');
+                
+                // Validate authorization code
+                if (authCode !== 'DSG-ADMIN-2024') {
+                    alert('Código de autorización inválido');
+                    return;
+                }
+                
+                // Validate role selection
+                if (!role) {
+                    alert('Por favor selecciona un rol administrativo');
+                    return;
+                }
+                
+                // Validate password
+                if (password !== confirmPassword) {
+                    alert('Las contraseñas no coinciden');
+                    return;
+                }
+                
+                if (password.length < 12) {
+                    alert('La contraseña debe tener al menos 12 caracteres');
+                    return;
+                }
+                
+                // Simulate registration process
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i data-lucide="loader-2" class="animate-spin"></i><span>Creando cuenta administrativa...</span>';
+                submitBtn.disabled = true;
+                lucide.createIcons();
+                
+                setTimeout(() => {
+                    // Redirect to success page
+                    window.location.href = '/pages/auth/auth-success.html?type=admin-register';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

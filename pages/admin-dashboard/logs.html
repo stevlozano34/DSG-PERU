@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs del Sistema - Fixture Admin</title>
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/admin-dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/logs.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Fixture</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="admin-dashboard.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clients.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <span>Logs</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Logs del Sistema</h1>
+                    <p>Monitorea la actividad y eventos del sistema</p>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../../assets/images/hero/user-avatar.jpg" alt="User" class="user-avatar">
+                        <span>Gbemigem</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Logs Content -->
+            <div class="dashboard-content">
+                <!-- Log Filters -->
+                <div class="logs-filters">
+                    <div class="filter-group">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Buscar en logs..." id="logSearch">
+                        </div>
+                        <select id="logLevel">
+                            <option value="all">Todos los niveles</option>
+                            <option value="info">Info</option>
+                            <option value="warning">Warning</option>
+                            <option value="error">Error</option>
+                            <option value="debug">Debug</option>
+                        </select>
+                        <select id="logCategory">
+                            <option value="all">Todas las categorías</option>
+                            <option value="auth">Autenticación</option>
+                            <option value="orders">Pedidos</option>
+                            <option value="payments">Pagos</option>
+                            <option value="system">Sistema</option>
+                        </select>
+                        <input type="date" id="logDate">
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn btn-secondary" id="clearLogs">
+                            <i class="fas fa-trash"></i>
+                            Limpiar Logs
+                        </button>
+                        <button class="btn btn-primary" id="exportLogs">
+                            <i class="fas fa-download"></i>
+                            Exportar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Log Stats -->
+                <div class="log-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon info">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">1,247</div>
+                            <div class="stat-label">Info</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">89</div>
+                            <div class="stat-label">Warnings</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon error">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">12</div>
+                            <div class="stat-label">Errors</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon debug">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">456</div>
+                            <div class="stat-label">Debug</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logs Table -->
+                <div class="logs-section">
+                    <div class="logs-header">
+                        <h3>Registros de Actividad</h3>
+                        <div class="auto-refresh">
+                            <label>
+                                <input type="checkbox" id="autoRefresh" checked>
+                                Auto-actualizar
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="logs-container">
+                        <div class="log-entry" data-level="info" data-category="auth">
+                            <div class="log-time">2024-01-15 14:32:15</div>
+                            <div class="log-level info">INFO</div>
+                            <div class="log-category">AUTH</div>
+                            <div class="log-message">Usuario 'admin@fixture.com' inició sesión exitosamente</div>
+                            <div class="log-actions">
+                                <button class="btn-icon" title="Ver detalles">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="log-entry" data-level="warning" data-category="orders">
+                            <div class="log-time">2024-01-15 14:30:42</div>
+                            <div class="log-level warning">WARN</div>
+                            <div class="log-category">ORDERS</div>
+                            <div class="log-message">Intento de acceso a pedido inexistente: ORD-999</div>
+                            <div class="log-actions">
+                                <button class="btn-icon" title="Ver detalles">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="log-entry" data-level="error" data-category="payments">
+                            <div class="log-time">2024-01-15 14:28:33</div>
+                            <div class="log-level error">ERROR</div>
+                            <div class="log-category">PAYMENTS</div>
+                            <div class="log-message">Error al procesar pago: Tarjeta de crédito expirada</div>
+                            <div class="log-actions">
+                                <button class="btn-icon" title="Ver detalles">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="log-entry" data-level="info" data-category="system">
+                            <div class="log-time">2024-01-15 14:25:18</div>
+                            <div class="log-level info">INFO</div>
+                            <div class="log-category">SYSTEM</div>
+                            <div class="log-message">Respaldo automático completado exitosamente</div>
+                            <div class="log-actions">
+                                <button class="btn-icon" title="Ver detalles">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="log-entry" data-level="debug" data-category="system">
+                            <div class="log-time">2024-01-15 14:22:05</div>
+                            <div class="log-level debug">DEBUG</div>
+                            <div class="log-category">SYSTEM</div>
+                            <div class="log-message">Cache limpiado: 245 entradas removidas</div>
+                            <div class="log-actions">
+                                <button class="btn-icon" title="Ver detalles">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="logs-pagination">
+                        <button class="btn btn-outline" id="loadMore">
+                            <i class="fas fa-plus"></i>
+                            Cargar Más
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/pages/admin-dashboard/admin-dashboard.js"></script>
+    <script src="../../assets/js/pages/admin-dashboard/logs.js"></script>
+</body>
+</html>

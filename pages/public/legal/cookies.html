@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies - DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Política de cookies de DSG PERU TECHNOLOGY">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/global/index_responsive.css">
+    <link rel="stylesheet" href="/assets/css/pages/legal/cookies.css">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY" loading="lazy">
+                    </div>
+                    <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/DSG/frontend/index.html" class="nav-link">Inicio</a>
+                <a href="/DSG/frontend/pages/pages/about.html" class="nav-link">DSG</a>
+                <a href="/DSG/frontend/index.html/#servicios" class="nav-link">Servicios</a>
+                <a href="/DSG/frontend/index.html/#precios" class="nav-link">Precios</a>
+                <a href="/DSG/frontend/index.html/#contacto" class="nav-link">Contacto</a>
+                
+                <!-- Mover nav-actions dentro del menú móvil -->
+                <!-- En la sección de navegación, actualizar los botones -->
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                        <i data-lucide="moon" class="theme-icon"></i>
+                    </button>
+                    <button class="btn btn-outline" onclick="requestDemo()">
+                        <i data-lucide="play-circle"></i>
+                        <span>Demo</span>
+                    </button>
+                    <!-- Dropdown para tipos de acceso -->
+                    <div class="login-dropdown">
+                        <button class="btn btn-primary" id="login-dropdown-btn">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="legal-page">
+        <!-- Hero Section -->
+        <section class="cookies-hero">
+            <div class="container">
+                <div class="cookies-hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-icon"></span>
+                        <span class="badge-text">Política de Cookies</span>
+                    </div>
+                    <h1 class="hero-title">Política de Cookies</h1>
+                    <p class="hero-subtitle">Última actualización: Enero 2024</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" id="accept-all-cookies">Aceptar Todas</button>
+                        <button class="btn btn-outline" id="customize-cookies">Personalizar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cookies Content -->
+        <section class="cookies-content">
+            <div class="container">
+                <div class="cookies-wrapper">
+                    <div class="cookies-sidebar">
+                        <nav class="cookies-nav" role="navigation" aria-label="Navegación de la política de cookies">
+                            <div class="nav-header">
+                                <h3>Navegación Rápida</h3>
+                                <div class="nav-indicator"></div>
+                            </div>
+                            <ul class="nav-list">
+                                <li><a href="#what-are-cookies" class="nav-link nav-link--active">
+                                    <span class="nav-icon">❓</span>
+                                    <span class="nav-text">¿Qué son las cookies?</span>
+                                </a></li>
+                                <li><a href="#types-of-cookies" class="nav-link">
+                                    <span class="nav-icon">📊</span>
+                                    <span class="nav-text">Tipos de cookies</span>
+                                </a></li>
+                                <li><a href="#how-we-use" class="nav-link">
+                                    <span class="nav-icon">⚙️</span>
+                                    <span class="nav-text">Cómo las usamos</span>
+                                </a></li>
+                                <li><a href="#third-party" class="nav-link">
+                                    <span class="nav-icon">🔗</span>
+                                    <span class="nav-text">Cookies de terceros</span>
+                                </a></li>
+                                <li><a href="#manage-cookies" class="nav-link">
+                                    <span class="nav-icon">⚙️</span>
+                                    <span class="nav-text">Gestionar cookies</span>
+                                </a></li>
+                                <li><a href="#contact" class="nav-link">
+                                    <span class="nav-icon">📞</span>
+                                    <span class="nav-text">Contacto</span>
+                                </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="cookies-main">
+                        <article class="cookies-article">
+                            <section id="what-are-cookies" class="content-section">
+                                <div class="section-header">
+                                    <h2 class="section-title">1. ¿Qué son las cookies?</h2>
+                                    <div class="section-line"></div>
+                                </div>
+                                <div class="section-content">
+                                    <p class="section-text">Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita nuestro sitio web. Estas cookies nos ayudan a mejorar su experiencia de navegación y a proporcionar servicios personalizados.</p>
+                                    <div class="info-card">
+                                        <div class="info-icon">💡</div>
+                                        <div class="info-content">
+                                            <h4>Tipos de Cookies</h4>
+                                            <p>Las cookies pueden ser <strong>"persistentes"</strong> o <strong>"de sesión"</strong>. Las cookies persistentes permanecen en su dispositivo cuando se desconecta, mientras que las cookies de sesión se eliminan cuando cierra su navegador.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section id="types-of-cookies" class="content-section content-section--hidden">
+                                <div class="section-header">
+                                    <h2 class="section-title">2. Tipos de cookies que utilizamos</h2>
+                                    <div class="section-line"></div>
+                                </div>
+                                <div class="section-content">
+                                    <div class="cookie-types-grid">
+                                        <div class="cookie-type-card essential">
+                                            <div class="card-header">
+                                                <div class="card-icon">🔒</div>
+                                                <h3 class="card-title">2.1 Cookies Esenciales</h3>
+                                            </div>
+                                            <p class="card-description">Estas cookies son necesarias para el funcionamiento básico del sitio web y no se pueden desactivar.</p>
+                                            <ul class="card-list">
+                                                <li>Cookies de autenticación</li>
+                                                <li>Cookies de seguridad</li>
+                                                <li>Cookies de preferencias del sitio</li>
+                                            </ul>
+                                            <div class="card-status required">Requeridas</div>
+                                        </div>
+                                        
+                                        <div class="cookie-type-card performance">
+                                            <div class="card-header">
+                                                <div class="card-icon">📊</div>
+                                                <h3 class="card-title">2.2 Cookies de Rendimiento</h3>
+                                            </div>
+                                            <p class="card-description">Estas cookies nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web.</p>
+                                            <ul class="card-list">
+                                                <li>Google Analytics</li>
+                                                <li>Métricas de velocidad de página</li>
+                                                <li>Análisis de comportamiento del usuario</li>
+                                            </ul>
+                                            <div class="card-status optional">Opcionales</div>
+                                        </div>
+                                        
+                                        <div class="cookie-type-card functionality">
+                                            <div class="card-header">
+                                                <div class="card-icon">⚙️</div>
+                                                <h3 class="card-title">2.3 Cookies de Funcionalidad</h3>
+                                            </div>
+                                            <p class="card-description">Estas cookies permiten que el sitio web recuerde las elecciones que hace.</p>
+                                            <ul class="card-list">
+                                                <li>Preferencias de idioma</li>
+                                                <li>Configuración de tema (claro/oscuro)</li>
+                                                <li>Información de inicio de sesión</li>
+                                            </ul>
+                                            <div class="card-status optional">Opcionales</div>
+                                        </div>
+                                        
+                                        <div class="cookie-type-card marketing">
+                                            <div class="card-header">
+                                                <div class="card-icon">📢</div>
+                                                <h3 class="card-title">2.4 Cookies de Marketing</h3>
+                                            </div>
+                                            <p class="card-description">Estas cookies se utilizan para mostrar anuncios relevantes.</p>
+                                            <ul class="card-list">
+                                                <li>Seguimiento de conversiones</li>
+                                                <li>Personalización de anuncios</li>
+                                                <li>Análisis de campañas</li>
+                                            </ul>
+                                            <div class="card-status optional">Opcionales</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section id="how-we-use" class="content-section content-section--hidden">
+                                <div class="section-header">
+                                    <h2 class="section-title">3. Cómo utilizamos las cookies</h2>
+                                    <div class="section-line"></div>
+                                </div>
+                                <div class="section-content">
+                                    <p>Utilizamos cookies para los siguientes propósitos:</p>
+                                    <h3 class="subsection-title">3.1 Mejorar la experiencia del usuario</h3>
+                                    <ul>
+                                        <li>Recordar sus preferencias</li>
+                                        <li>Personalizar el contenido</li>
+                                        <li>Facilitar la navegación</li>
+                                    </ul>
+                                    <h3 class="subsection-title">3.2 Análisis y estadísticas</h3>
+                                    <ul>
+                                        <li>Medir el tráfico del sitio web</li>
+                                        <li>Analizar patrones de uso</li>
+                                        <li>Identificar áreas de mejora</li>
+                                    </ul>
+                                    <h3 class="subsection-title">3.3 Seguridad</h3>
+                                    <ul>
+                                        <li>Proteger contra fraudes</li>
+                                        <li>Verificar la identidad del usuario</li>
+                                        <li>Mantener sesiones seguras</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section id="third-party" class="content-section content-section--hidden">
+                                <div class="section-header">
+                                    <h2 class="section-title">4. Cookies de terceros</h2>
+                                    <div class="section-line"></div>
+                                </div>
+                                <div class="section-content">
+                                    <p class="section-text">Nuestro sitio web puede contener cookies de terceros. Estos servicios incluyen:</p>
+                                    
+                                    <div class="third-party-grid">
+                                        <div class="third-party-card">
+                                            <div class="card-header">
+                                                <div class="service-icon">📊</div>
+                                                <h4 class="service-title">Google Analytics</h4>
+                                            </div>
+                                            <p class="service-description">Para análisis de tráfico y comportamiento del usuario.</p>
+                                            <div class="service-policy">
+                                                <span class="policy-label">Política:</span>
+                                                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="policy-link">
+                                                    Google Privacy Policy
+                                                    <span class="link-icon">↗</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="third-party-card">
+                                            <div class="card-header">
+                                                <div class="service-icon">🔤</div>
+                                                <h4 class="service-title">Google Fonts</h4>
+                                            </div>
+                                            <p class="service-description">Para cargar fuentes web.</p>
+                                            <div class="service-policy">
+                                                <span class="policy-label">Política:</span>
+                                                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="policy-link">
+                                                    Google Privacy Policy
+                                                    <span class="link-icon">↗</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="third-party-card">
+                                            <div class="card-header">
+                                                <div class="service-icon">🌐</div>
+                                                <h4 class="service-title">Redes Sociales</h4>
+                                            </div>
+                                            <p class="service-description">Para integración con plataformas sociales.</p>
+                                            <div class="service-policy">
+                                                <span class="policy-label">Nota:</span>
+                                                <span class="policy-note">Cada plataforma tiene su propia política de privacidad.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section id="manage-cookies" class="content-section content-section--hidden">
+                                <div class="section-header">
+                                    <h2 class="section-title">5. Cómo gestionar las cookies</h2>
+                                    <div class="section-line"></div>
+                                </div>
+                                <div class="section-content">
+                                    <div class="manage-section">
+                                        <h3 class="subsection-title">5.1 Configuración del navegador</h3>
+                                        <p class="subsection-text">Puede controlar y/o eliminar las cookies como desee. Para obtener detalles, consulte <a href="https://aboutcookies.org" target="_blank" rel="noopener noreferrer" class="external-link">aboutcookies.org</a>. Puede eliminar todas las cookies que ya están en su computadora y puede configurar la mayoría de los navegadores para evitar que se coloquen.</p>
+                                    </div>
+                                    
+                                    <div class="manage-section">
+                                        <h3 class="subsection-title">5.2 Instrucciones por navegador</h3>
+                                        <div class="browser-grid">
+                                            <div class="browser-card">
+                                                <div class="browser-icon">🌐</div>
+                                                <h4 class="browser-name">Chrome</h4>
+                                                <p class="browser-path">Configuración → Privacidad y seguridad → Cookies y otros datos del sitio</p>
+                                            </div>
+                                            
+                                            <div class="browser-card">
+                                                <div class="browser-icon">🦊</div>
+                                                <h4 class="browser-name">Firefox</h4>
+                                                <p class="browser-path">Opciones → Privacidad y seguridad → Cookies y datos del sitio</p>
+                                            </div>
+                                            
+                                            <div class="browser-card">
+                                                <div class="browser-icon">🍎</div>
+                                                <h4 class="browser-name">Safari</h4>
+                                                <p class="browser-path">Preferencias → Privacidad → Gestionar datos del sitio web</p>
+                                            </div>
+                                            
+                                            <div class="browser-card">
+                                                <div class="browser-icon">🔵</div>
+                                                <h4 class="browser-name">Edge</h4>
+                                                <p class="browser-path">Configuración → Privacidad, búsqueda y servicios → Cookies</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="manage-section">
+                                        <h3 class="subsection-title">5.3 Consecuencias de deshabilitar cookies</h3>
+                                        <p class="subsection-text">Si deshabilita las cookies, algunas funciones de nuestro sitio web pueden no funcionar correctamente:</p>
+                                        <div class="consequences-grid">
+                                            <div class="consequence-item">
+                                                <div class="consequence-icon">❌</div>
+                                                <span>No podrá mantener la sesión iniciada</span>
+                                            </div>
+                                            <div class="consequence-item">
+                                                <div class="consequence-icon">❌</div>
+                                                <span>Las preferencias no se guardarán</span>
+                                            </div>
+                                            <div class="consequence-item">
+                                                <div class="consequence-icon">❌</div>
+                                                <span>Algunas funciones interactivas pueden no funcionar</span>
+                                            </div>
+                                            <div class="consequence-item">
+                                                <div class="consequence-icon">❌</div>
+                                                <span>La experiencia de usuario puede verse afectada</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section id="contact" class="content-section content-section--hidden">
+                                <div class="section-header">
+                                    <h2 class="section-title">6. Contacto</h2>
+                                    <div class="section-line"></div>
+                                </div>
+                                <div class="section-content">
+                                    <p>Si tiene preguntas sobre nuestra política de cookies, puede contactarnos:</p>
+                                    <div class="contact-info">
+                                        <p><strong>DSG PERU TECHNOLOGY</strong></p>
+                                        <p>Email: privacy@dsgperu.com</p>
+                                        <p>Teléfono: +51 999 888 777</p>
+                                        <p>Dirección: Lima, Perú</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i data-lucide="code"></i>
+                        </div>
+                        <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                    </div>
+                    <p class="footer-description">
+                        Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="#servicios">Restaurantes</a></li>
+                            <li><a href="#servicios">Boticas</a></li>
+                            <li><a href="#servicios">Minimarkets</a></li>
+                            <li><a href="#servicios">Personalizado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/DSG/frontend/src/pages/about.html">Acerca de</a></li>
+                            <li><a href="/DSG/frontend/src/pages/contact.html">Contacto</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="/pages/public/blog/blog.html">Blog</a></li>
+                            <li><a href="/pages/public/blog/post.html">Post Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Soporte</h4>
+                        <ul>
+                            <li><a href="#">Centro de Ayuda</a></li>
+                            <li><a href="/pages/public/help/documentation.html">Documentación</a></li>
+                            <li><a href="#">Estado del Servicio</a></li>
+                            <li><a href="#">Contactar Soporte</a></li>
+                            <li><a href="/pages/public/help/faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DSG PERU TECHNOLOGY. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/dsgperu" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://www.instagram.com/dsgperu?igsh=NHczY3l2dDdiNWZj" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <script src="/assets/js/components/navigation.js"></script>
+    <script src="/assets/js/pages/cookies.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>

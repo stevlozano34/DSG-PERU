@@ -1,0 +1,42 @@
+/* Main Fonts CSS - Import all custom fonts */
+@import url('./inter/inter.css');
+@import url('./roboto/roboto.css');
+
+/* Global Font Variables */
+:root {
+  /* Primary font stack */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Secondary font stack */
+  --font-secondary: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* Base typography */
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Buttons and UI elements */
+button, .btn {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Body text alternatives */
+.text-secondary {
+  font-family: var(--font-secondary);
+}

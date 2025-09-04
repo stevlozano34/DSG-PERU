@@ -1,0 +1,93 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "Alejandro Ruiz",
+      "position": "CEO & Fundador",
+      "department": "Dirección",
+      "avatar": "../../assets/images/team/alejandro-ruiz.jpg",
+      "bio": "Con más de 10 años de experiencia en tecnología y negocios digitales, Alejandro lidera la visión estratégica de DSG.",
+      "skills": ["Liderazgo", "Estrategia Digital", "Desarrollo de Negocios"],
+      "social": {
+        "linkedin": "https://linkedin.com/in/alejandro-ruiz",
+        "twitter": "https://twitter.com/alejandro_ruiz",
+        "email": "alejandro@dsg.com"
+      },
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Sofia Herrera",
+      "position": "CTO",
+      "department": "Tecnología",
+      "avatar": "../../assets/images/team/sofia-herrera.jpg",
+      "bio": "Experta en arquitectura de software y tecnologías emergentes. Sofia asegura que nuestras soluciones sean escalables y robustas.",
+      "skills": ["Arquitectura de Software", "Cloud Computing", "DevOps"],
+      "social": {
+        "linkedin": "https://linkedin.com/in/sofia-herrera",
+        "github": "https://github.com/sofia-herrera",
+        "email": "sofia@dsg.com"
+      },
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Miguel Torres",
+      "position": "Lead Developer",
+      "department": "Desarrollo",
+      "avatar": "../../assets/images/team/miguel-torres.jpg",
+      "bio": "Desarrollador full-stack con pasión por crear aplicaciones web modernas y eficientes usando las últimas tecnologías.",
+      "skills": ["React", "Node.js", "Python", "PostgreSQL"],
+      "social": {
+        "linkedin": "https://linkedin.com/in/miguel-torres",
+        "github": "https://github.com/miguel-torres",
+        "email": "miguel@dsg.com"
+      },
+      "featured": true
+    },
+    {
+      "id": 4,
+      "name": "Isabella Castro",
+      "position": "UX/UI Designer",
+      "department": "Diseño",
+      "avatar": "../../assets/images/team/isabella-castro.jpg",
+      "bio": "Diseñadora creativa especializada en experiencias de usuario que combinan funcionalidad con estética excepcional.",
+      "skills": ["Figma", "Adobe Creative Suite", "Prototipado", "User Research"],
+      "social": {
+        "linkedin": "https://linkedin.com/in/isabella-castro",
+        "behance": "https://behance.net/isabella-castro",
+        "email": "isabella@dsg.com"
+      },
+      "featured": true
+    },
+    {
+      "id": 5,
+      "name": "Fernando López",
+      "position": "Marketing Manager",
+      "department": "Marketing",
+      "avatar": "../../assets/images/team/fernando-lopez.jpg",
+      "bio": "Especialista en marketing digital con expertise en SEO, SEM y estrategias de contenido que generan resultados medibles.",
+      "skills": ["SEO/SEM", "Google Analytics", "Content Marketing", "Social Media"],
+      "social": {
+        "linkedin": "https://linkedin.com/in/fernando-lopez",
+        "twitter": "https://twitter.com/fernando_lopez",
+        "email": "fernando@dsg.com"
+      },
+      "featured": false
+    },
+    {
+      "id": 6,
+      "name": "Camila Vargas",
+      "position": "Project Manager",
+      "department": "Operaciones",
+      "avatar": "../../assets/images/team/camila-vargas.jpg",
+      "bio": "Gestora de proyectos certificada PMP que asegura la entrega exitosa de todos nuestros proyectos en tiempo y forma.",
+      "skills": ["Gestión de Proyectos", "Scrum", "Agile", "Comunicación"],
+      "social": {
+        "linkedin": "https://linkedin.com/in/camila-vargas",
+        "email": "camila@dsg.com"
+      },
+      "featured": false
+    }
+  ]
+}

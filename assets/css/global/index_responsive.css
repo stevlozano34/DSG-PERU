@@ -1,0 +1,366 @@
+/* Estilos responsivos para la sección de aplicaciones móviles */
+@media (max-width: 1200px) {
+  .apps-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .apps-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .apps-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .apps-section {
+    padding: 2rem 1rem;
+  }
+  
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .app-card {
+    max-width: 100%;
+  }
+}
+
+/* Responsive para navegación móvil */
+@media (max-width: 768px) {
+  /* Mostrar botón de menú en móvil */
+  .nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  /* Configurar menú móvil */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var(--background);
+    box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 80px 20px 30px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Mostrar menú cuando tiene clase 'open' */
+  .nav-menu.open {
+    display: flex;
+    transform: translateX(0);
+  }
+  
+  /* Estilos para los enlaces en móvil */
+  .nav-menu .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    margin: 4px 0;
+    border-radius: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+  }
+  
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link:focus {
+    background: var(--accent);
+    color: var(--primary);
+    transform: translateX(4px);
+  }
+  
+  /* Acciones de navegación en móvil */
+  .nav-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  
+  /* Asegurar que los botones se ajusten bien */
+  .nav-actions .btn {
+    width: 100%;
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+  
+  /* Overlay para el menú móvil */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .mobile-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Ajustes para el body cuando el menú está abierto */
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Responsive para dropdown */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0.5rem 0 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    overflow: hidden;
+    animation: none;
+    transition: all 0.3s ease;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from { 
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to { 
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px !important;
+    margin: 0;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+  }
+  
+  .dropdown-item i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background: rgba(0, 0, 0, 0.05);
+    border-left-color: var(--primary);
+    padding-left: 25px !important;
+  }
+}
+
+/* Hero Section */
+.hero-content {
+  flex-direction: column;
+  text-align: center;
+  padding-top: var(--spacing-xxl);
+}
+
+.hero-text {
+  width: 100%;
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-actions {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.hero-actions .btn {
+  flex: 1 1 100%;
+  max-width: 100%;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+
+
+/* Carrusel de Testimonios - Responsive */
+@media (max-width: 1200px) {
+  .carousel-multi {
+    max-width: 90%;
+  }
+  
+  .carousel-slide {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-multi {
+    max-width: 100%;
+    padding: 0 2rem;
+    position: relative;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    padding: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .testimonial-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: 1px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  .carousel-btn:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+  }
+  
+  .testimonial-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-multi {
+    padding: 0 1rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.25rem;
+  }
+  
+  .testimonial-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .carousel-btn.prev {
+    left: 5px;
+  }
+  
+  .carousel-btn.next {
+    right: 5px;
+  }
+}
+
+/* Imágenes responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-visual {
+  margin-top: var(--spacing-xl);
+}
+
+/* Sección de servicios */
+.services-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Botones */
+.btn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.75rem 1.25rem;
+}
+
+.btn-large {
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+}

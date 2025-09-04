@@ -1,0 +1,724 @@
+<!-- Dashboard Widgets Collection -->
+
+<!-- Quick Stats Widget -->
+<div class="widget stats-widget">
+    <div class="widget-header">
+        <h3>Estadísticas Rápidas</h3>
+        <div class="widget-actions">
+            <button class="widget-action" data-action="refresh">
+                <i data-lucide="refresh-cw"></i>
+            </button>
+            <button class="widget-action" data-action="settings">
+                <i data-lucide="settings"></i>
+            </button>
+        </div>
+    </div>
+    <div class="widget-content">
+        <div class="stats-grid-mini">
+            <div class="stat-item">
+                <div class="stat-icon primary">
+                    <i data-lucide="shopping-bag"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value">24</span>
+                    <span class="stat-label">Pedidos</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon success">
+                    <i data-lucide="dollar-sign"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value">$2,450</span>
+                    <span class="stat-label">Facturado</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon warning">
+                    <i data-lucide="clock"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value">3</span>
+                    <span class="stat-label">Pendientes</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon info">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value">+12%</span>
+                    <span class="stat-label">Crecimiento</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activity Widget -->
+<div class="widget activity-widget">
+    <div class="widget-header">
+        <h3>Actividad Reciente</h3>
+        <a href="#" class="view-all">Ver todo</a>
+    </div>
+    <div class="widget-content">
+        <div class="activity-timeline-mini">
+            <div class="timeline-item">
+                <div class="timeline-marker success"></div>
+                <div class="timeline-content">
+                    <h4>Pago procesado</h4>
+                    <p>Factura #INV-2024-001 pagada</p>
+                    <span class="timeline-time">Hace 2 horas</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker info"></div>
+                <div class="timeline-content">
+                    <h4>Pedido actualizado</h4>
+                    <p>Pedido #ORD-2024-045 en proceso</p>
+                    <span class="timeline-time">Hace 4 horas</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker warning"></div>
+                <div class="timeline-content">
+                    <h4>Recordatorio</h4>
+                    <p>Renovación de servicio próxima</p>
+                    <span class="timeline-time">Hace 1 día</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions Widget -->
+<div class="widget actions-widget">
+    <div class="widget-header">
+        <h3>Acciones Rápidas</h3>
+    </div>
+    <div class="widget-content">
+        <div class="quick-actions-grid">
+            <button class="quick-action-btn" data-action="new-order">
+                <div class="action-icon">
+                    <i data-lucide="plus-circle"></i>
+                </div>
+                <span>Nuevo Pedido</span>
+            </button>
+            <button class="quick-action-btn" data-action="view-invoices">
+                <div class="action-icon">
+                    <i data-lucide="file-text"></i>
+                </div>
+                <span>Ver Facturas</span>
+            </button>
+            <button class="quick-action-btn" data-action="contact-support">
+                <div class="action-icon">
+                    <i data-lucide="help-circle"></i>
+                </div>
+                <span>Soporte</span>
+            </button>
+            <button class="quick-action-btn" data-action="download-reports">
+                <div class="action-icon">
+                    <i data-lucide="download"></i>
+                </div>
+                <span>Reportes</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Performance Chart Widget -->
+<div class="widget chart-widget">
+    <div class="widget-header">
+        <h3>Rendimiento Mensual</h3>
+        <div class="chart-controls">
+            <select class="chart-period">
+                <option value="7d">7 días</option>
+                <option value="30d" selected>30 días</option>
+                <option value="90d">90 días</option>
+            </select>
+        </div>
+    </div>
+    <div class="widget-content">
+        <div class="chart-container">
+            <canvas id="performance-chart" width="400" height="200"></canvas>
+        </div>
+        <div class="chart-legend">
+            <div class="legend-item">
+                <div class="legend-color primary"></div>
+                <span>Pedidos</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color success"></div>
+                <span>Ingresos</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Notifications Widget -->
+<div class="widget notifications-widget">
+    <div class="widget-header">
+        <h3>Notificaciones</h3>
+        <button class="clear-all">Limpiar todo</button>
+    </div>
+    <div class="widget-content">
+        <div class="notifications-list">
+            <div class="notification-item priority-high">
+                <div class="notification-icon">
+                    <i data-lucide="alert-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Pago vencido</h4>
+                    <p>Factura #INV-2024-002 vence hoy</p>
+                    <span class="notification-time">Hace 1 hora</span>
+                </div>
+                <button class="notification-dismiss">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="notification-item priority-medium">
+                <div class="notification-icon">
+                    <i data-lucide="info"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Actualización disponible</h4>
+                    <p>Nueva versión de tu plan disponible</p>
+                    <span class="notification-time">Hace 3 horas</span>
+                </div>
+                <button class="notification-dismiss">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="notification-item priority-low">
+                <div class="notification-icon">
+                    <i data-lucide="check-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Backup completado</h4>
+                    <p>Respaldo de datos realizado exitosamente</p>
+                    <span class="notification-time">Hace 6 horas</span>
+                </div>
+                <button class="notification-dismiss">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Weather Widget (Optional) -->
+<div class="widget weather-widget">
+    <div class="widget-header">
+        <h3>Clima - Lima, Perú</h3>
+        <button class="widget-action" data-action="refresh">
+            <i data-lucide="refresh-cw"></i>
+        </button>
+    </div>
+    <div class="widget-content">
+        <div class="weather-info">
+            <div class="weather-main">
+                <div class="weather-icon">
+                    <i data-lucide="sun"></i>
+                </div>
+                <div class="weather-temp">
+                    <span class="temp-value">24°</span>
+                    <span class="temp-unit">C</span>
+                </div>
+            </div>
+            <div class="weather-details">
+                <div class="weather-condition">Soleado</div>
+                <div class="weather-stats">
+                    <div class="weather-stat">
+                        <i data-lucide="droplets"></i>
+                        <span>65%</span>
+                    </div>
+                    <div class="weather-stat">
+                        <i data-lucide="wind"></i>
+                        <span>12 km/h</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Widget Styles */
+.widget {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    transition: all var(--transition-fast);
+}
+
+.widget:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.widget-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.02) 0%, rgba(var(--primary-rgb), 0.05) 100%);
+}
+
+.widget-header h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0;
+}
+
+.widget-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.widget-action {
+    background: none;
+    border: none;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.widget-action:hover {
+    background: var(--accent);
+    color: var(--foreground);
+}
+
+.widget-content {
+    padding: var(--spacing-lg);
+}
+
+/* Stats Widget */
+.stats-grid-mini {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: var(--accent);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.stat-icon.primary { background: var(--primary); }
+.stat-icon.success { background: #22c55e; }
+.stat-icon.warning { background: #f59e0b; }
+.stat-icon.info { background: #3b82f6; }
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--muted-foreground);
+}
+
+/* Activity Timeline */
+.activity-timeline-mini {
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 24px;
+    bottom: -16px;
+    width: 2px;
+    background: var(--border);
+}
+
+.timeline-marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.timeline-marker.success { background: #22c55e; }
+.timeline-marker.info { background: #3b82f6; }
+.timeline-marker.warning { background: #f59e0b; }
+
+.timeline-content h4 {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.timeline-content p {
+    font-size: var(--font-size-sm);
+    color: var(--muted-foreground);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.timeline-time {
+    font-size: var(--font-size-xs);
+    color: var(--muted-foreground);
+}
+
+/* Quick Actions */
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.quick-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    color: var(--foreground);
+}
+
+.quick-action-btn:hover {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    transform: translateY(-2px);
+}
+
+.action-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+}
+
+/* Chart Widget */
+.chart-container {
+    position: relative;
+    height: 200px;
+    margin-bottom: var(--spacing-md);
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-color.primary { background: var(--primary); }
+.legend-color.success { background: #22c55e; }
+
+/* Notifications Widget */
+.notifications-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    border-left: 4px solid transparent;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+    background: var(--accent);
+    transition: all var(--transition-fast);
+}
+
+.notification-item.priority-high {
+    border-left-color: #ef4444;
+}
+
+.notification-item.priority-medium {
+    border-left-color: #f59e0b;
+}
+
+.notification-item.priority-low {
+    border-left-color: #22c55e;
+}
+
+.notification-item:hover {
+    background: var(--muted);
+}
+
+.notification-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-foreground);
+    flex-shrink: 0;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content h4 {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.notification-content p {
+    font-size: var(--font-size-sm);
+    color: var(--muted-foreground);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.notification-dismiss {
+    background: none;
+    border: none;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.notification-dismiss:hover {
+    background: var(--destructive);
+    color: white;
+}
+
+/* Weather Widget */
+.weather-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.weather-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    color: #f59e0b;
+}
+
+.temp-value {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.temp-unit {
+    font-size: var(--font-size-lg);
+    color: var(--muted-foreground);
+}
+
+.weather-condition {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--foreground);
+    margin-bottom: var(--spacing-xs);
+}
+
+.weather-stats {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.weather-stat {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--muted-foreground);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-grid-mini,
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .weather-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+
+<script>
+// Widgets functionality
+(function() {
+    // Initialize widgets
+    function initWidgets() {
+        // Quick actions
+        document.querySelectorAll('.quick-action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.dataset.action;
+                handleQuickAction(action);
+            });
+        });
+        
+        // Notification dismissal
+        document.querySelectorAll('.notification-dismiss').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.closest('.notification-item').remove();
+            });
+        });
+        
+        // Clear all notifications
+        const clearAllBtn = document.querySelector('.clear-all');
+        if (clearAllBtn) {
+            clearAllBtn.addEventListener('click', function() {
+                document.querySelectorAll('.notification-item').forEach(item => {
+                    item.remove();
+                });
+            });
+        }
+        
+        // Widget refresh
+        document.querySelectorAll('[data-action="refresh"]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const widget = this.closest('.widget');
+                refreshWidget(widget);
+            });
+        });
+    }
+    
+    // Handle quick actions
+    function handleQuickAction(action) {
+        switch(action) {
+            case 'new-order':
+                window.location.href = '/pages/client-dasboard/orders.html?action=new';
+                break;
+            case 'view-invoices':
+                window.location.href = '/pages/client-dasboard/billing.html';
+                break;
+            case 'contact-support':
+                window.location.href = '/pages/client-dasboard/support.html';
+                break;
+            case 'download-reports':
+                // Simulate download
+                showNotification('Descargando reportes...', 'info');
+                break;
+        }
+    }
+    
+    // Refresh widget
+    function refreshWidget(widget) {
+        const refreshBtn = widget.querySelector('[data-action="refresh"]');
+        if (refreshBtn) {
+            refreshBtn.classList.add('spinning');
+            
+            // Simulate refresh
+            setTimeout(() => {
+                refreshBtn.classList.remove('spinning');
+                showNotification('Widget actualizado', 'success');
+            }, 1000);
+        }
+    }
+    
+    // Show notification
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.innerHTML = `
+            <i data-lucide="${type === 'success' ? 'check-circle' : type === 'error' ? 'x-circle' : 'info'}"></i>
+            <span>${message}</span>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+    
+    // Initialize chart (mock)
+    function initChart() {
+        const canvas = document.getElementById('performance-chart');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            
+            // Simple mock chart
+            ctx.fillStyle = 'var(--primary)';
+            ctx.fillRect(50, 150, 30, 40);
+            ctx.fillRect(100, 120, 30, 70);
+            ctx.fillRect(150, 100, 30, 90);
+            ctx.fillRect(200, 80, 30, 110);
+            ctx.fillRect(250, 60, 30, 130);
+            ctx.fillRect(300, 40, 30, 150);
+        }
+    }
+    
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+        initWidgets();
+        initChart();
+    });
+})();
+</script>

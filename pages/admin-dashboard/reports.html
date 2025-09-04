@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes - Fixture Admin</title>
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/admin-dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/reports.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Fixture</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="admin-dashboard.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clients.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logs.html" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <span>Logs</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <div class="page-title-container">
+                        <h1 class="page-title">
+                            <i class="fas fa-chart-line page-icon"></i>
+                            Reportes
+                        </h1>
+                        <p class="page-subtitle">Genera y gestiona reportes del sistema con análisis detallados</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="action-btn export-all-btn" title="Exportar Todo">
+                            <i class="fas fa-download"></i>
+                            <span>Exportar Todo</span>
+                        </button>
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../../assets/images/hero/user-avatar.jpg" alt="User" class="user-avatar">
+                            <div class="user-info">
+                                <span class="user-name">Gbemigem</span>
+                                <span class="user-role">Administrador</span>
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Reports Content -->
+            <div class="dashboard-content">
+                <!-- Quick Stats -->
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number">24</h3>
+                            <p class="stat-label">Reportes Generados</p>
+                            <span class="stat-change positive">+12% este mes</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number">3</h3>
+                            <p class="stat-label">En Proceso</p>
+                            <span class="stat-change neutral">Tiempo promedio: 2min</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number">156</h3>
+                            <p class="stat-label">Descargas</p>
+                            <span class="stat-change positive">+8% esta semana</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 class="stat-number">89%</h3>
+                            <p class="stat-label">Tasa de Éxito</p>
+                            <span class="stat-change positive">+2% vs mes anterior</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Generation -->
+                <div class="report-generator">
+                    <div class="generator-header">
+                        <div class="header-content">
+                            <h3 class="section-title">
+                                <i class="fas fa-magic"></i>
+                                Generar Nuevo Reporte
+                            </h3>
+                            <p class="section-description">Configura los parámetros para generar un reporte personalizado</p>
+                        </div>
+                        <button class="btn btn-primary" id="generateReportBtn">
+                            <i class="fas fa-plus"></i>
+                            <span>Generar Reporte</span>
+                        </button>
+                    </div>
+                    
+                    <div class="generator-form">
+                        <div class="form-section">
+                            <h4 class="form-section-title">Configuración del Reporte</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-chart-bar"></i>
+                                        Tipo de Reporte
+                                    </label>
+                                    <div class="select-wrapper">
+                                        <select id="reportType" class="form-select">
+                                            <option value="sales">📊 Reporte de Ventas</option>
+                                            <option value="users">👥 Reporte de Usuarios</option>
+                                            <option value="financial">💰 Reporte Financiero</option>
+                                            <option value="inventory">📦 Reporte de Inventario</option>
+                                            <option value="performance">⚡ Reporte de Rendimiento</option>
+                                            <option value="custom">🔧 Reporte Personalizado</option>
+                                        </select>
+                                        <i class="fas fa-chevron-down select-arrow"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Período de Tiempo
+                                    </label>
+                                    <div class="select-wrapper">
+                                        <select id="reportPeriod" class="form-select">
+                                            <option value="today">📅 Hoy</option>
+                                            <option value="week">📅 Esta Semana</option>
+                                            <option value="month">📅 Este Mes</option>
+                                            <option value="quarter">📅 Este Trimestre</option>
+                                            <option value="year">📅 Este Año</option>
+                                            <option value="custom">🗓️ Personalizado</option>
+                                        </select>
+                                        <i class="fas fa-chevron-down select-arrow"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-file-export"></i>
+                                        Formato de Exportación
+                                    </label>
+                                    <div class="format-options">
+                                        <label class="format-option">
+                                            <input type="radio" name="reportFormat" value="pdf" checked>
+                                            <span class="format-card">
+                                                <i class="fas fa-file-pdf"></i>
+                                                <span>PDF</span>
+                                            </span>
+                                        </label>
+                                        <label class="format-option">
+                                            <input type="radio" name="reportFormat" value="excel">
+                                            <span class="format-card">
+                                                <i class="fas fa-file-excel"></i>
+                                                <span>Excel</span>
+                                            </span>
+                                        </label>
+                                        <label class="format-option">
+                                            <input type="radio" name="reportFormat" value="csv">
+                                            <span class="format-card">
+                                                <i class="fas fa-file-csv"></i>
+                                                <span>CSV</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="date-range-section" id="dateRange" style="display: none;">
+                            <h4 class="form-section-title">Rango de Fechas Personalizado</h4>
+                            <div class="date-range">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-calendar-day"></i>
+                                        Fecha de Inicio
+                                    </label>
+                                    <input type="date" id="startDate" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-calendar-day"></i>
+                                        Fecha de Fin
+                                    </label>
+                                    <input type="date" id="endDate" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="advanced-options" id="advancedOptions">
+                            <h4 class="form-section-title">Opciones Avanzadas</h4>
+                            <div class="options-grid">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="includeCharts">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">
+                                        <i class="fas fa-chart-pie"></i>
+                                        Incluir gráficos
+                                    </span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="includeRawData">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">
+                                        <i class="fas fa-database"></i>
+                                        Incluir datos sin procesar
+                                    </span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="emailReport">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">
+                                        <i class="fas fa-envelope"></i>
+                                        Enviar por email
+                                    </span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="scheduleReport">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">
+                                        <i class="fas fa-clock"></i>
+                                        Programar generación
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Reports -->
+                <div class="reports-section">
+                    <div class="section-header">
+                        <div class="header-content">
+                            <h3 class="section-title">
+                                <i class="fas fa-history"></i>
+                                Reportes Recientes
+                            </h3>
+                            <p class="section-description">Historial de reportes generados recientemente</p>
+                        </div>
+                        <div class="section-actions">
+                            <div class="filter-dropdown">
+                                <button class="filter-btn">
+                                    <i class="fas fa-filter"></i>
+                                    Filtrar
+                                </button>
+                            </div>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Actualizar</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="reports-grid">
+                        <div class="report-card">
+                            <div class="report-status">
+                                <span class="status-indicator completed"></span>
+                            </div>
+                            <div class="report-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="report-info">
+                                <h4 class="report-title">Reporte de Ventas - Enero 2024</h4>
+                                <p class="report-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Generado el 15 Ene 2024, 14:30
+                                </p>
+                                <div class="report-meta">
+                                    <span class="report-size">
+                                        <i class="fas fa-file"></i>
+                                        2.4 MB
+                                    </span>
+                                    <span class="report-format pdf">
+                                        <i class="fas fa-file-pdf"></i>
+                                        PDF
+                                    </span>
+                                    <span class="report-downloads">
+                                        <i class="fas fa-download"></i>
+                                        23 descargas
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn-icon download" title="Descargar">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-icon view" title="Vista previa">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-icon share" title="Compartir">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="btn-icon more" title="Más opciones">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="report-card">
+                            <div class="report-status">
+                                <span class="status-indicator completed"></span>
+                            </div>
+                            <div class="report-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="report-info">
+                                <h4 class="report-title">Reporte de Usuarios - Diciembre 2023</h4>
+                                <p class="report-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Generado el 10 Ene 2024, 09:15
+                                </p>
+                                <div class="report-meta">
+                                    <span class="report-size">
+                                        <i class="fas fa-file"></i>
+                                        1.8 MB
+                                    </span>
+                                    <span class="report-format excel">
+                                        <i class="fas fa-file-excel"></i>
+                                        Excel
+                                    </span>
+                                    <span class="report-downloads">
+                                        <i class="fas fa-download"></i>
+                                        15 descargas
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn-icon download" title="Descargar">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-icon view" title="Vista previa">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-icon share" title="Compartir">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                                <button class="btn-icon more" title="Más opciones">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="report-card">
+                            <div class="report-status">
+                                <span class="status-indicator processing"></span>
+                            </div>
+                            <div class="report-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="report-info">
+                                <h4 class="report-title">Reporte Financiero - Q4 2023</h4>
+                                <p class="report-date">
+                                    <i class="fas fa-calendar"></i>
+                                    Iniciado el 5 Ene 2024, 16:45
+                                </p>
+                                <div class="report-meta">
+                                    <span class="report-size">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                        Procesando...
+                                    </span>
+                                    <span class="report-format pdf">
+                                        <i class="fas fa-file-pdf"></i>
+                                        PDF
+                                    </span>
+                                    <span class="report-progress">
+                                        <i class="fas fa-clock"></i>
+                                        75% completado
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn-icon cancel" title="Cancelar">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                <button class="btn-icon more" title="Más opciones">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Templates -->
+                <div class="templates-section">
+                    <div class="section-header">
+                        <div class="header-content">
+                            <h3 class="section-title">
+                                <i class="fas fa-layer-group"></i>
+                                Plantillas de Reportes
+                            </h3>
+                            <p class="section-description">Plantillas predefinidas para generar reportes rápidamente</p>
+                        </div>
+                        <div class="section-actions">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-plus"></i>
+                                <span>Nueva Plantilla</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="templates-grid">
+                        <div class="template-card">
+                            <div class="template-preview">
+                                <div class="template-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="template-badge popular">
+                                    <i class="fas fa-star"></i>
+                                    Popular
+                                </div>
+                            </div>
+                            <div class="template-info">
+                                <h4 class="template-title">Reporte de Ventas Mensual</h4>
+                                <p class="template-description">Análisis completo de ventas del mes con gráficos detallados y métricas clave</p>
+                                <div class="template-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-download"></i>
+                                        124 usos
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-clock"></i>
+                                        ~3 min
+                                    </span>
+                                </div>
+                                <button class="btn btn-primary template-btn">
+                                    <i class="fas fa-rocket"></i>
+                                    Usar Plantilla
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="template-card">
+                            <div class="template-preview">
+                                <div class="template-icon">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <div class="template-badge new">
+                                    <i class="fas fa-sparkles"></i>
+                                    Nuevo
+                                </div>
+                            </div>
+                            <div class="template-info">
+                                <h4 class="template-title">Análisis de Usuarios</h4>
+                                <p class="template-description">Estadísticas de actividad de usuarios, registros y comportamiento de navegación</p>
+                                <div class="template-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-download"></i>
+                                        67 usos
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-clock"></i>
+                                        ~2 min
+                                    </span>
+                                </div>
+                                <button class="btn btn-primary template-btn">
+                                    <i class="fas fa-rocket"></i>
+                                    Usar Plantilla
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="template-card">
+                            <div class="template-preview">
+                                <div class="template-icon">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                            </div>
+                            <div class="template-info">
+                                <h4 class="template-title">Estado Financiero</h4>
+                                <p class="template-description">Resumen financiero completo con balance, ingresos, gastos y proyecciones</p>
+                                <div class="template-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-download"></i>
+                                        89 usos
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-clock"></i>
+                                        ~5 min
+                                    </span>
+                                </div>
+                                <button class="btn btn-primary template-btn">
+                                    <i class="fas fa-rocket"></i>
+                                    Usar Plantilla
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="template-preview">
+                                <div class="template-icon">
+                                    <i class="fas fa-boxes"></i>
+                                </div>
+                            </div>
+                            <div class="template-info">
+                                <h4 class="template-title">Inventario y Stock</h4>
+                                <p class="template-description">Control de inventario, productos más vendidos y alertas de stock bajo</p>
+                                <div class="template-stats">
+                                    <span class="stat">
+                                        <i class="fas fa-download"></i>
+                                        45 usos
+                                    </span>
+                                    <span class="stat">
+                                        <i class="fas fa-clock"></i>
+                                        ~4 min
+                                    </span>
+                                </div>
+                                <button class="btn btn-primary template-btn">
+                                    <i class="fas fa-rocket"></i>
+                                    Usar Plantilla
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3>Generando Reporte...</h3>
+            <p>Por favor espera mientras procesamos tu solicitud</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">0%</span>
+        </div>
+    </div>
+
+    <script src="../../assets/js/pages/admin-dashboard/admin-dashboard.js"></script>
+    <script src="../../assets/js/pages/admin-dashboard/reports.js"></script>
+</body>
+</html>

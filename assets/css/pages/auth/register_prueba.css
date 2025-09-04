@@ -1,0 +1,337 @@
+/* --- FUENTE DE GOOGLE --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        /* --- VARIABLES GLOBALES Y RESETEO --- */
+        :root {
+            --color-background: #131313;
+            --color-surface: #1E1E1E;
+            --color-primary: #FFFFFF;
+            --color-secondary: #a0a0a0;
+            --color-accent: #4A40E3; /* Morado para Admin */
+            --color-success: #10B981; /* Verde para tag y beneficios */
+            --color-border: #3A3A3A;
+            --border-radius: 12px;
+            --transition-smooth: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-primary);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL Y ANIMACIÓN DE ENTRADA --- */
+        .signup-container {
+            width: 100%;
+            max-width: 480px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Centrar en pantallas más grandes */
+        @media (min-width: 600px) {
+            body {
+               align-items: center; 
+               padding: 2rem;
+            }
+        }
+
+        /* --- ENCABEZADO --- */
+        .signup-header {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+
+        .back-button:hover {
+            color: var(--color-primary);
+        }
+
+        /* --- FORMULARIO PRINCIPAL --- */
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .signup-form__logo {
+            background-color: var(--color-surface);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .signup-form__title {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .signup-form__subtitle {
+            color: var(--color-secondary);
+            margin-top: -1rem;
+        }
+
+        /* --- SELECCIÓN DE TIPO DE CUENTA --- */
+        .account-type {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .account-type__button {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: var(--color-surface);
+            border: 2px solid var(--color-border);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: left;
+            width: 100%;
+            color: var(--color-primary);
+            position: relative;
+        }
+        
+        .account-type__button .icon {
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+            transition: var(--transition-smooth);
+            flex-shrink: 0;
+        }
+        
+        #business-type.selected {
+            border-color: var(--color-success);
+            background-color: #10b9811f;
+        }
+        #business-type.selected .icon {
+            color: var(--color-success);
+        }
+        
+        #admin-type.selected {
+            border-color: var(--color-accent);
+            background-color: #4a40e31f;
+        }
+        #admin-type.selected .icon {
+             color: var(--color-accent);
+        }
+
+        .account-type__button:hover:not(.selected) {
+            background-color: #2c2c2c;
+            border-color: #555;
+        }
+        
+        .account-type__button .text-content {
+            flex-grow: 1;
+        }
+        
+        .account-type__button .title {
+            font-weight: 500;
+            display: block;
+        }
+
+        .account-type__button .description {
+            font-size: 0.8rem;
+            color: var(--color-secondary);
+            display: block;
+        }
+        
+        .tag {
+            background-color: var(--color-success);
+            color: var(--color-primary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            margin-left: auto; /* Mueve el tag a la derecha */
+            margin-right: 1rem;
+        }
+
+        /* --- ESTILO CORREGIDO PARA EL INDICADOR 'SELECCIONADO' --- */
+        .radio-select {
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 20px;
+            transition: var(--transition-smooth);
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .account-type__button .radio-select {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        .account-type__button.selected .radio-select {
+            opacity: 1;
+            transform: scale(1);
+            padding: 0.3rem 0.7rem;
+            background-color: var(--color-primary);
+            color: var(--color-background);
+        }
+        
+        /* --- CAMPOS DE ENTRADA Y GRUPOS --- */
+        .input-row {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        @media (min-width: 600px) {
+            .input-row {
+                flex-direction: row;
+                gap: 1rem;
+            }
+        }
+        .input-row .input-group {
+            flex: 1;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group .icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-secondary);
+            pointer-events: none;
+        }
+
+        .input-field, .select-field {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background-color: var(--color-surface);
+            border: 2px solid var(--color-border);
+            border-radius: var(--border-radius);
+            color: var(--color-primary);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .input-field::placeholder { color: var(--color-secondary); }
+        
+        .select-field {
+            -webkit-appearance: none; -moz-appearance: none; appearance: none;
+            padding-right: 3rem;
+            cursor: pointer;
+            color: var(--color-primary); /* Texto por defecto */
+        }
+        .select-field:has(option[value=""]:checked) {
+            color: var(--color-secondary); /* Placeholder color */
+        }
+        .select-field option { background-color: var(--color-surface); color: var(--color-primary); }
+        
+        .input-group .dropdown-arrow {
+            position: absolute; right: 1rem; top: 50%;
+            transform: translateY(-50%); color: var(--color-secondary);
+            pointer-events: none;
+        }
+        
+        .input-field:focus, .select-field:focus {
+            outline: none; border-color: var(--color-success);
+        }
+        
+        .password-toggle {
+            position: absolute; right: 1rem; top: 50%;
+            transform: translateY(-50%); background: none; border: none;
+            color: var(--color-secondary); cursor: pointer;
+            font-size: 1.2rem; padding: 0;
+        }
+
+        /* --- BOTONES --- */
+        .submit-button {
+            background-color: var(--color-primary); color: var(--color-background);
+            border: none; padding: 1rem; border-radius: var(--border-radius);
+            font-size: 1rem; font-weight: 600; cursor: pointer;
+            transition: var(--transition-smooth); width: 100%; margin-top: 0.5rem;
+        }
+        .submit-button:hover { opacity: 0.9; }
+        .submit-button:active { transform: scale(0.98); }
+        
+        /* --- SEPARADOR Y LOGIN SOCIAL --- */
+        .separator {
+            display: flex; align-items: center; gap: 1rem;
+            color: var(--color-secondary); font-size: 0.9rem;
+        }
+        .separator::before, .separator::after {
+            content: ''; flex-grow: 1; height: 1px;
+            background-color: var(--color-border);
+        }
+        
+        .social-login { display: flex; gap: 1rem; }
+        
+        .social-button {
+            flex-grow: 1; display: flex; justify-content: center;
+            align-items: center; gap: 0.5rem; padding: 0.8rem;
+            border: 2px solid var(--color-border); background: none;
+            color: var(--color-primary); border-radius: var(--border-radius);
+            cursor: pointer; font-size: 0.9rem; font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+        .social-button:hover { background-color: var(--color-surface); border-color: var(--color-secondary); }
+        .social-button svg { width: 20px; height: 20px; }
+
+        /* --- BENEFICIOS DE PRUEBA GRATUITA --- */
+        .free-trial {
+            background-color: #10b9811a; border: 1px solid #10b98180;
+            border-radius: var(--border-radius); padding: 1.5rem;
+            font-size: 0.9rem; color: var(--color-secondary); text-align: left;
+        }
+        .free-trial p {
+            font-weight: 600; color: var(--color-primary); margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .free-trial ul {
+            list-style: none; display: flex; flex-direction: column; gap: 0.75rem;
+        }
+        .free-trial li { display: flex; align-items: center; gap: 0.75rem; }
+        .free-trial li svg { color: var(--color-success); flex-shrink: 0; }
+
+        /* --- LINK DE INICIO DE SESIÓN --- */
+        .login-link { font-size: 0.9rem; color: var(--color-secondary); }
+        .login-link a {
+            color: var(--color-primary); font-weight: 600;
+            text-decoration: none; transition: var(--transition-smooth);
+        }
+        .login-link a:hover { color: var(--color-success); }
+        
+        .hidden { display: none; }

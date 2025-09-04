@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analíticas - Fixture Admin</title>
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/admin-dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/analytics.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Fixture</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="admin-dashboard.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clients.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logs.html" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <span>Logs</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Analíticas</h1>
+                    <p>Visualiza métricas y tendencias de tu negocio</p>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../../assets/images/hero/user-avatar.jpg" alt="User" class="user-avatar">
+                        <span>Gbemigem</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Analytics Content -->
+            <div class="dashboard-content">
+                <!-- Analytics Controls -->
+                <div class="analytics-controls">
+                    <div class="time-range-selector">
+                        <button class="time-btn active" data-range="7d">7 días</button>
+                        <button class="time-btn" data-range="30d">30 días</button>
+                        <button class="time-btn" data-range="90d">90 días</button>
+                        <button class="time-btn" data-range="1y">1 año</button>
+                    </div>
+                    <div class="export-controls">
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Exportar Datos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="key-metrics">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Ingresos Totales</h3>
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="metric-value">$245,890</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +12.5% vs mes anterior
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Nuevos Usuarios</h3>
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="metric-value">1,247</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +8.2% vs mes anterior
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Tasa de Conversión</h3>
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="metric-value">3.4%</div>
+                        <div class="metric-change negative">
+                            <i class="fas fa-arrow-down"></i>
+                            -2.1% vs mes anterior
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Valor Promedio</h3>
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="metric-value">$89.50</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +5.7% vs mes anterior
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <!-- Revenue Chart -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Ingresos por Tiempo</h3>
+                            <div class="chart-controls">
+                                <select class="chart-type-selector">
+                                    <option value="line">Línea</option>
+                                    <option value="bar">Barras</option>
+                                    <option value="area">Área</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- User Growth Chart -->
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Crecimiento de Usuarios</h3>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="userGrowthChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Analytics -->
+                <div class="additional-analytics">
+                    <!-- Traffic Sources -->
+                    <div class="analytics-card">
+                        <div class="card-header">
+                            <h3>Fuentes de Tráfico</h3>
+                        </div>
+                        <div class="traffic-sources">
+                            <div class="source-item">
+                                <div class="source-info">
+                                    <div class="source-name">Búsqueda Orgánica</div>
+                                    <div class="source-percentage">45.2%</div>
+                                </div>
+                                <div class="source-bar">
+                                    <div class="source-fill" style="width: 45.2%"></div>
+                                </div>
+                            </div>
+                            <div class="source-item">
+                                <div class="source-info">
+                                    <div class="source-name">Directo</div>
+                                    <div class="source-percentage">32.1%</div>
+                                </div>
+                                <div class="source-bar">
+                                    <div class="source-fill" style="width: 32.1%"></div>
+                                </div>
+                            </div>
+                            <div class="source-item">
+                                <div class="source-info">
+                                    <div class="source-name">Redes Sociales</div>
+                                    <div class="source-percentage">15.7%</div>
+                                </div>
+                                <div class="source-bar">
+                                    <div class="source-fill" style="width: 15.7%"></div>
+                                </div>
+                            </div>
+                            <div class="source-item">
+                                <div class="source-info">
+                                    <div class="source-name">Email Marketing</div>
+                                    <div class="source-percentage">7.0%</div>
+                                </div>
+                                <div class="source-bar">
+                                    <div class="source-fill" style="width: 7.0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Products -->
+                    <div class="analytics-card">
+                        <div class="card-header">
+                            <h3>Productos Más Vendidos</h3>
+                        </div>
+                        <div class="top-products">
+                            <div class="product-item">
+                                <div class="product-rank">1</div>
+                                <div class="product-info">
+                                    <div class="product-name">Producto Premium</div>
+                                    <div class="product-sales">234 ventas</div>
+                                </div>
+                                <div class="product-revenue">$12,450</div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-rank">2</div>
+                                <div class="product-info">
+                                    <div class="product-name">Servicio Básico</div>
+                                    <div class="product-sales">189 ventas</div>
+                                </div>
+                                <div class="product-revenue">$8,920</div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-rank">3</div>
+                                <div class="product-info">
+                                    <div class="product-name">Consultoría</div>
+                                    <div class="product-sales">156 ventas</div>
+                                </div>
+                                <div class="product-revenue">$15,600</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/pages/admin-dashboard/admin-dashboard.js"></script>
+    <script src="../../assets/js/pages/admin-dashboard/analytics.js"></script>
+</body>
+</html>

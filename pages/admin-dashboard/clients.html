@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes - Fixture Admin</title>
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/admin-dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/clients.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Fixture</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="admin-dashboard.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logs.html" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <span>Logs</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Gestión de Clientes</h1>
+                    <p>Administra la información y relaciones con tus clientes</p>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../../assets/images/hero/user-avatar.jpg" alt="User" class="user-avatar">
+                        <span>Gbemigem</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Clients Content -->
+            <div class="dashboard-content">
+                <!-- Client Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-number">456</div>
+                            <div class="stat-label">Total Clientes</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-number">342</div>
+                            <div class="stat-label">Clientes Activos</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-number">$125,430</div>
+                            <div class="stat-label">Ingresos Totales</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-number">23</div>
+                            <div class="stat-label">Nuevos Este Mes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Management -->
+                <div class="clients-section">
+                    <div class="section-header">
+                        <h3>Lista de Clientes</h3>
+                        <div class="section-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Nuevo Cliente
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-download"></i>
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="clients-filters">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Buscar clientes...">
+                        </div>
+                        <select class="filter-select">
+                            <option>Todos los tipos</option>
+                            <option>Empresa</option>
+                            <option>Individual</option>
+                        </select>
+                        <select class="filter-select">
+                            <option>Todos los estados</option>
+                            <option>Activo</option>
+                            <option>Inactivo</option>
+                            <option>Prospecto</option>
+                        </select>
+                    </div>
+
+                    <div class="clients-grid">
+                        <div class="client-card">
+                            <div class="client-header">
+                                <div class="client-avatar">
+                                    <img src="../../assets/images/logos/company1.png" alt="Cliente">
+                                </div>
+                                <div class="client-info">
+                                    <h4>TechCorp Solutions</h4>
+                                    <p>Empresa de Tecnología</p>
+                                </div>
+                                <div class="client-status">
+                                    <span class="status-badge active">Activo</span>
+                                </div>
+                            </div>
+                            <div class="client-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>contact@techcorp.com</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+1 (555) 123-4567</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>$45,230 en ventas</span>
+                                </div>
+                            </div>
+                            <div class="client-actions">
+                                <button class="btn btn-sm btn-primary">Ver Detalles</button>
+                                <button class="btn btn-sm btn-secondary">Contactar</button>
+                            </div>
+                        </div>
+
+                        <div class="client-card">
+                            <div class="client-header">
+                                <div class="client-avatar">
+                                    <img src="../../assets/images/logos/company2.png" alt="Cliente">
+                                </div>
+                                <div class="client-info">
+                                    <h4>Digital Marketing Pro</h4>
+                                    <p>Agencia de Marketing</p>
+                                </div>
+                                <div class="client-status">
+                                    <span class="status-badge active">Activo</span>
+                                </div>
+                            </div>
+                            <div class="client-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@digitalmp.com</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+1 (555) 987-6543</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>$32,150 en ventas</span>
+                                </div>
+                            </div>
+                            <div class="client-actions">
+                                <button class="btn btn-sm btn-primary">Ver Detalles</button>
+                                <button class="btn btn-sm btn-secondary">Contactar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/pages/admin-dashboard/admin-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+/* =================================
+   ESTILOS PARA SECCIONES MINIMALISTAS MODERNAS
+   ================================= */
+
+/* General Section Styles */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.03em;
+  position: relative;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000000;
+  transition: width 0.4s ease;
+}
+
+.section-header:hover h2::after {
+  width: 100%;
+}
+
+.section-link {
+  font-size: 1.1rem;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.section-link:hover {
+  transform: translateX(5px);
+  opacity: 0.8;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.app-card {
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.app-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #333333;
+}
+
+.app-image-placeholder {
+  width: 100%;
+  height: 180px;
+  background: #f0f0f0;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.app-card:hover .app-image-placeholder {
+  transform: scale(1.05);
+}
+
+.app-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 0.75rem;
+}
+
+.app-description {
+  font-size: 1rem;
+  color: #000000;
+  opacity: 0.7;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+.app-rating {
+  font-size: 1.1rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.app-btn {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.app-btn:hover {
+  background: #333333;
+  transform: scale(1.02);
+}
+
+.load-more-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.section-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.4s ease;
+}
+
+.section-btn:hover::before {
+  left: 0;
+}
+
+.section-btn-primary {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+}
+
+.section-btn-primary:hover {
+  background: #333333;
+}
+
+.section-btn-outline {
+  background: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.section-btn-outline:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Featured Apps */
+.featured-apps {
+  padding: 6rem 0;
+  background-color: #ffffff;
+}
+
+/* Categories */
+.categories-section {
+  padding: 6rem 0;
+  background-color: #ffffff;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+}
+
+.category-card {
+  background: transparent;
+  border: 1px solid #000000;
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  border-color: #333333;
+}
+
+.category-card h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.category-card p {
+  font-size: 1rem;
+  color: #000000;
+  opacity: 0.7;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Top Apps */
+.top-apps {
+  padding: 6rem 0;
+  background-color: #ffffff;
+}
+
+.sort-options {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.sort-options span {
+  font-size: 1.1rem;
+  color: #000000;
+  opacity: 0.8;
+}
+
+.sort-options select {
+  background: transparent;
+  border: 1px solid #000000;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  color: #000000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sort-options select:hover {
+  border-color: #333333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 6rem 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  transition: all 0.4s ease;
+}
+
+.cta-content:hover {
+  transform: scale(1.02);
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.cta-content p {
+  font-size: 1.3rem;
+  color: #000000;
+  opacity: 0.8;
+  margin: 0 0 2.5rem;
+  line-height: 1.6;
+}
+
+/* Modo oscuro */
+.dark .featured-apps,
+.dark .categories-section,
+.dark .top-apps,
+.dark .cta-section {
+  background-color: #000000;
+}
+
+.dark .section-header h2,
+.dark .section-link,
+.dark .app-title,
+.dark .app-rating,
+.dark .category-card h3,
+.dark .sort-options span,
+.dark .sort-options select,
+.dark .cta-content h2 {
+  color: #ffffff;
+}
+
+.dark .app-description,
+.dark .category-card p,
+.dark .sort-options span,
+.dark .cta-content p {
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+.dark .app-card,
+.dark .category-card {
+  background: #000000;
+  border-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+.dark .app-card:hover {
+  border-color: #cccccc;
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
+}
+
+.dark .app-image-placeholder {
+  background: #1a1a1a;
+}
+
+.dark .app-btn {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark .app-btn:hover {
+  background: #cccccc;
+}
+
+.dark .section-header h2::after {
+  background: #ffffff;
+}
+
+.dark .sort-options select {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.dark .sort-options select:hover {
+  border-color: #cccccc;
+}
+
+.dark .section-btn-primary {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark .section-btn-primary:hover {
+  background: #cccccc;
+}
+
+.dark .section-btn-outline {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.dark .section-btn-outline:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark .section-link {
+  color: #ffffff;
+}
+
+.dark .section-link:hover {
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .section-header {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+  }
+
+  .apps-grid,
+  .categories-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-apps,
+  .categories-section,
+  .top-apps,
+  .cta-section {
+      padding: 4rem 0;
+  }
+
+  .section-header h2,
+  .cta-content h2 {
+      font-size: 2rem;
+  }
+
+  .cta-content p {
+      font-size: 1.1rem;
+  }
+
+  .app-card,
+  .category-card {
+      padding: 1.5rem;
+  }
+}

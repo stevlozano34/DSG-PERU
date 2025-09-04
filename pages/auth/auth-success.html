@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Éxito! | DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Operación completada exitosamente">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/pages/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Header -->
+            <div class="auth-header">
+                <div class="logo">
+                    <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    <h1>DSG PERU TECHNOLOGY</h1>
+                </div>
+            </div>
+
+            <!-- Success Content -->
+            <div class="success-content" id="success-content">
+                <!-- Default Success -->
+                <div class="success-state" id="default-success">
+                    <i data-lucide="check-circle" style="width: 80px; height: 80px; color: #22c55e; margin-bottom: 2rem;"></i>
+                    <h2>¡Operación Exitosa!</h2>
+                    <p>Tu solicitud ha sido procesada correctamente.</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="success-actions" id="success-actions">
+                <a href="/pages/auth/client-login.html" class="btn btn-primary btn-full">
+                    <i data-lucide="log-in"></i>
+                    <span>Iniciar Sesión</span>
+                </a>
+                <a href="/index.html" class="btn btn-outline btn-full">
+                    <i data-lucide="home"></i>
+                    <span>Ir al Inicio</span>
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <div class="auth-footer">
+                <p>¿Necesitas ayuda? <a href="/pages/public/contact.html">Contacta soporte</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            
+            // Get success type from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type');
+            
+            const successContent = document.getElementById('success-content');
+            const successActions = document.getElementById('success-actions');
+            
+            // Configure content based on type
+            switch (type) {
+                case 'client-register':
+                    successContent.innerHTML = `
+                        <div class="success-state">
+                            <i data-lucide="user-plus" style="width: 80px; height: 80px; color: #22c55e; margin-bottom: 2rem;"></i>
+                            <h2>¡Cuenta Creada!</h2>
+                            <p>Tu cuenta de cliente ha sido creada exitosamente.</p>
+                            <p>Hemos enviado un email de verificación a tu dirección de correo.</p>
+                        </div>
+                    `;
+                    successActions.innerHTML = `
+                        <a href="/pages/auth/verify-email.html" class="btn btn-primary btn-full">
+                            <i data-lucide="mail"></i>
+                            <span>Verificar Email</span>
+                        </a>
+                        <a href="/pages/auth/client-login.html" class="btn btn-outline btn-full">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                        </a>
+                    `;
+                    break;
+                    
+                case 'admin-register':
+                    successContent.innerHTML = `
+                        <div class="success-state">
+                            <i data-lucide="shield-check" style="width: 80px; height: 80px; color: #22c55e; margin-bottom: 2rem;"></i>
+                            <h2>¡Cuenta Administrativa Creada!</h2>
+                            <p>La cuenta de administrador ha sido creada exitosamente.</p>
+                            <p>Se ha enviado la información de acceso al email corporativo.</p>
+                        </div>
+                    `;
+                    successActions.innerHTML = `
+                        <a href="/pages/auth/admin-login.html" class="btn btn-primary btn-full">
+                            <i data-lucide="shield"></i>
+                            <span>Acceso Administrativo</span>
+                        </a>
+                        <a href="/index.html" class="btn btn-outline btn-full">
+                            <i data-lucide="home"></i>
+                            <span>Ir al Inicio</span>
+                        </a>
+                    `;
+                    break;
+                    
+                case 'password-reset':
+                    successContent.innerHTML = `
+                        <div class="success-state">
+                            <i data-lucide="key" style="width: 80px; height: 80px; color: #22c55e; margin-bottom: 2rem;"></i>
+                            <h2>¡Contraseña Actualizada!</h2>
+                            <p>Tu contraseña ha sido restablecida exitosamente.</p>
+                            <p>Ya puedes iniciar sesión con tu nueva contraseña.</p>
+                        </div>
+                    `;
+                    successActions.innerHTML = `
+                        <a href="/pages/auth/client-login.html" class="btn btn-primary btn-full">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                        </a>
+                        <a href="/index.html" class="btn btn-outline btn-full">
+                            <i data-lucide="home"></i>
+                            <span>Ir al Inicio</span>
+                        </a>
+                    `;
+                    break;
+                    
+                case 'email-verified':
+                    successContent.innerHTML = `
+                        <div class="success-state">
+                            <i data-lucide="mail-check" style="width: 80px; height: 80px; color: #22c55e; margin-bottom: 2rem;"></i>
+                            <h2>¡Email Verificado!</h2>
+                            <p>Tu dirección de correo ha sido verificada exitosamente.</p>
+                            <p>Tu cuenta está ahora completamente activada.</p>
+                        </div>
+                    `;
+                    break;
+                    
+                default:
+                    // Keep default content
+                    break;
+            }
+            
+            lucide.createIcons();
+            
+            // Auto-redirect after 10 seconds
+            let countdown = 10;
+            const countdownElement = document.createElement('p');
+            countdownElement.style.color = 'var(--text-secondary)';
+            countdownElement.style.fontSize = '0.875rem';
+            countdownElement.style.marginTop = '2rem';
+            
+            function updateCountdown() {
+                countdownElement.textContent = `Redirigiendo automáticamente en ${countdown} segundos...`;
+                countdown--;
+                
+                if (countdown < 0) {
+                    // Redirect based on type
+                    switch (type) {
+                        case 'client-register':
+                            window.location.href = '/pages/auth/verify-email.html';
+                            break;
+                        case 'admin-register':
+                            window.location.href = '/pages/auth/admin-login.html';
+                            break;
+                        case 'password-reset':
+                        case 'email-verified':
+                            window.location.href = '/pages/auth/client-login.html';
+                            break;
+                        default:
+                            window.location.href = '/index.html';
+                            break;
+                    }
+                }
+            }
+            
+            document.querySelector('.auth-card').appendChild(countdownElement);
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+    
+    <style>
+        .success-content {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .success-state h2 {
+            margin: 0 0 1rem 0;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+        }
+        
+        .success-state p {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .success-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        @media (min-width: 480px) {
+            .success-actions {
+                flex-direction: row;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Pagos - Fixture Admin</title>
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/admin-dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/pages/admin-dashboard/payments.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Fixture</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="admin-dashboard.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="clients.html" class="nav-link">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="orders.html" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Payments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logs.html" class="nav-link">
+                            <i class="fas fa-list"></i>
+                            <span>Logs</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Control de Pagos</h1>
+                    <p>Gestiona transacciones, métodos de pago y facturación</p>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../../assets/images/hero/user-avatar.jpg" alt="User" class="user-avatar">
+                        <span>Gbemigem</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Payments Content -->
+            <div class="dashboard-content">
+                <!-- Payment Stats -->
+                <div class="payment-stats">
+                    <div class="stat-card revenue">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">$245,890</div>
+                            <div class="stat-label">Ingresos Totales</div>
+                            <div class="stat-change positive">+12.5%</div>
+                        </div>
+                    </div>
+                    <div class="stat-card transactions">
+                        <div class="stat-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">1,247</div>
+                            <div class="stat-label">Transacciones</div>
+                            <div class="stat-change positive">+8.2%</div>
+                        </div>
+                    </div>
+                    <div class="stat-card pending">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">23</div>
+                            <div class="stat-label">Pagos Pendientes</div>
+                            <div class="stat-change negative">-3.1%</div>
+                        </div>
+                    </div>
+                    <div class="stat-card refunds">
+                        <div class="stat-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number">$3,240</div>
+                            <div class="stat-label">Reembolsos</div>
+                            <div class="stat-change neutral">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-methods-section">
+                    <h3>Métodos de Pago</h3>
+                    <div class="payment-methods-grid">
+                        <div class="payment-method-card">
+                            <div class="method-icon visa">
+                                <i class="fab fa-cc-visa"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Visa</h4>
+                                <p>45% de transacciones</p>
+                                <div class="method-amount">$110,450</div>
+                            </div>
+                        </div>
+                        <div class="payment-method-card">
+                            <div class="method-icon mastercard">
+                                <i class="fab fa-cc-mastercard"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Mastercard</h4>
+                                <p>32% de transacciones</p>
+                                <div class="method-amount">$78,650</div>
+                            </div>
+                        </div>
+                        <div class="payment-method-card">
+                            <div class="method-icon paypal">
+                                <i class="fab fa-paypal"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>PayPal</h4>
+                                <p>18% de transacciones</p>
+                                <div class="method-amount">$44,280</div>
+                            </div>
+                        </div>
+                        <div class="payment-method-card">
+                            <div class="method-icon stripe">
+                                <i class="fab fa-stripe"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Stripe</h4>
+                                <p>5% de transacciones</p>
+                                <div class="method-amount">$12,510</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="transactions-section">
+                    <div class="section-header">
+                        <h3>Transacciones Recientes</h3>
+                        <div class="section-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Nueva Transacción
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-download"></i>
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="transactions-filters">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Buscar transacciones...">
+                        </div>
+                        <select class="filter-select">
+                            <option>Todos los estados</option>
+                            <option>Completado</option>
+                            <option>Pendiente</option>
+                            <option>Fallido</option>
+                            <option>Reembolsado</option>
+                        </select>
+                        <select class="filter-select">
+                            <option>Todos los métodos</option>
+                            <option>Tarjeta de Crédito</option>
+                            <option>PayPal</option>
+                            <option>Transferencia</option>
+                        </select>
+                    </div>
+
+                    <div class="transactions-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID Transacción</th>
+                                    <th>Cliente</th>
+                                    <th>Método</th>
+                                    <th>Monto</th>
+                                    <th>Estado</th>
+                                    <th>Fecha</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>#TXN-001</strong></td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <img src="../../assets/images/hero/user1.jpg" alt="Cliente">
+                                            <span>Juan Pérez</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="payment-method">
+                                            <i class="fab fa-cc-visa"></i>
+                                            <span>Visa ****1234</span>
+                                        </div>
+                                    </td>
+                                    <td><strong>$245.99</strong></td>
+                                    <td><span class="status-badge completed">Completado</span></td>
+                                    <td>15 Ene 2024</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-icon" title="Ver">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Reembolsar">
+                                                <i class="fas fa-undo"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Imprimir">
+                                                <i class="fas fa-print"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#TXN-002</strong></td>
+                                    <td>
+                                        <div class="customer-info">
+                                            <img src="../../assets/images/hero/user2.jpg" alt="Cliente">
+                                            <span>María García</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="payment-method">
+                                            <i class="fab fa-paypal"></i>
+                                            <span>PayPal</span>
+                                        </div>
+                                    </td>
+                                    <td><strong>$89.50</strong></td>
+                                    <td><span class="status-badge pending">Pendiente</span></td>
+                                    <td>14 Ene 2024</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-icon" title="Ver">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Procesar">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                            <button class="btn-icon" title="Cancelar">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../assets/js/pages/admin-dashboard/admin-dashboard.js"></script>
+    <script src="../../assets/js/pages/admin-dashboard/payments.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+/* Settings Page - Cliente */
+
+/* Variables específicas de configuración */
+:root {
+  --settings-toggle-width: 48px;
+  --settings-toggle-height: 24px;
+  --settings-toggle-thumb: 20px;
+}
+
+/* Settings Content */
+.settings-content {
+  padding: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Settings Navigation */
+.settings-nav {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--dashboard-card-shadow);
+}
+
+.settings-nav-list {
+  display: flex;
+  gap: var(--spacing-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.settings-nav-item {
+  flex-shrink: 0;
+}
+
+.settings-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--muted-foreground);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.settings-nav-link:hover {
+  background-color: var(--accent);
+  color: var(--foreground);
+}
+
+.settings-nav-link.active {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.settings-nav-link i {
+  width: 16px;
+  height: 16px;
+}
+
+/* Settings Sections */
+.settings-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--dashboard-card-shadow);
+  transition: all var(--transition-normal);
+}
+
+.settings-section:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--dashboard-card-shadow-hover);
+}
+
+.settings-section-header {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.settings-section-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.settings-section-description {
+  font-size: var(--font-size-sm);
+  color: var(--muted-foreground);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Settings Items */
+.settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.settings-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.settings-item-info {
+  flex: 1;
+  margin-right: var(--spacing-md);
+}
+
+.settings-item-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.settings-item-description {
+  font-size: var(--font-size-sm);
+  color: var(--muted-foreground);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.settings-item-control {
+  flex-shrink: 0;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: var(--settings-toggle-width);
+  height: var(--settings-toggle-height);
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--accent);
+  border: 1px solid var(--border);
+  transition: all var(--transition-fast);
+  border-radius: var(--settings-toggle-height);
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: var(--settings-toggle-thumb);
+  width: var(--settings-toggle-thumb);
+  left: 2px;
+  bottom: 1px;
+  background-color: var(--background);
+  transition: all var(--transition-fast);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+  background-color: var(--primary-foreground);
+}
+
+.toggle-slider:hover {
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+/* Settings Form */
+.settings-form {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.settings-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.settings-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.settings-form-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.settings-form-input,
+.settings-form-select {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+}
+
+.settings-form-input:focus,
+.settings-form-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+.settings-form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.settings-form-help {
+  font-size: var(--font-size-xs);
+  color: var(--muted-foreground);
+  margin-top: var(--spacing-xs);
+}
+
+/* Notification Settings */
+.notification-group {
+  background-color: var(--accent);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.notification-group:last-child {
+  margin-bottom: 0;
+}
+
+.notification-group-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0 0 var(--spacing-sm) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.notification-group-title i {
+  width: 16px;
+  height: 16px;
+  color: var(--primary);
+}
+
+.notification-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.notification-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm);
+  background-color: var(--background);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.notification-option-info {
+  flex: 1;
+}
+
+.notification-option-label {
+  font-size: var(--font-size-sm);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.notification-option-description {
+  font-size: var(--font-size-xs);
+  color: var(--muted-foreground);
+  margin: var(--spacing-xs) 0 0 0;
+}
+
+/* Danger Zone */
+.danger-zone {
+  background: var(--card);
+  border: 1px solid #ef4444;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.danger-zone-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.danger-zone-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: #ef4444;
+  margin: 0 0 var(--spacing-xs) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.danger-zone-title i {
+  width: 20px;
+  height: 20px;
+}
+
+.danger-zone-description {
+  font-size: var(--font-size-sm);
+  color: var(--muted-foreground);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.danger-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  color: white;
+  border: 1px solid #ef4444;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .settings-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .settings-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .settings-content {
+    padding: var(--spacing-md);
+  }
+  
+  .settings-section {
+    padding: var(--spacing-lg);
+  }
+  
+  .settings-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .settings-item-info {
+    margin-right: 0;
+  }
+  
+  .settings-nav-list {
+    flex-direction: column;
+  }
+  
+  .settings-nav-link {
+    justify-content: flex-start;
+  }
+  
+  .danger-actions {
+    flex-direction: column;
+  }
+}
+
+/* Dark Mode */
+[data-theme="dark"] .settings-section:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme="dark"] .notification-group {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .notification-option {
+  background-color: var(--card);
+}
+
+[data-theme="dark"] .settings-form-input,
+[data-theme="dark"] .settings-form-select {
+  background-color: var(--card);
+}
+
+[data-theme="dark"] .toggle-slider:before {
+  background-color: var(--card);
+}
+
+[data-theme="dark"] input:checked + .toggle-slider:before {
+  background-color: var(--primary-foreground);
+}

@@ -1,0 +1,70 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "María González",
+      "position": "CEO",
+      "company": "TechStart Solutions",
+      "avatar": "../../assets/images/testimonials/maria-gonzalez.jpg",
+      "rating": 5,
+      "text": "DSG transformó completamente nuestra presencia digital. El equipo es profesional, creativo y siempre cumple con los plazos. Nuestras ventas online aumentaron un 300% después del lanzamiento.",
+      "date": "2024-01-15",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Carlos Rodríguez",
+      "position": "Director de Marketing",
+      "company": "Innovate Corp",
+      "avatar": "../../assets/images/testimonials/carlos-rodriguez.jpg",
+      "rating": 5,
+      "text": "Trabajar con DSG fue una experiencia excepcional. Su enfoque estratégico y atención al detalle resultaron en una plataforma que superó todas nuestras expectativas.",
+      "date": "2024-02-20",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Ana Martínez",
+      "position": "Fundadora",
+      "company": "Creative Studio",
+      "avatar": "../../assets/images/testimonials/ana-martinez.jpg",
+      "rating": 5,
+      "text": "El diseño UX/UI que crearon para nosotros es simplemente impresionante. Nuestros usuarios ahora navegan de manera más intuitiva y las conversiones han mejorado significativamente.",
+      "date": "2024-03-10",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "name": "Roberto Silva",
+      "position": "Gerente General",
+      "company": "E-Shop Plus",
+      "avatar": "../../assets/images/testimonials/roberto-silva.jpg",
+      "rating": 5,
+      "text": "La tienda online que desarrollaron para nosotros es robusta, segura y fácil de administrar. El ROI ha sido excepcional desde el primer mes.",
+      "date": "2024-01-30",
+      "featured": true
+    },
+    {
+      "id": 5,
+      "name": "Laura Fernández",
+      "position": "Directora de Operaciones",
+      "company": "Global Services",
+      "avatar": "../../assets/images/testimonials/laura-fernandez.jpg",
+      "rating": 4,
+      "text": "DSG nos ayudó a modernizar todos nuestros sistemas. Su consultoría IT fue clave para optimizar nuestros procesos y reducir costos operativos.",
+      "date": "2024-02-05",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "name": "Diego Morales",
+      "position": "CMO",
+      "company": "Digital Trends",
+      "avatar": "../../assets/images/testimonials/diego-morales.jpg",
+      "rating": 5,
+      "text": "Su estrategia de marketing digital nos posicionó como líderes en nuestro sector. El crecimiento en redes sociales y tráfico web ha sido extraordinario.",
+      "date": "2024-03-01",
+      "featured": false
+    }
+  ]
+}

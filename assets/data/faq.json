@@ -1,0 +1,74 @@
+{
+  "faq": [
+    {
+      "id": 1,
+      "category": "general",
+      "question": "¿Qué servicios ofrece DSG?",
+      "answer": "Ofrecemos una amplia gama de servicios digitales incluyendo desarrollo web, diseño UX/UI, marketing digital, e-commerce, consultoría IT y mantenimiento web. Nos especializamos en soluciones integrales para empresas de todos los tamaños.",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "category": "precios",
+      "question": "¿Cómo funcionan sus precios?",
+      "answer": "Nuestros precios varían según el alcance y complejidad del proyecto. Ofrecemos cotizaciones personalizadas después de una consulta inicial gratuita donde evaluamos sus necesidades específicas. También tenemos paquetes predefinidos para proyectos estándar.",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "category": "proceso",
+      "question": "¿Cuál es su proceso de trabajo?",
+      "answer": "Nuestro proceso incluye: 1) Consulta inicial y análisis de requerimientos, 2) Propuesta y planificación del proyecto, 3) Diseño y desarrollo iterativo, 4) Testing y revisiones, 5) Lanzamiento y entrega, 6) Soporte post-lanzamiento.",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "category": "tiempo",
+      "question": "¿Cuánto tiempo toma completar un proyecto?",
+      "answer": "Los tiempos varían según el tipo de proyecto: sitios web simples (2-4 semanas), e-commerce (4-8 semanas), aplicaciones complejas (8-16 semanas). Siempre proporcionamos un cronograma detallado antes de comenzar.",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "category": "soporte",
+      "question": "¿Ofrecen soporte después del lanzamiento?",
+      "answer": "Sí, ofrecemos diferentes niveles de soporte post-lanzamiento incluyendo mantenimiento técnico, actualizaciones de contenido, monitoreo de seguridad y soporte técnico. Tenemos planes mensuales y anuales disponibles.",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "category": "tecnologia",
+      "question": "¿Qué tecnologías utilizan?",
+      "answer": "Trabajamos con tecnologías modernas y probadas como React, Node.js, Python, PHP, WordPress, Shopify, y bases de datos como PostgreSQL y MongoDB. Seleccionamos la tecnología más adecuada para cada proyecto.",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "category": "revision",
+      "question": "¿Puedo solicitar cambios durante el desarrollo?",
+      "answer": "Absolutamente. Trabajamos con metodología ágil que permite revisiones y ajustes durante el proceso. Incluimos un número determinado de revisiones en cada proyecto, y cambios adicionales se manejan de forma transparente.",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "category": "hosting",
+      "question": "¿Incluyen hosting y dominio?",
+      "answer": "Podemos incluir hosting y dominio en nuestros paquetes, o trabajar con su proveedor actual. Recomendamos soluciones de hosting confiables y optimizadas para el rendimiento de su sitio web.",
+      "featured": false
+    },
+    {
+      "id": 9,
+      "category": "seo",
+      "question": "¿Sus sitios web están optimizados para SEO?",
+      "answer": "Sí, todos nuestros sitios web se desarrollan siguiendo las mejores prácticas de SEO incluyendo estructura semántica, velocidad de carga optimizada, responsive design, y configuración técnica adecuada para motores de búsqueda.",
+      "featured": true
+    },
+    {
+      "id": 10,
+      "category": "contacto",
+      "question": "¿Cómo puedo comenzar un proyecto con ustedes?",
+      "answer": "Es muy simple: contáctanos a través de nuestro formulario web, email o teléfono para agendar una consulta gratuita. Discutiremos sus necesidades y le proporcionaremos una propuesta personalizada en 24-48 horas.",
+      "featured": true
+    }
+  ]
+}

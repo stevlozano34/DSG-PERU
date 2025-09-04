@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Configuración - DSG PERU</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .settings-section {
+            animation: fadeIn 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Overlay for mobile menu -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="../assets/images/logo.png" alt="DSG Logo" class="logo">
+                    <h2>DSG PERÚ</h2>
+                </div>
+                <p class="text-muted">Panel de Configuración</p>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#" class="nav-item active" data-section="account">
+                        <i class="fas fa-user"></i>
+                        <span>Mi Cuenta</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" data-section="appearance">
+                        <i class="fas fa-palette"></i>
+                        <span>Apariencia</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" data-section="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span>Notificaciones</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" data-section="security">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Seguridad</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" data-section="privacy">
+                        <i class="fas fa-lock"></i>
+                        <span>Privacidad</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <button class="btn btn-theme-toggle w-100" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Cambiar a modo claro</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=000000&color=ffffff" alt="Usuario" class="profile-img">
+                    <div class="profile-info">
+                        <span class="profile-name">Usuario</span>
+                        <span class="profile-email">usuario@ejemplo.com</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-content">
+                    <h2 class="greeting">Configuración</h2>
+                    <p class="date-display">
+                        <i class="far fa-calendar-alt"></i>
+                        <span id="currentDate"></span>
+                    </p>
+                </div>
+                <div class="header-actions">
+                    <div class="notification-bell">
+                        <i class="far fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Usuario&background=000000&color=ffffff" alt="Usuario">
+                    </div>
+                </div>
+            </header>
+
+            <div class="settings-main">
+                <!-- Sección de Cuenta (activa por defecto) -->
+                <section id="account" class="settings-section active">
+                <div class="section-header">
+                    <h3>Configuración de la Cuenta</h3>
+                    <p class="text-muted">Administra la información de tu cuenta</p>
+                </div>
+
+                <div class="setting-card">
+                    <h4>Información Personal</h4>
+                    <div class="form-group">
+                        <label for="fullName">Nombre Completo</label>
+                        <input type="text" id="fullName" class="form-control" value="Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" class="form-control" value="juan.perez@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" class="form-control" value="+51 987 654 321">
+                    </div>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-save me-2"></i>Guardar Cambios
+                    </button>
+                </div>
+
+                <div class="setting-card">
+                    <h4>Cambiar Contraseña</h4>
+                    <div class="form-group">
+                        <label for="currentPassword">Contraseña Actual</label>
+                        <div class="input-group">
+                            <input type="password" id="currentPassword" class="form-control">
+                            <button class="btn btn-outline toggle-password" type="button">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Nueva Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" id="newPassword" class="form-control">
+                            <button class="btn btn-outline toggle-password" type="button">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="confirmPassword">Confirmar Nueva Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" id="confirmPassword" class="form-control">
+                            <button class="btn btn-outline toggle-password" type="button">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-key me-2"></i>Actualizar Contraseña
+                    </button>
+                </div>
+            </section>
+
+            <!-- Sección de Apariencia -->
+            <section id="appearance" class="settings-section">
+                <div class="section-header">
+                    <h3>Apariencia</h3>
+                    <p class="text-muted">Personaliza el aspecto de tu panel</p>
+                </div>
+
+                <div class="setting-card">
+                    <h4>Tema</h4>
+                    <p class="text-muted mb-4">Elige cómo quieres que se vea tu panel</p>
+                    
+                    <div class="theme-options">
+                        <div class="theme-option active" data-theme="dark">
+                            <div class="theme-preview" style="background: #0a0a0a; border: 1px solid #333;"></div>
+                            <span>Oscuro</span>
+                        </div>
+                        <div class="theme-option" data-theme="light">
+                            <div class="theme-preview" style="background: #f8f9fa; border: 1px solid #dee2e6;"></div>
+                            <span>Claro</span>
+                        </div>
+                        <div class="theme-option" data-theme="system">
+                            <div class="theme-preview" style="background: linear-gradient(45deg, #0a0a0a 50%, #f8f9fa 50%); border: 1px solid #666;"></div>
+                            <span>Sistema</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-card">
+                    <h4>Densidad</h4>
+                    <p class="text-muted mb-3">Elige cuán compacto quieres que se vea el contenido</p>
+                    
+                    <div class="form-group">
+                        <select id="density" class="form-control">
+                            <option value="comfortable">Cómodo (predeterminado)</option>
+                            <option value="compact">Compacto</option>
+                            <option value="spacious">Espacioso</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Notificaciones -->
+            <section id="notifications" class="settings-section">
+                <div class="section-header">
+                    <h3>Notificaciones</h3>
+                    <p class="text-muted">Configura cómo y cuándo recibir notificaciones</p>
+                </div>
+                
+                <div class="setting-card">
+                    <h4>Preferencias de Notificación</h4>
+                    
+                    <div class="form-group d-flex justify-content-between align-items-center">
+                        <div>
+                            <label class="mb-0">Notificaciones por correo electrónico</label>
+                            <p class="text-muted small mb-0">Recibir notificaciones importantes por correo</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group d-flex justify-content-between align-items-center mt-4">
+                        <div>
+                            <label class="mb-0">Notificaciones push</label>
+                            <p class="text-muted small mb-0">Recibir notificaciones en tiempo real</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group d-flex justify-content-between align-items-center mt-4">
+                        <div>
+                            <label class="mb-0">Recordatorios</label>
+                            <p class="text-muted small mb-0">Recordatorios de tareas pendientes</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-save me-2"></i>Guardar Preferencias
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Seguridad -->
+            <section id="security" class="settings-section">
+                <div class="section-header">
+                    <h3>Seguridad</h3>
+                    <p class="text-muted">Configuración de seguridad de tu cuenta</p>
+                </div>
+                
+                <div class="setting-card">
+                    <h4>Autenticación de Dos Factores</h4>
+                    <p class="text-muted mb-4">Añade una capa adicional de seguridad a tu cuenta</p>
+                    
+                    <div class="alert alert-info d-flex align-items-center" role="alert">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <div>La autenticación de dos factores está actualmente desactivada.</div>
+                    </div>
+                    
+                    <button class="btn btn-primary mt-3">
+                        <i class="fas fa-lock me-2"></i>Activar Autenticación en Dos Pasos
+                    </button>
+                    
+                    <div class="mt-4 pt-3 border-top">
+                        <h5>Dispositivos conectados</h5>
+                        <p class="text-muted small">Estos son los dispositivos que han accedido a tu cuenta recientemente.</p>
+                        
+                        <div class="device-list">
+                            <div class="device-item d-flex justify-content-between align-items-center p-3 border rounded mb-2">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-desktop fa-2x me-3"></i>
+                                    <div>
+                                        <div class="fw-bold">Windows 10</div>
+                                        <div class="text-muted small">Chrome • Lima, PE</div>
+                                        <div class="text-muted small">Hoy, 14:32</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-danger">Cerrar sesión</button>
+                            </div>
+                            
+                            <div class="device-item d-flex justify-content-between align-items-center p-3 border rounded">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-mobile-alt fa-2x me-3"></i>
+                                    <div>
+                                        <div class="fw-bold">iPhone 13</div>
+                                        <div class="text-muted small">Safari • Lima, PE</div>
+                                        <div class="text-muted small">Ayer, 09:15</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-danger">Cerrar sesión</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Privacidad -->
+            <section id="privacy" class="settings-section">
+                <div class="section-header">
+                    <h3>Privacidad</h3>
+                    <p class="text-muted">Controla tu privacidad y datos</p>
+                </div>
+                
+                <div class="setting-card">
+                    <h4>Configuración de Privacidad</h4>
+                    <p class="text-muted mb-4">Controla cómo otros usuarios interactúan contigo y ven tu información</p>
+                    
+                    <div class="form-group">
+                        <label class="d-block mb-2">Visibilidad del perfil</label>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="profileVisibility" id="profilePublic" checked>
+                            <label class="form-check-label" for="profilePublic">
+                                Público - Cualquiera puede ver tu perfil
+                            </label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="profileVisibility" id="profilePrivate">
+                            <label class="form-check-label" for="profilePrivate">
+                                Privado - Solo usuarios que sigues pueden ver tu perfil completo
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group mt-4">
+                        <label class="d-block mb-2">Actividad</label>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="showOnlineStatus" checked>
+                            <label class="form-check-label" for="showOnlineStatus">Mostrar estado en línea</label>
+                        </div>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="activityStatus" checked>
+                            <label class="form-check-label" for="activityStatus">Compartir actividad de la aplicación</label>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 pt-3 border-top">
+                        <h5>Descarga de datos</h5>
+                        <p class="text-muted small mb-3">Solicita una copia de todos los datos que tenemos sobre ti.</p>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download me-2"></i>Solicitar mis datos
+                        </button>
+                    </div>
+                    
+                    <div class="mt-4 pt-3 border-top">
+                        <h5 class="text-danger">Eliminar cuenta</h5>
+    </div>
+
+    <script src="js/settings.js"></script>
+    
+</body>
+</html>

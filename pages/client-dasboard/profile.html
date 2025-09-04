@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Perfil del cliente DSG PERU TECHNOLOGY">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/global/index_responsive.css">
+    <link rel="stylesheet" href="/assets/css/pages/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+</head>
+<body class="dashboard-body">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                </div>
+                <span class="logo-text">DSG PERU</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/pages/client-dasboard/dashboard.html" class="nav-link">
+                        <i data-lucide="home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/client-dasboard/orders.html" class="nav-link">
+                        <i data-lucide="shopping-bag"></i>
+                        <span>Pedidos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/client-dasboard/billing.html" class="nav-link">
+                        <i data-lucide="credit-card"></i>
+                        <span>Facturación</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/client-dasboard/profile.html" class="nav-link active">
+                        <i data-lucide="user"></i>
+                        <span>Perfil</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/client-dasboard/settings.html" class="nav-link">
+                        <i data-lucide="settings"></i>
+                        <span>Configuración</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/client-dasboard/support.html" class="nav-link">
+                        <i data-lucide="help-circle"></i>
+                        <span>Soporte</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="/index.html" class="logout-btn">
+                <i data-lucide="log-out"></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i data-lucide="menu"></i>
+                </button>
+                <h1 class="page-title">Perfil</h1>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="theme-toggle">
+                    <i data-lucide="moon"></i>
+                </button>
+                <div class="user-menu">
+                    <button class="user-menu-toggle" id="user-menu-toggle">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Usuario">
+                        </div>
+                        <span class="user-name">Juan Pérez</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Profile Content -->
+        <div class="dashboard-content">
+            <div class="profile-container">
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <div class="profile-avatar-section">
+                        <div class="profile-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face" alt="Juan Pérez">
+                            <button class="avatar-edit-btn">
+                                <i data-lucide="camera"></i>
+                            </button>
+                        </div>
+                        <div class="profile-info">
+                            <h2>Juan Pérez</h2>
+                            <p class="profile-email">juan.perez@email.com</p>
+                            <span class="profile-status active">Cuenta Activa</span>
+                        </div>
+                    </div>
+                    <button class="edit-profile-btn">
+                        <i data-lucide="edit-2"></i>
+                        Editar Perfil
+                    </button>
+                </div>
+
+                <!-- Profile Form -->
+                <div class="profile-form-section">
+                    <h3>Información Personal</h3>
+                    <form class="profile-form" id="profileForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Nombre</label>
+                                <input type="text" id="firstName" name="firstName" value="Juan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Apellido</label>
+                                <input type="text" id="lastName" name="lastName" value="Pérez" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" value="juan.perez@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" value="+51 999 888 777">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Empresa</label>
+                                <input type="text" id="company" name="company" value="Mi Empresa SAC">
+                            </div>
+                            <div class="form-group">
+                                <label for="position">Cargo</label>
+                                <input type="text" id="position" name="position" value="Gerente General">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Dirección</label>
+                            <textarea id="address" name="address" rows="3">Av. Javier Prado Este 123, San Isidro, Lima</textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary">Cancelar</button>
+                            <button type="submit" class="btn-primary">
+                                <i data-lucide="save"></i>
+                                Guardar Cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Security Section -->
+                <div class="security-section">
+                    <h3>Seguridad</h3>
+                    <div class="security-item">
+                        <div class="security-info">
+                            <h4>Contraseña</h4>
+                            <p>Última actualización: hace 3 meses</p>
+                        </div>
+                        <button class="btn-outline">
+                            <i data-lucide="key"></i>
+                            Cambiar Contraseña
+                        </button>
+                    </div>
+                    
+                    <div class="security-item">
+                        <div class="security-info">
+                            <h4>Autenticación de Dos Factores</h4>
+                            <p>Protege tu cuenta con verificación adicional</p>
+                        </div>
+                        <button class="btn-outline">
+                            <i data-lucide="shield"></i>
+                            Configurar 2FA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="/assets/js/components/sidebar.js"></script>
+    <script src="/assets/js/components/theme-toggle.js"></script>
+    <script src="/assets/js/pages/client-dashboard.js"></script>
+    <script src="/assets/js/main.js"></script>
+    
+    <script>
+        // Profile specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileForm = document.getElementById('profileForm');
+            const editBtn = document.querySelector('.edit-profile-btn');
+            const avatarEditBtn = document.querySelector('.avatar-edit-btn');
+            
+            // Handle profile form submission
+            profileForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate saving
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i data-lucide="loader-2"></i> Guardando...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i data-lucide="check"></i> Guardado';
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        lucide.createIcons();
+                    }, 1500);
+                }, 2000);
+                
+                lucide.createIcons();
+            });
+            
+            // Handle avatar edit
+            avatarEditBtn.addEventListener('click', function() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.click();
+                
+                input.addEventListener('change', function(e) {
+                    if (e.target.files[0]) {
+                        // Simulate upload
+                        console.log('Uploading avatar:', e.target.files[0].name);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

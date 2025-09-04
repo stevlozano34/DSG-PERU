@@ -1,0 +1,408 @@
+/* ===== PRIVACY PAGE STYLES ===== */
+/* Specific styles for the Privacy Policy page, adapted to the main theme. */
+
+.legal-page {
+    background: var(--background);
+    min-height: 100vh;
+    line-height: 1.6;
+    color: var(--foreground);
+    font-size: var(--font-size-base);
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background: linear-gradient(rgba(var(--primary-rgb), 0.7), rgba(var(--primary-rgb), 0.7)), url('/assets/images/hero/dsg\ image.avif') center center / cover no-repeat;
+    padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-bottom-left-radius: var(--radius-2xl);
+    border-bottom-right-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.breadcrumb-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.breadcrumb-nav a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumb-nav a:hover {
+    color: white;
+}
+
+.breadcrumb-nav svg {
+    width: 1rem;
+    height: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumb-nav span {
+    color: white;
+    font-weight: 600;
+}
+
+/* Legal Content Layout */
+.legal-content {
+    padding: var(--spacing-3xl) 0;
+    background: var(--background);
+}
+
+.legal-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px; /* Main content and sidebar */
+    gap: var(--spacing-3xl);
+    align-items: start;
+}
+
+/* Main Content Area */
+.legal-main {
+    background: var(--card);
+    border-radius: var(--radius-2xl); /* More rounded corners for modern look */
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-xl); /* Stronger shadow */
+    border: 1px solid var(--border);
+    transition: all var(--transition-normal);
+}
+
+.legal-main:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: var(--shadow-2xl); /* Deeper shadow on hover */
+}
+
+.legal-header {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border);
+}
+
+.legal-header h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+.legal-updated {
+    font-size: var(--font-size-sm);
+    color: var(--muted-foreground);
+    font-style: italic;
+}
+
+.legal-text {
+    line-height: 1.7;
+}
+
+.legal-section {
+    margin-bottom: var(--spacing-3xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px dashed var(--border); /* Subtle separator */
+}
+
+.legal-section:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.legal-section h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--primary); /* Highlight section titles */
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-left: var(--spacing-lg);
+}
+
+.legal-section h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.legal-section h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--foreground);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.legal-text p {
+    margin-bottom: var(--spacing-md);
+    color: var(--muted-foreground);
+}
+
+.legal-text ul {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.legal-text ul li {
+    position: relative;
+    padding-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-xs);
+    color: var(--muted-foreground);
+}
+
+.legal-text ul li::before {
+    content: '→'; /* Modern arrow bullet */
+    position: absolute;
+    left: 0;
+    color: var(--secondary); /* Highlight bullet points */
+    font-weight: bold;
+}
+
+.legal-text a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast), text-decoration var(--transition-fast);
+}
+
+.legal-text a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Sidebar */
+.legal-sidebar {
+    position: sticky;
+    top: calc(80px + var(--spacing-xl)); /* Space from fixed navbar */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.sidebar-widget {
+    background: var(--card);
+    border-radius: var(--radius-xl); /* Consistent radius with main content */
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md); /* Softer shadow for widgets */
+    border: 1px solid var(--border);
+    transition: all var(--transition-normal);
+}
+
+.sidebar-widget:hover {
+    transform: translateY(-3px); /* Subtle lift on hover */
+    box-shadow: var(--shadow-lg); /* Deeper shadow on hover */
+}
+
+.sidebar-widget h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-light); /* Lighter border for separation */
+}
+
+.legal-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.legal-nav li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.legal-nav li:last-child {
+    margin-bottom: 0;
+}
+
+.legal-nav a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    color: var(--muted-foreground);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-weight: 500;
+}
+
+.legal-nav a:hover {
+    background: var(--accent);
+    color: var(--foreground);
+    transform: translateX(4px);
+}
+
+.legal-nav a.active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm); /* Small shadow for active state */
+}
+
+.legal-nav a.active:hover {
+    transform: none; /* No transform on active hover */
+}
+
+.dark .legal-nav a:hover {
+    background-color: var(--accent); /* Fondo más oscuro para contraste */
+    color: var(--foreground); /* Texto claro en hover para modo oscuro */
+}
+
+.dark .legal-nav a.active {
+    background-color: var(--primary); /* Fondo blanco en modo oscuro */
+    color: #333333; /* Texto oscuro explícito para contraste */
+}
+
+.sidebar-widget p {
+    color: var(--muted-foreground);
+    margin-bottom: var(--spacing-lg);
+}
+
+.sidebar-widget .btn {
+    width: 100%;
+    text-align: center;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg); /* Rounded buttons */
+    background-color: var(--primary); /* Asegura el color primario del tema */
+    color: var(--primary-foreground); /* Asegura el color de texto del tema */
+    border: 1px solid var(--primary); /* Borde con color primario */
+    transition: all var(--transition-fast);
+}
+
+.sidebar-widget .btn:hover {
+    background-color: var(--primary-dark); /* Color más oscuro en hover */
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.dark .sidebar-widget .btn {
+    background-color: var(--primary); /* Fondo blanco en modo oscuro */
+    color: var(--primary-foreground); /* Texto negro en modo oscuro */
+    border-color: var(--primary);
+}
+
+.dark .sidebar-widget .btn:hover {
+    background-color: var(--primary-dark); /* Fondo gris claro en hover */
+    border-color: var(--primary-dark);
+    opacity: 1; /* Sin opacidad en modo oscuro */
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    background: var(--muted);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    border: 1px solid var(--border);
+}
+
+.contact-info p {
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--foreground);
+}
+
+.contact-info strong {
+    color: var(--primary);
+}
+
+.contact-info a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.contact-info a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .legal-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+    
+    .legal-sidebar {
+        position: static;
+        order: 2; /* Sidebar below main content on smaller screens */
+    }
+    
+    .legal-main {
+        order: 1;
+        padding: var(--spacing-xl);
+    }
+    
+    .legal-header h1 {
+        font-size: var(--font-size-3xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .breadcrumb {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .legal-content {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .legal-main {
+        padding: var(--spacing-lg);
+    }
+    
+    .legal-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .legal-section h2 {
+        font-size: var(--font-size-xl);
+        padding-left: var(--spacing-md);
+    }
+
+    .legal-section h2::before {
+        width: 6px;
+        height: 6px;
+    }
+
+    .legal-text ul li {
+        padding-left: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-main {
+        padding: var(--spacing-md);
+    }
+
+    .legal-header h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .legal-section h2 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .sidebar-widget {
+        padding: var(--spacing-lg);
+    }
+}

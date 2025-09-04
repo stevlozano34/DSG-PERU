@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente | DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Crea tu cuenta de cliente en DSG PERU TECHNOLOGY">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/pages/auth.css">
+    <link rel="stylesheet" href="/assets/css/pages/auth/client-register.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Header -->
+            <div class="auth-header">
+                <div class="logo">
+                    <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    <h1>DSG PERU TECHNOLOGY</h1>
+                </div>
+                <h2>Crear Cuenta - Cliente</h2>
+                <p>Únete a nuestra plataforma y comienza hoy</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form class="auth-form" id="client-register-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Nombre</label>
+                        <div class="input-group">
+                            <i data-lucide="user" class="input-icon"></i>
+                            <input type="text" id="firstName" name="firstName" required placeholder="Tu nombre">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Apellido</label>
+                        <div class="input-group">
+                            <i data-lucide="user" class="input-icon"></i>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Tu apellido">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <div class="input-group">
+                        <i data-lucide="mail" class="input-icon"></i>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <div class="input-group">
+                        <i data-lucide="phone" class="input-icon"></i>
+                        <input type="tel" id="phone" name="phone" required placeholder="+51 999 999 999">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Empresa (Opcional)</label>
+                    <div class="input-group">
+                        <i data-lucide="building" class="input-icon"></i>
+                        <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-group">
+                            <i data-lucide="lock" class="input-icon"></i>
+                            <input type="password" id="password" name="password" required placeholder="Mínimo 8 caracteres">
+                            <button type="button" class="password-toggle" id="password-toggle">
+                                <i data-lucide="eye" id="toggle-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar Contraseña</label>
+                        <div class="input-group">
+                            <i data-lucide="lock" class="input-icon"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirma tu contraseña">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password Strength Indicator -->
+                <div class="password-strength" id="password-strength">
+                    <div class="strength-bar">
+                        <div class="strength-fill" id="strength-fill"></div>
+                    </div>
+                    <span class="strength-text" id="strength-text">Ingresa una contraseña</span>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <span class="checkmark"></span>
+                        Acepto los <a href="/pages/public/legal/terms.html" target="_blank">Términos y Condiciones</a>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <span class="checkmark"></span>
+                        Quiero recibir noticias y ofertas por email
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i data-lucide="user-plus"></i>
+                    <span>Crear Cuenta</span>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="auth-divider">
+                <span>o</span>
+            </div>
+
+            <!-- Social Registration -->
+            <div class="social-login">
+                <button class="btn btn-outline btn-full social-btn" id="google-register">
+                    <svg width="20" height="20" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    Registrarse con Google
+                </button>
+            </div>
+
+            <!-- Footer -->
+            <div class="auth-footer">
+                <p>¿Ya tienes una cuenta? <a href="/pages/auth/client-login.html">Inicia sesión aquí</a></p>
+                <p><a href="/index.html">← Volver al inicio</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            
+            // Password toggle
+            const passwordToggle = document.getElementById('password-toggle');
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggle-icon');
+            
+            passwordToggle.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                toggleIcon.setAttribute('data-lucide', type === 'password' ? 'eye' : 'eye-off');
+                lucide.createIcons();
+            });
+            
+            // Password strength checker
+            const strengthFill = document.getElementById('strength-fill');
+            const strengthText = document.getElementById('strength-text');
+            
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                let strength = 0;
+                let text = '';
+                let color = '';
+                
+                if (password.length >= 8) strength++;
+                if (/[a-z]/.test(password)) strength++;
+                if (/[A-Z]/.test(password)) strength++;
+                if (/[0-9]/.test(password)) strength++;
+                if (/[^A-Za-z0-9]/.test(password)) strength++;
+                
+                switch (strength) {
+                    case 0:
+                    case 1:
+                        text = 'Muy débil';
+                        color = '#ef4444';
+                        break;
+                    case 2:
+                        text = 'Débil';
+                        color = '#f97316';
+                        break;
+                    case 3:
+                        text = 'Regular';
+                        color = '#eab308';
+                        break;
+                    case 4:
+                        text = 'Fuerte';
+                        color = '#22c55e';
+                        break;
+                    case 5:
+                        text = 'Muy fuerte';
+                        color = '#16a34a';
+                        break;
+                }
+                
+                strengthFill.style.width = `${(strength / 5) * 100}%`;
+                strengthFill.style.backgroundColor = color;
+                strengthText.textContent = text;
+                strengthText.style.color = color;
+            });
+            
+            // Form validation
+            document.getElementById('client-register-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (password !== confirmPassword) {
+                    alert('Las contraseñas no coinciden');
+                    return;
+                }
+                
+                if (password.length < 8) {
+                    alert('La contraseña debe tener al menos 8 caracteres');
+                    return;
+                }
+                
+                // Simulate registration process
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i data-lucide="loader-2" class="animate-spin"></i><span>Creando cuenta...</span>';
+                submitBtn.disabled = true;
+                lucide.createIcons();
+                
+                setTimeout(() => {
+                    // Redirect to email verification
+                    window.location.href = '/pages/auth/verify-email.html';
+                }, 2000);
+            });
+            
+            // Google registration
+            document.getElementById('google-register').addEventListener('click', function() {
+                alert('Funcionalidad de Google OAuth en desarrollo');
+            });
+        });
+    </script>
+</body>
+</html>

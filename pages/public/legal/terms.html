@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Términos y condiciones de uso de DSG PERU TECHNOLOGY">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/global/index_responsive.css">
+    <link rel="stylesheet" href="/assets/css/pages/legal/legal.css">
+    <link rel="stylesheet" href="/assets/css/components/navbar.css">
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    </div>
+                    <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link nav-link-dropdown" id="services-dropdown-link">
+                    <span>Servicios</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                    </a>
+                    <div class="dropdown-menu nav-submenu" id="services-dropdown-menu">
+                    <a href="/pages/public/shop.html" class="dropdown-item">
+                        <i data-lucide="layout"></i>
+                        <span>Todos los Servicios</span>
+                    </a>
+                    <a href="/pages/services/desarrollo_web.html" class="dropdown-item">
+                        <i data-lucide="globe"></i>
+                        <span>Desarrollo Web</span>
+                    </a>
+                    <a href="/pages/services/app_movil.html" class="dropdown-item">
+                        <i data-lucide="smartphone"></i>
+                        <span>Apps Móviles</span>
+                    </a>
+                    <a href="/pages/services/sistema_empre.html" class="dropdown-item">
+                        <i data-lucide="building-2"></i>
+                        <span>Sistemas Empresariales</span>
+                    </a>
+                    </div>
+                </div>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                
+                <!-- Mover nav-actions dentro del menú móvil -->
+                <!-- En la sección de navegación, actualizar los botones -->
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+                        <i data-lucide="moon" class="theme-icon"></i>
+                        <span class="sr-only">Cambiar tema</span>
+                    </button>
+                    <button class="btn btn-outline btn-demo" onclick="requestDemo()" aria-label="Ver demostración">
+                        <i data-lucide="play-circle" class="btn-icon"></i>
+                        <span>Demo</span>
+                    </button>
+                    <!-- Dropdown para tipos de acceso -->
+                    <div class="login-dropdown">
+                        <button class="btn btn-primary btn-login" id="login-dropdown-btn" aria-expanded="false" aria-haspopup="true" aria-controls="login-dropdown-menu">
+                            <i data-lucide="log-in" class="btn-icon"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down" class="dropdown-chevron"></i>
+                        </button>
+                        <div class="dropdown-menu" id="login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon" style="display: none;"></i>
+                <span class="sr-only">Menú de navegación</span>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="/index.html" class="nav-link">Inicio</a>
+                <a href="/pages/public/about.html" class="nav-link">DSG</a>
+                <a href="/index.html#servicios" class="nav-link">Servicios</a>
+                <a href="/index.html#precios" class="nav-link">Precios</a>
+                <a href="/index.html#contacto" class="nav-link">Contacto</a>
+                <div class="mobile-actions">
+                    <div class="mobile-actions-top">
+                        <button class="theme-toggle" id="mobile-theme-toggle" aria-label="Cambiar tema">
+                            <i data-lucide="moon" class="theme-icon"></i>
+                        </button>
+                        <button class="btn btn-outline" onclick="requestDemo()">
+                            <i data-lucide="play-circle"></i>
+                            <span>Ver Demo</span>
+                        </button>
+                    </div>
+                    <div class="login-dropdown mobile-login-dropdown">
+                        <button class="btn btn-primary" id="mobile-login-dropdown-btn" aria-expanded="false">
+                            <i data-lucide="log-in"></i>
+                            <span>Iniciar Sesión</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="mobile-login-dropdown-menu">
+                            <a href="/DSG/frontend/pages/pages/auth/login_prueba.html" class="dropdown-item">
+                                <i data-lucide="user"></i>
+                                <span>Acceso Cliente</span>
+                            </a>
+                            <a href="/DSG/frontend/pages/pages/auth/admin_login.html" class="dropdown-item">
+                                <i data-lucide="shield"></i>
+                                <span>Acceso Administrador</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Overlay -->
+            <div class="mobile-overlay" id="mobile-overlay"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="legal-page">
+        <!-- Hero Section -->
+        <section class="legal-hero">
+            <div class="container">
+                <div class="legal-hero-content">
+                    <h1>Términos y Condiciones</h1>
+                    <p>Última actualización: Enero 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms Content -->
+        <section class="legal-content">
+            <div class="container">
+                <div class="legal-wrapper">
+                    <div class="legal-sidebar">
+                        <nav class="legal-nav">
+                            <h3>Navegación</h3>
+                            <ul>
+                                <li><a href="#acceptance">Aceptación</a></li>
+                                <li><a href="#services">Servicios</a></li>
+                                <li><a href="#user-accounts">Cuentas de Usuario</a></li>
+                                <li><a href="#payment">Pagos</a></li>
+                                <li><a href="#intellectual-property">Propiedad Intelectual</a></li>
+                                <li><a href="#limitations">Limitaciones</a></li>
+                                <li><a href="#termination">Terminación</a></li>
+                                <li><a href="#changes">Modificaciones</a></li>
+                                <li><a href="#contact">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="legal-main">
+                        <article class="terms-content">
+                            <section id="acceptance">
+                                <h2>1. Aceptación de los Términos</h2>
+                                <p>Al acceder y utilizar los servicios de DSG PERU TECHNOLOGY, usted acepta estar sujeto a estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestros servicios.</p>
+                                <p>Estos términos se aplican a todos los visitantes, usuarios y otras personas que accedan o utilicen el servicio.</p>
+                            </section>
+
+                            <section id="services">
+                                <h2>2. Descripción de Servicios</h2>
+                                <p>DSG PERU TECHNOLOGY proporciona servicios de desarrollo de software, consultoría tecnológica, desarrollo web y móvil, y soluciones empresariales.</p>
+                                <h3>2.1 Servicios Incluidos:</h3>
+                                <ul>
+                                    <li>Desarrollo de aplicaciones web y móviles</li>
+                                    <li>Consultoría en tecnología</li>
+                                    <li>Sistemas empresariales</li>
+                                    <li>Mantenimiento y soporte técnico</li>
+                                    <li>Marketing digital</li>
+                                </ul>
+                            </section>
+
+                            <section id="user-accounts">
+                                <h2>3. Cuentas de Usuario</h2>
+                                <p>Para acceder a ciertos servicios, debe crear una cuenta. Usted es responsable de:</p>
+                                <ul>
+                                    <li>Mantener la confidencialidad de su cuenta y contraseña</li>
+                                    <li>Todas las actividades que ocurran bajo su cuenta</li>
+                                    <li>Notificar inmediatamente cualquier uso no autorizado</li>
+                                    <li>Proporcionar información precisa y actualizada</li>
+                                </ul>
+                            </section>
+
+                            <section id="payment">
+                                <h2>4. Términos de Pago</h2>
+                                <h3>4.1 Precios y Facturación</h3>
+                                <p>Los precios de nuestros servicios están disponibles en nuestro sitio web y pueden cambiar sin previo aviso. Los pagos deben realizarse según los términos acordados en el contrato de servicio.</p>
+                                
+                                <h3>4.2 Métodos de Pago</h3>
+                                <p>Aceptamos los siguientes métodos de pago:</p>
+                                <ul>
+                                    <li>Transferencias bancarias</li>
+                                    <li>Tarjetas de crédito y débito</li>
+                                    <li>Pagos en línea</li>
+                                    <li>Efectivo (para servicios locales)</li>
+                                </ul>
+                                
+                                <h3>4.3 Reembolsos</h3>
+                                <p>Los reembolsos se procesarán según las políticas específicas de cada servicio y estarán sujetos a evaluación caso por caso.</p>
+                            </section>
+
+                            <section id="intellectual-property">
+                                <h2>5. Propiedad Intelectual</h2>
+                                <p>El contenido, características y funcionalidad de nuestros servicios son propiedad de DSG PERU TECHNOLOGY y están protegidos por derechos de autor, marcas comerciales y otras leyes de propiedad intelectual.</p>
+                                
+                                <h3>5.1 Derechos del Cliente</h3>
+                                <p>Los clientes retienen los derechos sobre:</p>
+                                <ul>
+                                    <li>Contenido proporcionado por el cliente</li>
+                                    <li>Datos específicos del negocio</li>
+                                    <li>Productos finales desarrollados específicamente para el cliente</li>
+                                </ul>
+                                
+                                <h3>5.2 Derechos de DSG PERU TECHNOLOGY</h3>
+                                <p>Nos reservamos los derechos sobre:</p>
+                                <ul>
+                                    <li>Metodologías y procesos de desarrollo</li>
+                                    <li>Herramientas y frameworks propietarios</li>
+                                    <li>Conocimiento técnico general</li>
+                                </ul>
+                            </section>
+
+                            <section id="limitations">
+                                <h2>6. Limitaciones de Responsabilidad</h2>
+                                <p>DSG PERU TECHNOLOGY no será responsable por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo pero no limitado a:</p>
+                                <ul>
+                                    <li>Pérdida de beneficios</li>
+                                    <li>Pérdida de datos</li>
+                                    <li>Interrupción del negocio</li>
+                                    <li>Pérdida de información</li>
+                                </ul>
+                                
+                                <h3>6.1 Garantías</h3>
+                                <p>Proporcionamos nuestros servicios "tal como están" y no garantizamos que:</p>
+                                <ul>
+                                    <li>Los servicios cumplirán con sus requisitos específicos</li>
+                                    <li>Los servicios serán ininterrumpidos o libres de errores</li>
+                                    <li>Los resultados obtenidos serán precisos o confiables</li>
+                                </ul>
+                            </section>
+
+                            <section id="termination">
+                                <h2>7. Terminación</h2>
+                                <p>Podemos terminar o suspender su acceso inmediatamente, sin previo aviso o responsabilidad, por cualquier motivo, incluyendo el incumplimiento de estos Términos.</p>
+                                
+                                <h3>7.1 Efectos de la Terminación</h3>
+                                <p>Al terminar el servicio:</p>
+                                <ul>
+                                    <li>Su derecho a usar el servicio cesará inmediatamente</li>
+                                    <li>Proporcionaremos una transición ordenada de datos cuando sea posible</li>
+                                    <li>Las obligaciones de pago pendientes permanecerán vigentes</li>
+                                </ul>
+                            </section>
+
+                            <section id="changes">
+                                <h2>8. Modificaciones a los Términos</h2>
+                                <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en nuestro sitio web.</p>
+                                <p>Es su responsabilidad revisar estos términos periódicamente. El uso continuado de nuestros servicios después de las modificaciones constituye su aceptación de los nuevos términos.</p>
+                            </section>
+
+                            <section id="contact">
+                                <h2>9. Información de Contacto</h2>
+                                <p>Si tiene preguntas sobre estos Términos y Condiciones, puede contactarnos:</p>
+                                <div class="contact-info">
+                                    <p><strong>DSG PERU TECHNOLOGY</strong></p>
+                                    <p>Email: legal@dsgperu.com</p>
+                                    <p>Teléfono: +51 999 888 777</p>
+                                    <p>Dirección: Lima, Perú</p>
+                                </div>
+                            </section>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                        </div>
+                        <span class="logo-text">DSG PERU TECHNOLOGY</span>
+                    </div>
+                    <p class="footer-description">
+                        Desarrollamos soluciones tecnológicas que impulsan el crecimiento de tu negocio.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="/pages/services/restaurantes.html">Restaurantes</a></li>
+                            <li><a href="/pages/services/boticas.html">Boticas</a></li>
+                            <li><a href="/pages/services/minimarkets.html">Minimarkets</a></li>
+                            <li><a href="/pages/services/personalizado.html">Personalizado</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="/pages/public/about.html">Acerca de</a></li>
+                            <li><a href="/pages/public/contact.html">Contacto</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="/pages/public/blog/blog.html">Blog</a></li>
+                            <li><a href="/pages/public/blog/post.html">Post Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Soporte</h4>
+                        <ul>
+                            <li><a href="/pages/public/help/centro-ayuda.html">Centro de Ayuda</a></li>
+                            <li><a href="/pages/public/help/documentation.html">Documentación</a></li>
+                            <li><a href="/pages/public/help/estado_servicio.html">Estado del Servicio</a></li>
+                            <li><a href="/pages/public/help/support.html">Contactar Soporte</a></li>
+                            <li><a href="/pages/public/help/faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DSG PERU TECHNOLOGY. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/dsgperu" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="https://www.tiktok.com/@dsg.peru.technolo" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/dsgperu?igsh=NHczY3l2dDdiNWZj" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/assets/js/components/navigation.js"></script>
+    <script src="/assets/js/components/dropdowns.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+
+    <!-- WhatsApp Button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/components/whatsapp-button.css">
+    <div class="whatsapp-float">
+        <a href="https://wa.me/51903148583?text=%C2%A1Hola!%20👋%20Estoy%20interesado(a)%20en%20los%20servicios%20de%20DSG%20Per%C3%BA%20Technology%20SRL.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20soluciones%20de%20facturaci%C3%B3n%20electr%C3%B3nica,%20alquiler%20de%20sistemas%20inform%C3%A1ticos,%20consultor%C3%ADa%20TI,%20outsourcing%20o%20desarrollo%20de%20software%20a%20medida.%20%C2%A1Gracias!" 
+        class="whatsapp-button" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Chatea con nosotros por WhatsApp">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            <span class="whatsapp-badge">1</span>
+            <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+        </a>
+    </div>
+</body>
+</html>

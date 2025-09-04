@@ -1,0 +1,102 @@
+<header class="dashboard-header">
+    <div class="header-left">
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <i data-lucide="menu"></i>
+        </button>
+        <div class="breadcrumb" id="breadcrumb">
+            <a href="/pages/client-dasboard/dashboard.html">Dashboard</a>
+            <span class="separator">/</span>
+            <span class="current" id="current-page">Panel Principal</span>
+        </div>
+    </div>
+    <div class="header-right">
+        <button class="theme-toggle" id="theme-toggle">
+            <i data-lucide="moon"></i>
+        </button>
+        <div class="notification-menu">
+            <button class="notification-toggle" id="notification-toggle">
+                <i data-lucide="bell"></i>
+                <span class="notification-badge" id="notification-count">3</span>
+            </button>
+            <div class="notification-dropdown" id="notification-dropdown">
+                <div class="notification-header">
+                    <h3>Notificaciones</h3>
+                    <button class="mark-all-read">Marcar todas como leídas</button>
+                </div>
+                <div class="notification-list">
+                    <div class="notification-item">
+                        <div class="notification-icon success">
+                            <i data-lucide="check-circle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-title">Pedido completado</div>
+                            <div class="notification-message">Tu pedido #12345 ha sido procesado exitosamente</div>
+                            <div class="notification-time">Hace 2 horas</div>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon info">
+                            <i data-lucide="info"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-title">Actualización disponible</div>
+                            <div class="notification-message">Nueva versión del dashboard disponible</div>
+                            <div class="notification-time">Hace 1 día</div>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon warning">
+                            <i data-lucide="alert-triangle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <div class="notification-title">Factura pendiente</div>
+                            <div class="notification-message">Tienes una factura pendiente de pago</div>
+                            <div class="notification-time">Hace 3 días</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-footer">
+                    <a href="#" class="view-all-notifications">Ver todas las notificaciones</a>
+                </div>
+            </div>
+        </div>
+        <div class="user-menu">
+            <button class="user-menu-toggle" id="user-menu-toggle">
+                <div class="user-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Usuario">
+                </div>
+                <span class="user-name">Juan Pérez</span>
+                <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="user-dropdown" id="user-dropdown">
+                <div class="user-info">
+                    <div class="user-avatar-large">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Usuario">
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name-large">Juan Pérez</div>
+                        <div class="user-email">juan.perez@email.com</div>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <a href="/pages/client-dasboard/profile.html" class="dropdown-item">
+                    <i data-lucide="user"></i>
+                    <span>Mi Perfil</span>
+                </a>
+                <a href="/pages/client-dasboard/settings.html" class="dropdown-item">
+                    <i data-lucide="settings"></i>
+                    <span>Configuración</span>
+                </a>
+                <a href="/pages/client-dasboard/support.html" class="dropdown-item">
+                    <i data-lucide="help-circle"></i>
+                    <span>Ayuda</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="/index.html" class="dropdown-item logout">
+                    <i data-lucide="log-out"></i>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

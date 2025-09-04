@@ -1,0 +1,101 @@
+:root {
+  /* Light Theme (Default) */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-text: #333333;
+  --color-text-secondary: #666666;
+  --color-border: #e0e0e0;
+  --color-primary: #000000;
+  --color-primary-light: #333333;
+  --color-card: #ffffff;
+  --color-card-hover: #f5f5f5;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --color-bg: #121212;
+  --color-bg-secondary: #1e1e1e;
+  --color-text: #f5f5f5;
+  --color-text-secondary: #b0b0b0;
+  --color-border: #333333;
+  --color-primary: #ffffff;
+  --color-primary-light: #e0e0e0;
+  --color-card: #1e1e1e;
+  --color-card-hover: #2a2a2a;
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Base styles that apply to both themes */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: var(--transition);
+}
+
+/* Update existing components to use theme variables */
+.about-hero {
+  background: var(--color-bg-secondary);
+}
+
+.about-title, .section-header h2, .mv-card h3, .reason-card h3, .industry-content h3 {
+  color: var(--color-text);
+}
+
+.about-subtitle, .about-description, .mv-card p, .reason-card p, .industry-content p, .industry-content li {
+  color: var(--color-text-secondary);
+}
+
+.mv-card, .reason-card, .industry-card {
+  background: var(--color-card);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.mv-card:hover, .reason-card:hover, .industry-card:hover {
+  background: var(--color-card-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* Update CTA section for dark mode */
+.cta-section {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.cta-section.bg-image::before {
+  background: var(--color-overlay);
+}
+
+/* Update buttons */
+.btn {
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-text);
+}

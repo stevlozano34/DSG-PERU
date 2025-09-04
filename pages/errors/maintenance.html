@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento Programado | DSG</title>
+    <link rel="stylesheet" href="../../assets/css/global/reset.css">
+    <link rel="stylesheet" href="../../assets/css/global/variables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            overflow-y: auto; /* Cambiado de 'hidden' a 'auto' */
+            overflow-x: hidden; /* Solo ocultar scroll horizontal */
+        }
+
+        .maintenance-container {
+            text-align: center;
+            max-width: 800px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: zoomIn 0.8s ease-out;
+            margin: 2rem auto; /* Añadir margen para mejor espaciado */
+            max-height: 90vh; /* Limitar altura máxima */
+            overflow-y: auto; /* Permitir scroll interno si es necesario */
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .maintenance-icon {
+            font-size: 6rem;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .maintenance-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .maintenance-subtitle {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .maintenance-message {
+            font-size: 1.1rem;
+            color: #718096;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .countdown-container {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .countdown-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .time-unit {
+            text-align: center;
+        }
+
+        .time-number {
+            font-size: 3rem;
+            font-weight: 900;
+            display: block;
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .progress-section {
+            margin: 2rem 0;
+        }
+
+        .progress-title {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            border-radius: 6px;
+            transition: width 0.5s ease;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200px 0;
+            }
+            100% {
+                background-position: calc(200px + 100%) 0;
+            }
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .updates-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .updates-title {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .update-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #4facfe;
+        }
+
+        .update-icon {
+            color: #4facfe;
+            margin-top: 0.2rem;
+        }
+
+        .update-content h4 {
+            color: #2d3748;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .update-content p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .contact-section {
+            margin-top: 3rem;
+        }
+
+        .contact-title {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .contact-options {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #4a5568;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-btn:hover {
+            background: #4facfe;
+            color: white;
+            border-color: #4facfe;
+            transform: translateY(-2px);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(79, 172, 254, 0.3);
+        }
+
+                @media (max-width: 768px) {
+            body {
+                padding: 1rem 0; /* Añadir padding vertical */
+            }
+            
+            .maintenance-container {
+                margin: 1rem;
+                padding: 2rem;
+                max-height: none; /* Remover limitación de altura en móvil */
+                min-height: auto; /* Altura automática */
+            }
+
+            .maintenance-title {
+                font-size: 2.5rem;
+            }
+
+            .countdown-timer {
+                gap: 1rem;
+            }
+
+            .time-number {
+                font-size: 2rem;
+            }
+
+            .contact-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+        
+        /* Mejora para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .maintenance-container {
+                padding: 1.5rem;
+                margin: 0.5rem;
+            }
+            
+            .maintenance-title {
+                font-size: 2rem;
+            }
+            
+            .countdown-timer {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .time-unit {
+                display: inline-block;
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-container">
+        <div class="maintenance-icon">
+            <i class="fas fa-cogs"></i>
+        </div>
+        
+        <h1 class="maintenance-title">Mantenimiento Programado</h1>
+        <p class="maintenance-subtitle">Estamos mejorando nuestros servicios</p>
+        <p class="maintenance-message">
+            Actualmente estamos realizando tareas de mantenimiento para mejorar tu experiencia. 
+            Estaremos de vuelta muy pronto con nuevas funcionalidades y mejoras.
+        </p>
+
+        <div class="countdown-container">
+            <div class="countdown-title">
+                <i class="fas fa-clock"></i>
+                Tiempo estimado de finalización
+            </div>
+            <div class="countdown-timer">
+                <div class="time-unit">
+                    <span class="time-number" id="hours">02</span>
+                    <span class="time-label">Horas</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="minutes">30</span>
+                    <span class="time-label">Minutos</span>
+                </div>
+                <div class="time-unit">
+                    <span class="time-number" id="seconds">45</span>
+                    <span class="time-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-title">
+                <i class="fas fa-tasks"></i>
+                Progreso del Mantenimiento
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" style="width: 65%"></div>
+            </div>
+            <div class="progress-text">65% completado - Actualizando base de datos</div>
+        </div>
+
+        <div class="updates-section">
+            <div class="updates-title">
+                <i class="fas fa-bullhorn"></i>
+                Actualizaciones en Tiempo Real
+            </div>
+            <div class="update-item">
+                <div class="update-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="update-content">
+                    <h4>Backup de Seguridad Completado</h4>
+                    <p>Se ha realizado exitosamente el respaldo de todos los datos - 14:30</p>
+                </div>
+            </div>
+            <div class="update-item">
+                <div class="update-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="update-content">
+                    <h4>Actualizando Sistema de Base de Datos</h4>
+                    <p>Migrando a la nueva versión con mejoras de rendimiento - En progreso</p>
+                </div>
+            </div>
+            <div class="update-item">
+                <div class="update-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="update-content">
+                    <h4>Próximo: Optimización de Servidores</h4>
+                    <p>Configuración de nuevos servidores para mejor rendimiento - Pendiente</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-title">
+                <i class="fas fa-headset"></i>
+                ¿Necesitas Ayuda?
+            </div>
+            <div class="contact-options">
+                <a href="mailto:soporte@dsg.com" class="contact-btn">
+                    <i class="fas fa-envelope"></i>
+                    Email de Soporte
+                </a>
+                <a href="tel:+1234567890" class="contact-btn">
+                    <i class="fas fa-phone"></i>
+                    Llamar Soporte
+                </a>
+                <a href="#" class="contact-btn">
+                    <i class="fas fa-comments"></i>
+                    Chat en Vivo
+                </a>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" class="social-link" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer
+        function updateCountdown() {
+            // Set target time (2.5 hours from now)
+            const targetTime = new Date().getTime() + (2.5 * 60 * 60 * 1000);
+            
+            const timer = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetTime - now;
+                
+                const hours = Math.floor(distance / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                
+                if (distance < 0) {
+                    clearInterval(timer);
+                    location.reload();
+                }
+            }, 1000);
+        }
+        
+        // Simulate progress updates
+        function updateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.querySelector('.progress-text');
+            
+            const stages = [
+                { progress: 65, text: 'Actualizando base de datos' },
+                { progress: 75, text: 'Optimizando servidores' },
+                { progress: 85, text: 'Configurando servicios' },
+                { progress: 95, text: 'Realizando pruebas finales' },
+                { progress: 100, text: 'Mantenimiento completado' }
+            ];
+            
+            let currentStage = 0;
+            
+            const progressTimer = setInterval(() => {
+                if (currentStage < stages.length) {
+                    const stage = stages[currentStage];
+                    progressBar.style.width = stage.progress + '%';
+                    progressText.textContent = stage.progress + '% completado - ' + stage.text;
+                    currentStage++;
+                } else {
+                    clearInterval(progressTimer);
+                }
+            }, 30000); // Update every 30 seconds
+        }
+        
+        // Initialize
+        updateCountdown();
+        updateProgress();
+        
+        // Auto-refresh page when maintenance is complete
+        setTimeout(() => {
+            if (confirm('El mantenimiento ha finalizado. ¿Deseas recargar la página?')) {
+                window.location.href = '../../index.html';
+            }
+        }, 2.5 * 60 * 60 * 1000); // 2.5 hours
+    </script>
+</body>
+</html>

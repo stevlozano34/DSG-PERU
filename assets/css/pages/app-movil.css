@@ -1,0 +1,297 @@
+/* =================================
+   ESTILOS PARA EL HERO MINIMALISTA
+   ================================= */
+
+/* Estructura principal */
+.hero-app {
+    position: relative;
+    padding: 8rem 0;
+    background-color: #ffffff;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Contenedor principal */
+.hero-app .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Contenido del hero */
+.hero-app .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Títulos */
+.hero-app .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000000;
+    margin: 0 0 1.5rem;
+    letter-spacing: -0.02em;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.hero-app .hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #000000;
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    font-weight: 400;
+}
+
+/* Tarjetas de características */
+.hero-app .hero-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.hero-app .feature-card {
+    background: transparent;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.hero-app .feature-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-app .feature-card h3 {
+    font-size: 1.2rem;
+    margin: 0 0 0.75rem;
+    color: #000000;
+    font-weight: 600;
+}
+
+.hero-app .feature-card p {
+    font-size: 0.95rem;
+    color: #000000;
+    opacity: 0.6;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Barra de búsqueda */
+.hero-app .hero-search-container {
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.hero-app .search-input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hero-app .search-input-group:focus-within {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-app .search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    color: #000000;
+    outline: none;
+    font-weight: 400;
+}
+
+.hero-app .search-input::placeholder {
+    color: #000000;
+    opacity: 0.5;
+}
+
+.hero-app .search-button {
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-app .search-button:hover {
+    background: #333333;
+}
+
+/* Estadísticas */
+.hero-app .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.hero-app .stat-item {
+    text-align: center;
+}
+
+.hero-app .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    display: block;
+}
+
+.hero-app .stat-label {
+    font-size: 0.9rem;
+    color: #000000;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* CTA */
+.hero-app .hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.hero-app .hero-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+.hero-app .hero-btn-primary {
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+}
+
+.hero-app .hero-btn-primary:hover {
+    background: #333333;
+}
+
+.hero-app .hero-btn-outline {
+    background: transparent;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.hero-app .hero-btn-outline:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* Modo oscuro */
+.dark .hero-app {
+    background-color: #000000;
+}
+
+.dark .hero-app .hero-title,
+.dark .hero-app .stat-number,
+.dark .hero-app .feature-card h3 {
+    color: #ffffff;
+}
+
+.dark .hero-app .hero-subtitle,
+.dark .hero-app .feature-card p,
+.dark .hero-app .stat-label {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.dark .hero-app .feature-card {
+    border-color: #ffffff;
+}
+
+.dark .hero-app .search-input-group {
+    border-color: #ffffff;
+}
+
+.dark .hero-app .search-input {
+    color: #ffffff;
+}
+
+.dark .hero-app .search-input::placeholder {
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.dark .hero-app .search-button {
+    background: #ffffff;
+    color: #000000;
+}
+
+.dark .hero-app .search-button:hover {
+    background: #cccccc;
+}
+
+.dark .hero-app .hero-btn-primary {
+    background: #ffffff;
+    color: #000000;
+}
+
+.dark .hero-app .hero-btn-primary:hover {
+    background: #cccccc;
+}
+
+.dark .hero-app .hero-btn-outline {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.dark .hero-app .hero-btn-outline:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-app .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-app .hero-features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-app .hero-stats {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-app {
+        padding: 6rem 0;
+    }
+
+    .hero-app .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-app .stat-number {
+        font-size: 2rem;
+    }
+}
+
+

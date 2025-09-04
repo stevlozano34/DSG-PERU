@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Administrativo | DSG PERU TECHNOLOGY</title>
+    <meta name="description" content="Panel de acceso para administradores de DSG PERU TECHNOLOGY">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/global/index.css">
+    <link rel="stylesheet" href="/assets/css/pages/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/icons/logo_3.1.png" type="image/png">
+    
+    <style>
+        .admin-badge {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .security-notice {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #92400e;
+        }
+        
+        .security-notice h4 {
+            margin: 0 0 0.5rem 0;
+            color: #92400e;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .two-factor {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f3f4f6;
+            border-radius: 0.5rem;
+            display: none;
+        }
+        
+        .two-factor.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <!-- Header -->
+            <div class="auth-header">
+                <div class="logo">
+                    <img src="/assets/images/logos/logo_3.1.png" alt="DSG PERU TECHNOLOGY">
+                    <h1>DSG PERU TECHNOLOGY</h1>
+                </div>
+                <div class="admin-badge">
+                    <i data-lucide="shield"></i>
+                    <span>Acceso Administrativo</span>
+                </div>
+                <h2>Panel de Administración</h2>
+                <p>Acceso restringido solo para personal autorizado</p>
+            </div>
+
+            <!-- Security Notice -->
+            <div class="security-notice">
+                <h4><i data-lucide="alert-triangle" style="width: 16px; height: 16px; margin-right: 0.5rem;"></i>Aviso de Seguridad</h4>
+                <p>Este es un sistema restringido. Todas las actividades son monitoreadas y registradas.</p>
+            </div>
+
+            <!-- Login Form -->
+            <form class="auth-form" id="admin-login-form">
+                <div class="form-group">
+                    <label for="username">Usuario Administrativo</label>
+                    <div class="input-group">
+                        <i data-lucide="user-check" class="input-icon"></i>
+                        <input type="text" id="username" name="username" required placeholder="admin@dsgperu.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <div class="input-group">
+                        <i data-lucide="lock" class="input-icon"></i>
+                        <input type="password" id="password" name="password" required placeholder="Contraseña administrativa">
+                        <button type="button" class="password-toggle" id="password-toggle">
+                            <i data-lucide="eye" id="toggle-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Two Factor Authentication -->
+                <div class="two-factor" id="two-factor">
+                    <div class="form-group">
+                        <label for="twoFactorCode">Código de Verificación (2FA)</label>
+                        <div class="input-group">
+                            <i data-lucide="smartphone" class="input-icon"></i>
+                            <input type="text" id="twoFactorCode" name="twoFactorCode" placeholder="000000" maxlength="6">
+                        </div>
+                        <small>Ingresa el código de 6 dígitos de tu aplicación autenticadora</small>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span class="checkmark"></span>
+                        Mantener sesión activa (30 días)
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i data-lucide="shield-check"></i>
+                    <span>Acceder al Panel</span>
+                </button>
+            </form>
+
+            <!-- Emergency Access -->
+            <div class="auth-divider">
+                <span>Acceso de Emergencia</span>
+            </div>
+
+            <button class="btn btn-outline btn-full" id="emergency-access">
+                <i data-lucide="phone"></i>
+                <span>Contactar Soporte Técnico</span>
+            </button>
+
+            <!-- Footer -->
+            <div class="auth-footer">
+                <p><a href="/pages/auth/forgot-password.html">¿Problemas para acceder?</a></p>
+                <p><a href="/pages/auth/client-login.html">← Acceso de Cliente</a></p>
+                <p><a href="/index.html">← Volver al inicio</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            
+            // Password toggle
+            const passwordToggle = document.getElementById('password-toggle');
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggle-icon');
+            
+            passwordToggle.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                toggleIcon.setAttribute('data-lucide', type === 'password' ? 'eye' : 'eye-off');
+                lucide.createIcons();
+            });
+            
+            // Form submission with 2FA simulation
+            document.getElementById('admin-login-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const twoFactorDiv = document.getElementById('two-factor');
+                const twoFactorCode = document.getElementById('twoFactorCode').value;
+                
+                // First step: validate credentials
+                if (!twoFactorDiv.classList.contains('active')) {
+                    if (username && password) {
+                        // Show 2FA step
+                        twoFactorDiv.classList.add('active');
+                        document.querySelector('button[type="submit"] span').textContent = 'Verificar Código';
+                        return;
+                    }
+                }
+                
+                // Second step: validate 2FA
+                if (twoFactorCode.length !== 6) {
+                    alert('Por favor ingresa un código de 6 dígitos');
+                    return;
+                }
+                
+                // Simulate login process
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i data-lucide="loader-2" class="animate-spin"></i><span>Verificando acceso...</span>';
+                submitBtn.disabled = true;
+                lucide.createIcons();
+                
+                setTimeout(() => {
+                    // Redirect to admin dashboard
+                    window.location.href = '/pages/admin-dashboard/dashboard.html';
+                }, 2000);
+            });
+            
+            // Emergency access
+            document.getElementById('emergency-access').addEventListener('click', function() {
+                alert('Contactando al equipo de soporte técnico...\n\nTeléfono: +51 999 999 999\nEmail: soporte@dsgperu.com');
+            });
+            
+            // Auto-format 2FA code
+            document.getElementById('twoFactorCode').addEventListener('input', function() {
+                this.value = this.value.replace(/\D/g, '').substring(0, 6);
+            });
+        });
+    </script>
+</body>
+</html>

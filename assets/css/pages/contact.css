@@ -1,0 +1,581 @@
+/* Estilos base */
+.contact-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+  border-radius: 12px;
+  margin: 1rem;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.03);
+  z-index: 1;
+}
+
+.hero-content {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.8s ease-out;
+  z-index: 2;
+  max-width: 780px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: 0 0 1.2rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0 0 1.2rem;
+  line-height: 1.5;
+  color: #333333;
+  font-weight: 400;
+}
+
+.cta-button {
+  background: #000000;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 980px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.cta-button:hover {
+  background: #333333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section {
+  padding: 2rem 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-form-container {
+  width: 100%;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-form-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.checkbox-group {
+  margin: 20px 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #000000;
+}
+
+.checkmark {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+
+input[type="checkbox"]:checked + .checkmark::after {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+}
+
+.contact-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.contact-faq {
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  margin: 1rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+}
+
+.faq-question {
+  margin: 0;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question::after {
+  content: '▼';
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+
+/* Tablets pequeñas en adelante (600px) */
+@media (min-width: 600px) {
+  .contact-hero {
+    padding: 3rem 1.5rem;
+    margin: 1.5rem;
+  }
+  
+  .hero-content {
+    padding: 2.5rem 2rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-section {
+    padding: 2.5rem 1.5rem;
+    margin: 1.5rem;
+  }
+  
+  .contact-container {
+    flex-direction: row;
+  }
+  
+  .contact-form-container {
+    padding: 2rem;
+  }
+  
+  .form-row {
+    flex-direction: row;
+  }
+  
+  .form-group {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .contact-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets grandes en adelante (900px) */
+@media (min-width: 900px) {
+  .contact-hero {
+    padding: 4rem 2rem;
+  }
+  
+  .hero-content {
+    padding: 3rem 3.5rem;
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+  }
+  
+  .contact-section {
+    padding: 4rem 2rem;
+  }
+  
+  .contact-info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .faq-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Escritorios grandes (1200px) */
+@media (min-width: 1200px) {
+  .contact-hero {
+    max-width: 1400px;
+    margin: 2rem auto;
+  }
+  
+  .contact-section {
+    max-width: 1400px;
+    margin: 2rem auto;
+  }
+  
+  .contact-faq {
+    max-width: 1400px;
+    margin: 2rem auto;
+  }
+}
+
+/* Ajustes para pantallas extremadamente estrechas (hasta 245px) */
+@media (max-width: 245px) {
+  .contact-hero {
+    min-height: 35vh;
+    padding: 0.5rem;
+    margin: 0.3rem;
+  }
+  
+  .hero-content {
+    padding: 0.8rem !important;
+    width: 98%;
+  }
+  
+  h1 {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+  
+  h2 {
+    font-size: 1rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  p, .form-group label, .form-group input, .form-group select, .form-group textarea {
+    font-size: 0.8rem !important;
+  }
+  
+  .info-card {
+    padding: 0.8rem 0.3rem;
+    font-size: 0.85rem;
+  }
+  
+  .info-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  
+  .contact-form-container, .contact-section, .contact-faq {
+    padding: 0.8rem 0.5rem;
+    margin: 0.5rem 0.3rem;
+  }
+  
+  .cta-button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  
+  .form-row {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 0.8rem;
+  }
+  
+  .faq-item {
+    padding: 12px 8px;
+  }
+  
+  .faq-question {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ajustes para pantallas muy estrechas (hasta 320px) */
+@media (max-width: 320px) {
+  .contact-hero {
+    min-height: 40vh;
+    padding: 1rem 0.5rem;
+    margin: 0.5rem;
+  }
+  
+  .hero-content {
+    padding: 1rem 0.8rem !important;
+    width: 95%;
+  }
+  
+  h1 {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  p, .form-group label, .form-group input, .form-group select, .form-group textarea {
+    font-size: 0.9rem !important;
+  }
+  
+  .info-card {
+    padding: 1rem 0.5rem;
+  }
+  
+  .info-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .contact-form-container, .contact-section, .contact-faq {
+    padding: 1rem 0.8rem;
+    margin: 0.8rem 0.5rem;
+  }
+  
+  .cta-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Ajustes para móviles en orientación horizontal */
+@media (max-height: 500px) and (orientation: landscape) {
+  .contact-hero {
+    min-height: 100vh;
+  }
+  
+  .hero-content {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding-top: 15px;
+}
+
+.contact-cta {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+  border-radius: 12px;
+  margin: 2rem 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cta-content {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 3rem 4rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.cta-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}

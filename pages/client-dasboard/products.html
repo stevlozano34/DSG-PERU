@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Productos - DSG</title>
+    <link rel="stylesheet" href="/pages/client-dasboard/style.css">
+    <link rel="stylesheet" href="css/dashboard-section.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Overlay for mobile menu -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+        <!-- Menú desplegable del perfil -->
+        <div class="profile-dropdown" id="profileDropdown">
+            <div class="profile-header" role="button" aria-expanded="false" aria-controls="profileMenu" tabindex="0">
+                <div class="profile-avatar">
+                    <img src="https://ui-avatars.com/api/?name=Rafael&background=000000&color=ffffff&size=40" 
+                        alt="Avatar de Rafael" 
+                        class="avatar"
+                        loading="lazy">
+                </div>
+                <div class="profile-info">
+                    <span class="profile-name">Rafael M.</span>
+                    <span class="profile-email">admin@dsg.com</span>
+                </div>
+                <i class="fas fa-chevron-down profile-arrow"></i>
+            </div>
+            <ul class="profile-menu" id="profileMenu" role="menu">
+                <li role="none">
+                    <a href="#" class="menu-item" role="menuitem" tabindex="-1">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <span>Mi Perfil</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#" class="menu-item" role="menuitem" tabindex="-1">
+                        <i class="fas fa-cog" aria-hidden="true"></i>
+                        <span>Configuración</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#" class="menu-item" id="themeToggle" role="menuitem" tabindex="-1">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                        <span id="themeText">Modo Oscuro</span>
+                    </a>
+                </li>
+                <li class="divider" role="separator"></li>
+                <li role="none">
+                    <a href="#" class="menu-item text-danger" role="menuitem" tabindex="-1">
+                        <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                        <span>Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul class="menu-links">
+                <li class="menu-title"><span>Dashboard - DSG</span></li>
+                <li><a href="dashboard.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+                <li><a href="products.html"><i class="fas fa-box"></i><span>Productos</span></a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-line"></i><span>Análisis</span></a></li>
+                <li><a href="calendar.html"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
+                <li><a href="billing.html"><i class="fas fa-file-invoice-dollar"></i><span>Facturación</span></a></li>
+                <li><a href="clients.html"><i class="fas fa-users"></i><span>Clientes</span></a></li>
+            </ul>
+            <div class="options-divider">
+                <span class="options-title">Opciones</span>
+            </div>
+            <ul class="menu-links">
+                <li><a href="#"><i class="fas fa-plus-circle"></i><span>Agregar Productos</span></a></li>
+                <li><a href="#"><i class="fas fa-calendar-plus"></i><span>Agregar Cita</span></a></li>
+                <li><a href="#"><i class="fas fa-file-signature"></i><span>Agregar Facturación</span></a></li>
+                <li><a href="#"><i class="fas fa-money-bill-wave"></i><span>Registrar gastos</span></a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i><span>Nueva Factura</span></a></li>
+                <li><a href="#"><i class="fas fa-trash"></i><span>Papelera</span></a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-content">
+                    <h2 class="greeting"><span class="typewriter-text"></span><span class="cursor"></span></h2>
+                    <p class="date-display">
+                        <i class="far fa-calendar-alt"></i> 
+                        <span class="typewriter-date" id="currentDate"></span>
+                    </p>
+                </div>
+            </header>
+
+            <!-- Cards Section -->
+            <section class="dashboard-cards">
+                <div class="cards">
+                    <div class="card">
+                        <i class="fas fa-box"></i>
+                        <span>Total de</span>
+                        <strong>0 Productos</strong>
+                        <span class="card-trend positive"><i class="fas fa-arrow-up"></i> 12%</span>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-box"></i>
+                        <span>Hoy tienes</span>
+                        <strong>0 Productos</strong>
+                        <span class="card-trend positive"><i class="fas fa-arrow-up"></i> 8%</span>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-box"></i>
+                        <span>Hoy tienes</span>
+                        <strong>0 Productos</strong>
+                        <span class="card-trend negative"><i class="fas fa-arrow-down"></i> 3%</span>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Ingresos</span>
+                        <strong>S/ 0.00</strong>
+                        <span class="card-trend positive"><i class="fas fa-arrow-up"></i> 15%</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+    <div class="dashboard-3">
+        <!-- Tarjeta de Reportes -->
+        <div class="card-3">
+            <div class="card-header">
+                <h3><i class="fas fa-chart-line"></i> Reportes</h3>
+                <select class="time-filter">
+                    <option>Últimos 7 días</option>
+                    <option>Últimos 30 días</option>
+                    <option>Este mes</option>
+                </select>
+            </div>
+            <div class="chart-container">
+                <canvas id="lineChart" height="140"></canvas>
+            </div>
+        </div>
+
+        <!-- Tarjeta de Análisis -->
+        <div class="card-3">
+            <div class="card-header">
+                <h3><i class="fas fa-chart-pie"></i> Análisis</h3>
+            </div>
+            <div class="chart-container">
+                <canvas id="donutChart" height="160"></canvas>
+                <div class="chart-legend">
+                    <span class="legend-item"><span class="legend-color" style="background: #60a5fa"></span>Ventas</span>
+                    <span class="legend-item"><span class="legend-color" style="background: #34d399"></span>Distribución</span>
+                    <span class="legend-item"><span class="legend-color" style="background: #f87171"></span>Devoluciones</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <!-- Tabla de Órdenes Recientes -->
+        <div class="card-3">
+            <div class="card-header">
+                <h3><i class="fas fa-shopping-cart"></i> Órdenes Recientes</h3>
+                <a href="#" class="view-all">Ver todo</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>N° Seguimiento</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#876364</td>
+                            <td>Minimarket</td>
+                            <td>$178</td>
+                            <td><span class="tag">325</span></td>
+                            <td><strong>$146,650</strong></td>
+                        </tr>
+                        <tr>
+                            <td>#876368</td>
+                            <td>Droguería</td>
+                            <td>$14</td>
+                            <td><span class="tag">53</span></td>
+                            <td><strong>$46,660</strong></td>
+                        </tr>
+                        <tr>
+                            <td>#876412</td>
+                            <td>Botica</td>
+                            <td>$21</td>
+                            <td><span class="tag">78</span></td>
+                            <td><strong>$346,676</strong></td>
+                        </tr>
+                        <tr>
+                            <td>#876621</td>
+                            <td>Sistema Empresarial</td>
+                            <td>$32</td>
+                            <td><span class="tag">98</span></td>
+                            <td><strong>$346,981</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Productos Más Vendidos -->
+        <div class="card-3">
+            <div class="card-header">
+                <h3><i class="fas fa-star"></i> Productos Destacados</h3>
+            </div>
+            <div class="products-list">
+                <div class="product">
+                    <div class="product-info">
+                        <div class="product-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div>
+                            <strong>App Empresarial</strong>
+                            <div class="stars" title="5 estrellas">
+                                ★★★★★
+                                <span class="reviews">(128 reseñas)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        $8,785.00
+                        <span class="trend up">+12%</span>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <div class="product-info">
+                        <div class="product-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <strong>Página Web</strong>
+                            <div class="stars" title="4 estrellas">
+                                ★★★★☆
+                                <span class="reviews">(86 reseñas)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        $987.00
+                        <span class="trend down">-3%</span>
+                    </div>
+                </div>
+                
+                <div class="view-more">
+                    <a href="#">Ver más productos <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/profile-menu.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Elements
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuLinks = document.querySelectorAll('.menu-links li a');
+        const searchInput = document.querySelector('.search-input');
+        
+        // Set current date
+        const currentDate = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = currentDate.toLocaleDateString('es-ES', options);
+        
+        // Toggle sidebar on mobile
+        function toggleSidebar() {
+            sidebar.classList.toggle('show');
+            menuOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        }
+        
+        // Close sidebar when clicking on overlay
+        menuOverlay.addEventListener('click', toggleSidebar);
+        
+        // Toggle sidebar when clicking menu button
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleSidebar();
+            });
+        }
+        
+        // Active menu link
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Remove active class from all links
+                menuLinks.forEach(l => l.parentElement.classList.remove('active'));
+                // Add active class to clicked link
+                this.parentElement.classList.add('active');
+                
+                // Close sidebar on mobile after clicking a link
+                if (window.innerWidth <= 1024) {
+                    toggleSidebar();
+                }
+            });
+        });
+        
+        // Search functionality
+        if (searchInput) {
+            searchInput.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            searchInput.addEventListener('blur', function() {
+                this.parentElement.classList.remove('focused');
+            });
+        }
+        
+        // Add animation to cards when they come into view
+        const animateOnScroll = () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (cardPosition < screenPosition) {
+                    card.style.animation = `fadeIn 0.6s ease-out forwards`;
+                }
+            });
+        };
+        
+        // Initial check for animations
+        animateOnScroll();
+        
+        // Check for animations on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Add hover effect for touch devices
+        document.addEventListener('touchstart', function() {}, true);
+    });
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script>
+        const lineCtx = document.getElementById('lineChart');
+        new Chart(lineCtx, {
+            type: 'line',
+            data: {
+                labels: ['10am','11am','12am','01am','02am','03am','04am','05am','06am','07am'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [5,6,4,3,6,2,4,5,7,6],
+                    borderColor: '#a855f7',
+                    backgroundColor: 'rgba(168,85,247,.15)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius:4,
+                    pointHoverRadius:6,
+                    pointBackgroundColor:'#a855f7'
+            }]
+            },
+            options: {
+            responsive: true,
+            plugins:{legend:{display:false}},
+            scales:{
+                x:{ticks:{color:'#777'}},
+                y:{ticks:{color:'#777'}}
+            },
+            animations:{
+                tension:{duration:1000,easing:'easeOutQuad',from:.6,to:.4,loop:true}
+            }
+            }
+        });
+    
+        const donutCtx = document.getElementById('donutChart');
+        new Chart(donutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Sale','Distribute','Return'],
+                datasets: [{data:[80,12,8], backgroundColor:['#60a5fa','#34d399','#f87171']}]
+            },
+            options:{plugins:{legend:{display:false}}, cutout:'70%',
+                animations:{animateRotate:true,animateScale:true}}
+        });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
