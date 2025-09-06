@@ -140,11 +140,11 @@
 }
 
 .method-icon.mastercard {
-    background: linear-gradient(135deg, #eb001b, #ff5f00);
+    
 }
 
 .method-icon.paypal {
-    background: linear-gradient(135deg, #003087, #009cde);
+    
 }
 
 .method-icon.stripe {
